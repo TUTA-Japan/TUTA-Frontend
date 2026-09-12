@@ -52,3 +52,34 @@ body {
   color: var(--foreground);
   font-family: var(--font-montserrat), sans-serif;
 }
+
+:where(.site-header, .site-footer) :where(a, button, input):focus-visible {
+  outline: 2px solid var(--tuta-green);
+  outline-offset: 4px;
+}
+
+.header-panel:not([hidden]) {
+  animation: header-panel-enter 180ms ease-out;
+}
+
+@keyframes header-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .header-panel:not([hidden]) {
+    animation: none;
+  }
+}
