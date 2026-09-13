@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f5ef;
+  --foreground: #1f2a22;
+
+  --tuta-green: #587054;
+  --tuta-green-dark: #40543e;
+  --tuta-green-light: #e8eee6;
+
+  --tuta-orange: #c75030;
+  --tuta-orange-light: #f7e8e2;
+
+  --surface: #ffffff;
+
+  --text-primary: #1f2a22;
+  --text-secondary: #6f786f;
+
+  --border: #dedcd4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-tuta-green: var(--tuta-green);
+  --color-tuta-green-dark: var(--tuta-green-dark);
+  --color-tuta-green-light: var(--tuta-green-light);
+
+  --color-tuta-orange: var(--tuta-orange);
+  --color-tuta-orange-light: var(--tuta-orange-light);
+
+  --color-surface: var(--surface);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+:where(.site-header, .site-footer) :where(a, button, input):focus-visible {
+  outline: 2px solid var(--tuta-green);
+  outline-offset: 4px;
+}
+
+.header-panel:not([hidden]) {
+  animation: header-panel-enter 180ms ease-out;
+}
+
+@keyframes header-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .header-panel:not([hidden]) {
+    animation: none;
+  }
 }
