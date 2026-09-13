@@ -15,11 +15,11 @@ export function ProductCard({ product }: ProductCardProps) {
   const currentPrice =
     product.referencePriceVnd === undefined
       ? null
-      : `${priceFormatter.format(product.referencePriceVnd)} ₫`;
+      : priceFormatter.format(product.referencePriceVnd);
   const originalPrice =
     product.originalPriceVnd !== undefined &&
     product.originalPriceVnd > (product.referencePriceVnd ?? 0)
-      ? `${priceFormatter.format(product.originalPriceVnd)} ₫`
+      ? priceFormatter.format(product.originalPriceVnd)
       : null;
 
   return (
@@ -60,12 +60,20 @@ export function ProductCard({ product }: ProductCardProps) {
 
           <div className="mt-auto flex items-end justify-between gap-4 pt-4">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-              <p className="text-sm font-semibold tabular-nums text-tuta-green-dark sm:text-[15px]">
-                {currentPrice ?? "Đang cập nhật"}
+              <p className="text-sm font-bold tabular-nums sm:text-[15px]">
+                {currentPrice ? (
+                  <>
+                    {currentPrice}
+                    <span className="ml-0.5 text-[10px] font-semibold">đ</span>
+                  </>
+                ) : (
+                  "Đang cập nhật"
+                )}
               </p>
               {originalPrice && (
                 <del className="text-xs tabular-nums text-[#59635b] decoration-1">
                   {originalPrice}
+                  <span className="ml-0.5 text-[9px]">đ</span>
                 </del>
               )}
             </div>
