@@ -1,15 +1,10 @@
 "use client";
 
-import { Menu, Search, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu, Search, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
-const navigation = [
-  { label: "Khám phá", href: "/" },
-  { label: "Danh mục", href: "/categories" },
-  { label: "Thương hiệu", href: "/brands" },
-];
+import { NAVIGATION_ITEMS } from "@/constants/navigation";
 
 type Panel = "menu" | "search" | null;
 
@@ -63,7 +58,7 @@ export function HeaderNavigation() {
         className="hidden items-center md:flex"
       >
         <ul className="flex items-center gap-8">
-          {navigation.map(({ label, href }) => {
+          {NAVIGATION_ITEMS.map(({ label, href }) => {
             const active = isActive(href);
 
             return (
@@ -129,7 +124,7 @@ export function HeaderNavigation() {
         >
           <nav aria-label="Điều hướng trên di động" className="px-5 py-4">
             <ul>
-              {navigation.map(({ label, href }) => {
+              {NAVIGATION_ITEMS.map(({ label, href }) => {
                 const active = isActive(href);
 
                 return (
