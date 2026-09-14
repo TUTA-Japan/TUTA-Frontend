@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { ROUTES } from "@/constants/routes";
 import type { Product } from "@/types/product";
+import { CONTACT_LINKS } from "@/constants/contact";
+import { ProductContact } from "@/components/products/product-contact";
 
 type ProductDetailProps = {
   product: Product;
@@ -109,6 +111,11 @@ export function ProductDetail({ product }: ProductDetailProps) {
               </div>
             </div>
           )}
+
+          <ProductContact
+            zaloUrl={CONTACT_LINKS.zalo}
+            facebookUrl={CONTACT_LINKS.facebook}
+          />
 
           {product.shortDescription && (
             <p className="mt-8 max-w-xl text-base leading-7 text-text-secondary">
