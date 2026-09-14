@@ -10,6 +10,7 @@ export const products: Product[] = [
     category: "Chống nắng",
     referencePriceVnd: 229000,
     originalPriceVnd: 259000,
+    specification: "110g × 1 tuýp",
     image: "https://picsum.photos/seed/tuta-1/800/1000",
     shortDescription: "Kem chống nắng dạng gel nhẹ, phù hợp sử dụng hằng ngày.",
     description:
@@ -23,6 +24,7 @@ export const products: Product[] = [
     brand: "Hada Labo",
     category: "Lotion",
     referencePriceVnd: 189000,
+    specification: "170ml × 1 chai",
     image: "https://picsum.photos/seed/tuta-2/800/1000",
     shortDescription:
       "Lotion dưỡng ẩm với kết cấu đơn giản, dễ kết hợp routine.",
@@ -38,6 +40,7 @@ export const products: Product[] = [
     category: "Chống nắng",
     referencePriceVnd: 199000,
     originalPriceVnd: 235000,
+    specification: "70g × 1 tuýp",
     image: "https://picsum.photos/seed/tuta-3/800/1000",
     shortDescription: "Chống nắng kết cấu mỏng nhẹ, phổ biến tại Nhật.",
     description:
@@ -51,6 +54,7 @@ export const products: Product[] = [
     brand: "MUJI",
     category: "Toner",
     referencePriceVnd: 179000,
+    specification: "200ml × 1 chai",
     image: "https://picsum.photos/seed/tuta-4/800/1000",
     shortDescription: "Toner tối giản dành cho routine chăm sóc da cơ bản.",
     description:
@@ -65,6 +69,7 @@ export const products: Product[] = [
     category: "Chăm sóc tóc",
     referencePriceVnd: 215000,
     originalPriceVnd: 249000,
+    specification: "230g × 1 hũ",
     image: "https://picsum.photos/seed/tuta-5/800/1000",
     shortDescription: "Mặt nạ ủ tóc phổ biến trong nhóm chăm sóc tóc Nhật.",
     description:
@@ -79,6 +84,7 @@ export const products: Product[] = [
     category: "Chăm sóc tóc",
     referencePriceVnd: 265000,
     originalPriceVnd: 299000,
+    specification: "490ml × 1 chai",
     image: "https://picsum.photos/seed/tuta-6/800/1000",
     shortDescription: "Dầu gội Nhật dành cho tóc cần độ ẩm và mềm mượt.",
     description:
@@ -92,6 +98,7 @@ export const products: Product[] = [
     brand: "Lion",
     category: "Chăm sóc răng miệng",
     referencePriceVnd: 89000,
+    specification: "130g × 1 tuýp",
     image: "https://picsum.photos/seed/tuta-7/800/1000",
     shortDescription: "Kem đánh răng nội địa Nhật dùng hằng ngày.",
     description:
@@ -106,6 +113,7 @@ export const products: Product[] = [
     category: "Chăm sóc cá nhân",
     referencePriceVnd: 159000,
     originalPriceVnd: 185000,
+    specification: "12 miếng × 1 hộp",
     image: "https://picsum.photos/seed/tuta-8/800/1000",
     shortDescription: "Mặt nạ mắt tạo cảm giác ấm, phù hợp lúc nghỉ ngơi.",
     description:
@@ -119,6 +127,7 @@ export const products: Product[] = [
     brand: "Pilot",
     category: "Văn phòng phẩm",
     referencePriceVnd: 129000,
+    specification: "3 màu × 1 cây",
     image: "https://picsum.photos/seed/tuta-9/800/1000",
     shortDescription: "Bút 3 màu có thể xóa, thiết kế gọn nhẹ.",
     description:
@@ -133,6 +142,7 @@ export const products: Product[] = [
     category: "Văn phòng phẩm",
     referencePriceVnd: 119000,
     originalPriceVnd: 139000,
+    specification: "5 màu × 1 bộ",
     image: "https://picsum.photos/seed/tuta-10/800/1000",
     shortDescription: "Bút highlight màu dịu, phù hợp ghi chú và học tập.",
     description:

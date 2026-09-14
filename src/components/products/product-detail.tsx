@@ -137,6 +137,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 Nhật Bản
               </dd>
             </div>
+
+            <div className="grid grid-cols-[120px_1fr] gap-4 py-4">
+              <dt className="text-sm text-text-secondary">Quy cách</dt>
+              <dd className="text-sm font-medium text-text-primary">
+                {product.specification ?? "Đang cập nhật"}
+              </dd>
+            </div>
           </dl>
         </div>
       </section>
