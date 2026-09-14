@@ -3,23 +3,23 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { ROUTES } from "@/constants/routes";
+import { formatVnd } from "@/utils/currency";
 import type { Product } from "@/types/product";
 
 type ProductCardProps = {
   product: Product;
 };
 
-const priceFormatter = new Intl.NumberFormat("vi-VN");
-
 export function ProductCard({ product }: ProductCardProps) {
   const currentPrice =
     product.referencePriceVnd === undefined
       ? null
-      : priceFormatter.format(product.referencePriceVnd);
+      : formatVnd(product.referencePriceVnd);
+
   const originalPrice =
     product.originalPriceVnd !== undefined &&
     product.originalPriceVnd > (product.referencePriceVnd ?? 0)
-      ? priceFormatter.format(product.originalPriceVnd)
+      ? formatVnd(product.originalPriceVnd)
       : null;
 
   return (
@@ -64,7 +64,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 {currentPrice ? (
                   <>
                     {currentPrice}
-                    <span className="ml-0.5 text-[10px] font-semibold">đ</span>
+                    <span className="ml-1 text-[10px] font-semibold">đ</span>
                   </>
                 ) : (
                   "Đang cập nhật"
