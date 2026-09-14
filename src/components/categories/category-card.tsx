@@ -16,7 +16,7 @@ export function CategoryCard({
 }: CategoryCardProps) {
   return (
     <Link href={`/categories/${slug}`} className="group block">
-      <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+      <div className="relative aspect-4/3 overflow-hidden bg-surface">
         {image && (
           <Image
             src={image}

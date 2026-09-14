@@ -8,9 +8,14 @@ import type { Product } from "@/types/product";
 
 type ProductCardProps = {
   product: Product;
+  headingLevel?: "h2" | "h3";
 };
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({
+  product,
+  headingLevel = "h2",
+}: ProductCardProps) {
+  const Heading = headingLevel;
   const currentPrice =
     product.referencePriceVnd === undefined
       ? null
@@ -54,9 +59,9 @@ export function ProductCard({ product }: ProductCardProps) {
             </p>
           </div>
 
-          <h2 className="mt-2 min-h-12 line-clamp-2 text-sm font-semibold leading-6 text-text-primary transition-colors duration-200 group-hover:text-tuta-green-dark group-focus-visible:text-tuta-green-dark motion-reduce:transition-none sm:text-[15px]">
+          <Heading className="mt-2 min-h-12 line-clamp-2 text-sm font-semibold leading-6 text-text-primary transition-colors duration-200 group-hover:text-tuta-green-dark group-focus-visible:text-tuta-green-dark motion-reduce:transition-none sm:text-[15px]">
             {product.nameVi}
-          </h2>
+          </Heading>
 
           <div className="mt-auto flex items-end justify-between gap-4 pt-4">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
