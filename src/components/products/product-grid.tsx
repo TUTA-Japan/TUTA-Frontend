@@ -1,6 +1,9 @@
 import type { Product } from "@/types/product";
 
-import { ProductCard } from "./product-card";
+import { ProductCard } from "@/components/products/product-card";
+import { ProductEmptyState } from "@/components/products/product-empty-state";
+{
+}
 
 type ProductGridProps = {
   products: Product[];
@@ -9,14 +12,10 @@ type ProductGridProps = {
 export function ProductGrid({ products }: ProductGridProps) {
   if (products.length === 0) {
     return (
-      <div className="border-y border-border py-16 text-center sm:py-20">
-        <p className="text-base font-medium text-text-primary">
-          Chưa có sản phẩm phù hợp
-        </p>
-        <p className="mt-2 text-sm leading-6 text-[#59635b]">
-          Các sản phẩm mới sẽ được TUTA tuyển chọn và cập nhật tại đây.
-        </p>
-      </div>
+      <ProductEmptyState
+        title="Không có sản phẩm phù hợp"
+        description="Hãy thử thay đổi từ khóa hoặc bộ lọc để xem thêm sản phẩm."
+      />
     );
   }
 
