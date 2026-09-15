@@ -16,6 +16,9 @@ export function ProductCard({
   headingLevel = "h2",
 }: ProductCardProps) {
   const Heading = headingLevel;
+
+  const coverImage = product.images[0];
+
   const currentPrice =
     product.referencePriceVnd === undefined
       ? null
@@ -35,8 +38,8 @@ export function ProductCard({
       >
         <div className="relative aspect-4/5 overflow-hidden border border-transparent bg-surface transition-colors duration-200 group-hover:border-border group-focus-visible:border-tuta-green motion-reduce:transition-none">
           <Image
-            src={product.image}
-            alt=""
+            src={coverImage}
+            alt={product.nameVi}
             fill
             sizes="(max-width: 767px) calc(50vw - 28px), (max-width: 1023px) calc(33.333vw - 38px), (max-width: 1279px) calc(25vw - 42px), 278px"
             className="object-contain p-6 transition-transform duration-250 ease-out group-hover:scale-[1.025] group-focus-visible:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:p-8"
