@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { ROUTES } from "@/constants/routes";
 import type { Product } from "@/types/product";
 import { CONTACT_LINKS } from "@/constants/contact";
 import { ProductContact } from "@/components/products/product-contact";
+import { ProductGallery } from "@/components/products/product-gallery";
 
 type ProductDetailProps = {
   product: Product;
@@ -64,16 +64,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
       </nav>
 
       <section className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-        <div className="relative aspect-4/5 overflow-hidden bg-surface">
-          <Image
-            src={product.image}
-            alt={product.nameVi}
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-contain p-8 md:p-12"
-          />
-        </div>
+        <ProductGallery images={product.images} productName={product.nameVi} />
 
         <div className="flex flex-col">
           <p className="text-xs font-medium tracking-[0.16em] text-text-secondary uppercase">
@@ -90,7 +81,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </p>
           )} */}
 
-          {product.referencePriceVnd && (
+          {product.referencePriceVnd !== undefined && (
             <div className="mt-7">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
                 <p className="text-2xl font-semibold text-text-primary">

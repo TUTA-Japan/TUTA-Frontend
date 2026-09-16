@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import Tippy from "@tippyjs/react";
 import { ArrowUpRight } from "lucide-react";
 
 import { ROUTES } from "@/constants/routes";
@@ -11,11 +14,9 @@ type ProductCardProps = {
   headingLevel?: "h2" | "h3";
 };
 
-export function ProductCard({
-  product,
-  headingLevel = "h2",
-}: ProductCardProps) {
-  const Heading = headingLevel;
+export function ProductCard({ product }: ProductCardProps) {
+  const coverImage = product.images[0];
+
   const currentPrice =
     product.referencePriceVnd === undefined
       ? null
@@ -35,8 +36,8 @@ export function ProductCard({
       >
         <div className="relative aspect-4/5 overflow-hidden border border-transparent bg-surface transition-colors duration-200 group-hover:border-border group-focus-visible:border-tuta-green motion-reduce:transition-none">
           <Image
-            src={product.image}
-            alt=""
+            src={coverImage}
+            alt={product.nameVi}
             fill
             sizes="(max-width: 767px) calc(50vw - 28px), (max-width: 1023px) calc(33.333vw - 38px), (max-width: 1279px) calc(25vw - 42px), 278px"
             className="object-contain p-6 transition-transform duration-250 ease-out group-hover:scale-[1.025] group-focus-visible:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:p-8"
@@ -59,9 +60,11 @@ export function ProductCard({
             </p>
           </div>
 
-          <Heading className="mt-2 min-h-12 line-clamp-2 text-sm font-semibold leading-6 text-text-primary transition-colors duration-200 group-hover:text-tuta-green-dark group-focus-visible:text-tuta-green-dark motion-reduce:transition-none sm:text-[15px]">
-            {product.nameVi}
-          </Heading>
+          <Tippy content={product.nameVi} placement="top" delay={[200, 0]}>
+            <h2 className="mt-2 min-h-12 line-clamp-2 text-sm font-semibold leading-6 text-text-primary transition-colors duration-200 group-hover:text-tuta-green-dark group-focus-visible:text-tuta-green-dark motion-reduce:transition-none sm:text-[15px]">
+              {product.nameVi}
+            </h2>
+          </Tippy>
 
           <div className="mt-auto flex items-end justify-between gap-4 pt-4">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">

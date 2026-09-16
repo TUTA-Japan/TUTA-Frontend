@@ -58,7 +58,7 @@ export function HomeHero() {
           aria-hidden="true"
           className="bg-tuta-green-light px-5 py-10 md:px-8 md:py-14 lg:col-span-5 lg:px-10 lg:py-16"
         >
-          <div className="relative flex min-h-115 h-full overflow-hidden border border-tuta-green/25 bg-background p-6 md:min-h-[520px] md:p-9 lg:min-h-0">
+          <div className="relative flex min-h-115 h-full overflow-hidden border border-tuta-green/25 bg-background p-6 md:min-h-130 md:p-9 lg:min-h-0">
             <div className="absolute top-[8%] right-[7%] size-[clamp(9rem,18vw,15rem)] rounded-full border border-tuta-orange/25 bg-tuta-orange-light" />
             <div className="absolute top-0 bottom-0 left-[34%] w-px bg-tuta-green/15" />
             <div className="absolute right-0 bottom-[20%] left-0 h-px bg-tuta-green/15" />

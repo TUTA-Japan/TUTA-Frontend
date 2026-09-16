@@ -1,4 +1,8 @@
 import type { Product } from "@/types/product";
+import canmakeImange from "@/assets/products/Canmake.png";
+import canmakeImange1 from "@/assets/products/Canmake-1.png";
+import canmakeImange2 from "@/assets/products/Canmake-2.png";
+import canmakeImange3 from "@/assets/products/Canmake-3.png";
 
 export const products: Product[] = [
   {
@@ -11,10 +15,14 @@ export const products: Product[] = [
     referencePriceVnd: 229000,
     originalPriceVnd: 259000,
     specification: "110g × 1 tuýp",
-    image: "https://picsum.photos/seed/tuta-1/800/1000",
+    images: [
+      "https://picsum.photos/seed/tuta-1-a/1200/900",
+      "https://picsum.photos/seed/tuta-1-b/1200/900",
+      "https://picsum.photos/seed/tuta-1-c/1200/900",
+      "https://picsum.photos/seed/tuta-1-d/1200/900",
+    ],
     shortDescription: "Kem chống nắng dạng gel nhẹ, phù hợp sử dụng hằng ngày.",
-    description:
-      "Sản phẩm chống nắng nội địa Nhật với kết cấu nhẹ, dễ sử dụng trong routine chăm sóc da hằng ngày.",
+    description: "Sản phẩm chống nắng nội địa Nhật với kết cấu nhẹ...",
   },
   {
     id: "2",
@@ -25,7 +33,7 @@ export const products: Product[] = [
     category: "Lotion",
     referencePriceVnd: 189000,
     specification: "170ml × 1 chai",
-    image: "https://picsum.photos/seed/tuta-2/800/1000",
+    images: ["https://picsum.photos/seed/tuta-2/800/1000"],
     shortDescription:
       "Lotion dưỡng ẩm với kết cấu đơn giản, dễ kết hợp routine.",
     description:
@@ -33,119 +41,18 @@ export const products: Product[] = [
   },
   {
     id: "3",
-    slug: "biore-uv-aqua-rich",
-    nameVi: "Kem chống nắng Bioré UV Aqua Rich",
-    nameJp: "ビオレUV アクアリッチ",
-    brand: "Bioré",
-    category: "Chống nắng",
-    referencePriceVnd: 199000,
-    originalPriceVnd: 235000,
-    specification: "70g × 1 tuýp",
-    image: "https://picsum.photos/seed/tuta-3/800/1000",
-    shortDescription: "Chống nắng kết cấu mỏng nhẹ, phổ biến tại Nhật.",
+    slug: "canmake-marshmallow-finish-powder-abloom",
+    nameVi:
+      "Canmake Marshmallow Finish Powder Abloom - Phấn phủ nén 5 màu hiệu chỉnh tông da",
+    brand: "Canmake",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 260000,
+
+    images: [canmakeImange, canmakeImange1, canmakeImange2, canmakeImange3],
+
+    shortDescription: "Phấn phủ nén 5 màu hiệu chỉnh tông da.",
+
     description:
-      "Dòng chống nắng Bioré nổi bật với kết cấu nhẹ và cảm giác dễ chịu khi sử dụng hằng ngày.",
-  },
-  {
-    id: "4",
-    slug: "muji-sensitive-skin-toning-water",
-    nameVi: "Nước cân bằng MUJI cho da nhạy cảm",
-    nameJp: "敏感肌用化粧水",
-    brand: "MUJI",
-    category: "Toner",
-    referencePriceVnd: 179000,
-    specification: "200ml × 1 chai",
-    image: "https://picsum.photos/seed/tuta-4/800/1000",
-    shortDescription: "Toner tối giản dành cho routine chăm sóc da cơ bản.",
-    description:
-      "Sản phẩm theo tinh thần tối giản của MUJI, phù hợp với người thích routine gọn nhẹ và dễ sử dụng.",
-  },
-  {
-    id: "5",
-    slug: "shiseido-fino-premium-touch-mask",
-    nameVi: "Ủ tóc Fino Premium Touch",
-    nameJp: "フィーノ プレミアムタッチ",
-    brand: "Shiseido",
-    category: "Chăm sóc tóc",
-    referencePriceVnd: 215000,
-    originalPriceVnd: 249000,
-    specification: "230g × 1 hũ",
-    image: "https://picsum.photos/seed/tuta-5/800/1000",
-    shortDescription: "Mặt nạ ủ tóc phổ biến trong nhóm chăm sóc tóc Nhật.",
-    description:
-      "Dòng ủ tóc được nhiều người biết đến nhờ khả năng hỗ trợ tóc khô xơ và tăng cảm giác mềm mượt.",
-  },
-  {
-    id: "6",
-    slug: "tsubaki-premium-moist-shampoo",
-    nameVi: "Dầu gội Tsubaki Premium Moist",
-    nameJp: "ツバキ プレミアムモイスト",
-    brand: "Tsubaki",
-    category: "Chăm sóc tóc",
-    referencePriceVnd: 265000,
-    originalPriceVnd: 299000,
-    specification: "490ml × 1 chai",
-    image: "https://picsum.photos/seed/tuta-6/800/1000",
-    shortDescription: "Dầu gội Nhật dành cho tóc cần độ ẩm và mềm mượt.",
-    description:
-      "Dòng chăm sóc tóc của Tsubaki với định hướng dưỡng ẩm và hỗ trợ cải thiện cảm giác khô xơ.",
-  },
-  {
-    id: "7",
-    slug: "lion-clinica-advantage-toothpaste",
-    nameVi: "Kem đánh răng Lion Clinica Advantage",
-    nameJp: "クリニカアドバンテージ",
-    brand: "Lion",
-    category: "Chăm sóc răng miệng",
-    referencePriceVnd: 89000,
-    specification: "130g × 1 tuýp",
-    image: "https://picsum.photos/seed/tuta-7/800/1000",
-    shortDescription: "Kem đánh răng nội địa Nhật dùng hằng ngày.",
-    description:
-      "Một lựa chọn phổ biến trong nhóm chăm sóc răng miệng tại Nhật, phù hợp cho routine hằng ngày.",
-  },
-  {
-    id: "8",
-    slug: "kao-megrhythm-steam-eye-mask",
-    nameVi: "Mặt nạ mắt hơi ấm MegRhythm",
-    nameJp: "めぐりズム 蒸気でホットアイマスク",
-    brand: "Kao",
-    category: "Chăm sóc cá nhân",
-    referencePriceVnd: 159000,
-    originalPriceVnd: 185000,
-    specification: "12 miếng × 1 hộp",
-    image: "https://picsum.photos/seed/tuta-8/800/1000",
-    shortDescription: "Mặt nạ mắt tạo cảm giác ấm, phù hợp lúc nghỉ ngơi.",
-    description:
-      "Sản phẩm chăm sóc cá nhân phổ biến tại Nhật, thường được sử dụng khi thư giãn hoặc trước khi ngủ.",
-  },
-  {
-    id: "9",
-    slug: "pilot-frixion-ball-3",
-    nameVi: "Bút Pilot FriXion Ball 3",
-    nameJp: "フリクションボール3",
-    brand: "Pilot",
-    category: "Văn phòng phẩm",
-    referencePriceVnd: 129000,
-    specification: "3 màu × 1 cây",
-    image: "https://picsum.photos/seed/tuta-9/800/1000",
-    shortDescription: "Bút 3 màu có thể xóa, thiết kế gọn nhẹ.",
-    description:
-      "Một sản phẩm stationery Nhật quen thuộc, phù hợp cho học tập, ghi chú và công việc hằng ngày.",
-  },
-  {
-    id: "10",
-    slug: "zebra-mildliner-set",
-    nameVi: "Bộ bút highlight Zebra Mildliner",
-    nameJp: "マイルドライナー",
-    brand: "Zebra",
-    category: "Văn phòng phẩm",
-    referencePriceVnd: 119000,
-    originalPriceVnd: 139000,
-    specification: "5 màu × 1 bộ",
-    image: "https://picsum.photos/seed/tuta-10/800/1000",
-    shortDescription: "Bút highlight màu dịu, phù hợp ghi chú và học tập.",
-    description:
-      "Dòng bút highlight nổi tiếng với màu nhẹ mắt, phù hợp cho planner, note và học tập.",
+      "Canmake Marshmallow Finish Powder Abloom là phấn phủ nén 5 màu giúp hiệu chỉnh sắc tố da và nâng tông tự nhiên.\n\nMàu 01 - Dearest Bouquet (ディアレストブーケ): Phối 5 sắc màu hiệu chỉnh (xanh, tím, vàng, hồng, trắng) giúp cân bằng sắc tố da và nâng tông tự nhiên.\n\nMàu 02 - Sakura Tulle (サクラチュール): Tông hồng phấn nhẹ nhàng giúp tăng độ hồng hào, rạng rỡ cho làn da.\n\nMàu 03 - Plumeria Wreath (プルメリアリース): Tông màu tươi sáng (vàng, xanh lá, hồng nhạt) mang lại vẻ rạng rỡ, trong trẻo và thanh thoát.\n.",
   },
 ];
