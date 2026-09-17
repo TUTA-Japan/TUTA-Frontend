@@ -44,7 +44,7 @@ export function ProductCard({
             alt={product.nameVi}
             fill
             sizes="(max-width: 767px) calc(50vw - 28px), (max-width: 1023px) calc(33.333vw - 38px), (max-width: 1279px) calc(25vw - 42px), 278px"
-            className="object-contain p-6 transition-transform duration-250 ease-out group-hover:scale-[1.025] group-focus-visible:scale-[1.025] motion-reduce:transform-none motion-reduce:transition-none sm:p-7 lg:p-8"
+            className="object-contain p-2 scale-[1.08] transition-transform duration-250 ease-out group-hover:scale-[1.11] group-focus-visible:scale-[1.11] motion-reduce:transform-none motion-reduce:transition-none sm:p-3"
           />
 
           <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-tuta-green transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none" />
