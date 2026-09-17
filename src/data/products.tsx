@@ -1,8 +1,8 @@
 import type { Product } from "@/types/product";
-import canmakeImange from "@/assets/products/Canmake.png";
-import canmakeImange1 from "@/assets/products/Canmake-1.png";
-import canmakeImange2 from "@/assets/products/Canmake-2.png";
-import canmakeImange3 from "@/assets/products/Canmake-3.png";
+import canmakeImange from "@/assets/products/Canmake/Canmake.png";
+import canmakeImange1 from "@/assets/products/Canmake/Canmake.png";
+import canmakeImange2 from "@/assets/products/Canmake/Canmake.png";
+import canmakeImange3 from "@/assets/products/Canmake/Canmake.png";
 
 export const products: Product[] = [
   {
@@ -23,6 +23,22 @@ export const products: Product[] = [
     ],
     shortDescription: "Kem chống nắng dạng gel nhẹ, phù hợp sử dụng hằng ngày.",
     description: "Sản phẩm chống nắng nội địa Nhật với kết cấu nhẹ...",
+  },
+  {
+    id: "2",
+    slug: "vien-uong-dhc-vitamin-c-20-ngay",
+    nameVi: "Viên uống DHC bổ sung Vitamin C 20 ngày",
+    brand: "DHC",
+    category: "Thực phẩm chức năng",
+    referencePriceVnd: 140000,
+    specification: "60 viên",
+    images: [
+      "https://tshop.r10s.jp/rakutensokuhaimart/cabinet/rakuten24/wb3-a/4511413404133-a.jpg?fitin=660%3A660",
+    ],
+    shortDescription:
+      "Viên uống bổ sung Vitamin C DHC cung cấp 1.000mg vitamin C và vitamin B2, hỗ trợ sức khỏe và làm đẹp da.",
+    description:
+      "Viên uống bổ sung Vitamin C DHC cung cấp 1.000mg vitamin C và vitamin B2, hỗ trợ sức khỏe, làm đẹp da, tiện lợi cho người bận rộn. Quy cách: 60 viên. DHC nội địa Nhật Bản.",
   },
   {
     id: "2",
