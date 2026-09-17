@@ -11,8 +11,43 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "TUTA Japan",
-  description: "Khám phá sản phẩm nội địa Nhật được tuyển chọn bởi TUTA.",
+  metadataBase: new URL("https://tutatuta.vn"),
+
+  title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
+  description:
+    "Khám phá sản phẩm nội địa Nhật được tuyển chọn cho cuộc sống hằng ngày.",
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  openGraph: {
+    title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
+    description:
+      "Khám phá sản phẩm nội địa Nhật được tuyển chọn cho cuộc sống hằng ngày.",
+    url: "https://tutatuta.vn",
+    siteName: "TUTA Japan Select",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TUTA Japan Select",
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
+    description:
+      "Khám phá sản phẩm nội địa Nhật được tuyển chọn cho cuộc sống hằng ngày.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
