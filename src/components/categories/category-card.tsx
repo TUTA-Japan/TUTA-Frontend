@@ -1,12 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type CategoryCardProps = {
-  name: string;
-  slug: string;
-  description?: string;
-  image?: string;
-};
+import type { Category } from "@/types/category";
+
+type CategoryCardProps = Category;
 
 export function CategoryCard({
   name,
