@@ -16,7 +16,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
   return (
     <div>
-      <div className="relative aspect-4/5 overflow-hidden bg-surface">
+      <div className="relative aspect-4/5 overflow-hidden">
         <Image
           src={images[activeIndex]}
           alt={`${productName} - ảnh ${activeIndex + 1}`}
