@@ -627,4 +627,81 @@ Trong mỗi 2 viên dùng hằng ngày:
 - Người có nhu cầu chăm sóc mắt khi xuất hiện cảm giác mỏi hoặc khó chịu do phải điều tiết nhiều.
 `,
   },
+  {
+    id: "15",
+    slug: "vien-uong-glucosamine-orihiro-1500mg-900-vien",
+    nameVi: "Viên uống Glucosamine Orihiro 1500mg Nhật Bản 900 viên",
+    brand: "ORIHIRO",
+    category: "Thực phẩm chức năng",
+    referencePriceVnd: 630000,
+    originalPriceVnd: 394800,
+    specification: "Hộp 900 viên",
+    images: [
+      "https://images.tutatuta.vn/image/products/glucosamine/1.png",
+      "https://images.tutatuta.vn/image/products/glucosamine/2.png",
+      "https://images.tutatuta.vn/image/products/glucosamine/3.png",
+    ],
+    shortDescription:
+      "Viên uống Glucosamine Orihiro 1500mg hỗ trợ bổ sung dưỡng chất cho sụn khớp, duy trì khả năng vận động và chăm sóc sức khỏe xương khớp.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Bổ sung Glucosamine:** Cung cấp Glucosamine nhằm hỗ trợ duy trì sức khỏe sụn và khớp, phù hợp với người có nhu cầu bổ sung dưỡng chất cho hệ vận động.
+
+- **Hỗ trợ vận động khớp:** Glucosamine góp phần hỗ trợ duy trì chức năng khớp và sự linh hoạt khi vận động hằng ngày.
+
+- **Hỗ trợ giảm cảm giác khó chịu khi vận động:** Sản phẩm phù hợp với người thường xuyên vận động hoặc có nhu cầu chăm sóc sức khỏe xương khớp.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều dùng:** Uống 10 viên mỗi ngày, chia thành 2 - 3 lần.
+
+- **Thời điểm dùng:** Nên sử dụng sau bữa ăn cùng nước lọc hoặc nước ấm.
+
+- **Lưu ý dị ứng:** Người có tiền sử dị ứng với hải sản như tôm, cua nên kiểm tra kỹ thành phần và cân nhắc trước khi sử dụng.
+
+- **Lưu ý:** Không sử dụng quá liều khuyến nghị. Nếu đang điều trị bệnh xương khớp hoặc đang dùng thuốc, nên tham khảo bác sĩ hoặc dược sĩ trước khi dùng.
+`,
+  },
+  {
+    id: "16",
+    slug: "mat-na-ba-ruou-sake-wafood-made-pdc-10-mieng",
+    nameVi: "Mặt nạ bã rượu Sake Wafood Made PDC Nhật Bản 10 miếng",
+    brand: "PDC",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 210000,
+    specification: "Gói 10 miếng",
+    images: [
+      "https://images.tutatuta.vn/image/products/sake-wafood/1.png",
+      "https://images.tutatuta.vn/image/products/sake-wafood/2.png",
+      "https://images.tutatuta.vn/image/products/sake-wafood/3.png",
+    ],
+    shortDescription:
+      "Mặt nạ giấy Wafood Made PDC chiết xuất bã rượu sake hỗ trợ cấp ẩm, làm mềm da và cải thiện bề mặt da xỉn màu, thô ráp.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ dưỡng sáng da:** Công thức có các thành phần từ quá trình lên men sake và Kojic Acid, hỗ trợ cải thiện vẻ ngoài của làn da xỉn màu và không đều màu.
+
+- **Hỗ trợ làm mịn bề mặt da:** Giúp chăm sóc vùng da thô ráp, mang lại cảm giác mềm mại và giúp bề mặt da trông mịn màng hơn.
+
+- **Hỗ trợ cấp ẩm:** Thành phần chiết xuất cám gạo, dưa chuột và các dưỡng chất hỗ trợ duy trì độ ẩm, giúp da mềm mại và dễ chịu hơn sau khi sử dụng.
+
+- **Miếng mask ôm sát khuôn mặt:** Chất liệu mặt nạ mỏng, mềm và giữ tinh chất tốt, giúp sản phẩm tiếp xúc đều với bề mặt da trong quá trình sử dụng.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Thời gian đắp:** Đắp mặt nạ trên da đã được làm sạch trong khoảng 10 - 15 phút.
+
+- **Sau khi tháo mặt nạ:** Dùng tay vỗ nhẹ để phần tinh chất còn lại được dàn đều trên da.
+
+- **Bước tiếp theo:** Có thể tiếp tục với kem dưỡng để duy trì độ ẩm cho da.
+
+- **Lưu ý:** Không cần rửa lại với nước, trừ khi hướng dẫn trên bao bì sản phẩm có yêu cầu khác.
+`,
+  },
 ];
