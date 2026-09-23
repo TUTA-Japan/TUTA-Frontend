@@ -17,9 +17,17 @@ export const products: Product[] = [
     ],
 
     shortDescription: "Phấn phủ nén 5 màu hiệu chỉnh tông da.",
+    description: `
+Canmake Marshmallow Finish Powder Abloom là phấn phủ nén 5 màu giúp hiệu chỉnh sắc tố da và nâng tông tự nhiên.
 
-    description:
-      "Canmake Marshmallow Finish Powder Abloom là phấn phủ nén 5 màu giúp hiệu chỉnh sắc tố da và nâng tông tự nhiên.\n\nMàu 01 - Dearest Bouquet (ディアレストブーケ): Phối 5 sắc màu hiệu chỉnh (xanh, tím, vàng, hồng, trắng) giúp cân bằng sắc tố da và nâng tông tự nhiên.\n\nMàu 02 - Sakura Tulle (サクラチュール): Tông hồng phấn nhẹ nhàng giúp tăng độ hồng hào, rạng rỡ cho làn da.\n\nMàu 03 - Plumeria Wreath (プルメリアリース): Tông màu tươi sáng (vàng, xanh lá, hồng nhạt) mang lại vẻ rạng rỡ, trong trẻo và thanh thoát.\n.",
+**Bảng màu Canmake Marshmallow Finish Powder Abloom**
+
+- **Màu 01 - Dearest Bouquet** (ディアレストブーケ): Phối 5 sắc màu hiệu chỉnh (xanh, tím, vàng, hồng, trắng) giúp cân bằng sắc tố da và nâng tông tự nhiên.
+
+- **Màu 02 - Sakura Tulle** (サクラチュール): Tông hồng phấn nhẹ nhàng giúp tăng độ hồng hào, rạng rỡ cho làn da.
+
+- **Màu 03 - Plumeria Wreath** (プルメリアリース): Tông màu tươi sáng (vàng, xanh lá, hồng nhạt) mang lại vẻ rạng rỡ, trong trẻo và thanh thoát.
+`,
   },
   {
     id: "2",
@@ -35,8 +43,46 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Viên uống bổ sung Vitamin C DHC cung cấp 1.000mg vitamin C và vitamin B2, hỗ trợ sức khỏe và làm đẹp da.",
-    description:
-      "Viên uống bổ sung Vitamin C DHC cung cấp 1.000mg vitamin C và vitamin B2, hỗ trợ sức khỏe, làm đẹp da, tiện lợi cho người bận rộn. Quy cách: 60 viên. DHC nội địa Nhật Bản.",
+    description: `
+Viên uống DHC Vitamin C là dòng thực phẩm chức năng đến từ thương hiệu DHC Nhật Bản. Với hàm lượng dưỡng chất tối ưu, sản phẩm hỗ trợ bổ sung vitamin C hằng ngày, đồng thời hỗ trợ chăm sóc sức khỏe và làn da.
+
+**Công dụng nổi bật của viên uống DHC Vitamin C**
+
+- **Tăng cường sức đề kháng:** Bổ sung Vitamin C cần thiết giúp hỗ trợ hoạt động của hệ miễn dịch và duy trì sức khỏe tổng thể.
+
+- **Hỗ trợ làm sáng và đều màu da:** Vitamin C góp phần hỗ trợ quá trình chăm sóc làn da xỉn màu, thâm sau mụn và không đều màu.
+
+- **Hỗ trợ tổng hợp collagen:** Vitamin C tham gia vào quá trình tổng hợp collagen, góp phần duy trì độ săn chắc và đàn hồi của da.
+
+- **Chống oxy hóa:** Vitamin C có vai trò chống oxy hóa, hỗ trợ bảo vệ tế bào trước tác động của các gốc tự do.
+
+- **Bổ sung Vitamin B2:** Hỗ trợ duy trì sức khỏe của da và niêm mạc.
+
+**Thành phần dinh dưỡng**  
+Trong mỗi 2 viên dùng hằng ngày:
+
+- **Vitamin C:** 1.000mg
+- **Vitamin B2:** 2mg
+- **Phụ liệu:** Gelatin, caramel, titan dioxid và các thành phần khác theo công thức sản phẩm.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều lượng:** Uống 2 viên mỗi ngày.
+
+- **Thời điểm dùng:** Nên sử dụng sau bữa ăn và uống cùng nước.
+
+- **Lưu ý:** Không sử dụng quá liều khuyến nghị. Nếu đang điều trị bệnh, mang thai, cho con bú hoặc đang dùng thuốc, nên tham khảo ý kiến chuyên môn trước khi sử dụng.
+
+---
+
+**Đối tượng phù hợp**
+
+- Người có nhu cầu bổ sung Vitamin C hằng ngày.
+- Người có chế độ ăn ít rau củ và trái cây tươi.
+- Người muốn bổ sung dưỡng chất hỗ trợ chăm sóc da và sức khỏe tổng thể.
+`,
   },
 
   {
@@ -51,8 +97,40 @@ export const products: Product[] = [
     images: ["https://images.tutatuta.vn/image/products/zinc-dhc/zinc-dhc.png"],
     shortDescription:
       "Viên uống bổ sung kẽm DHC cung cấp 15mg kẽm mỗi ngày, kết hợp crom và selen, hỗ trợ bổ sung vi chất và duy trì sức khỏe tổng thể.",
-    description:
-      "Viên uống bổ sung kẽm DHC Nhật Bản cung cấp 15mg kẽm mỗi ngày, kết hợp crom và selen. Sản phẩm hỗ trợ bổ sung kẽm cho cơ thể, góp phần duy trì chức năng miễn dịch, sức khỏe da, tóc, móng và vị giác. Quy cách: 60 viên, tương ứng khoảng 60 ngày sử dụng với liều 1 viên mỗi ngày. Nên uống sau bữa ăn và dùng cùng nước. Tránh sử dụng cùng thời điểm với các sản phẩm bổ sung sắt hoặc canxi; có thể dùng cách nhau khoảng 2 giờ. Xuất xứ: Nhật Bản. Thương hiệu DHC.",
+    description: `
+**Lợi ích nổi bật của viên uống kẽm DHC Zinc**
+
+- **Hỗ trợ kiểm soát dầu thừa và chăm sóc da:** Kẽm là vi chất tham gia vào nhiều quá trình sinh học của cơ thể, hỗ trợ duy trì sức khỏe làn da và quá trình phục hồi mô.
+
+- **Hỗ trợ sức khỏe tóc và móng:** Kẽm góp phần vào quá trình tổng hợp protein và duy trì cấu trúc keratin, hỗ trợ tóc và móng chắc khỏe.
+
+- **Hỗ trợ hệ miễn dịch:** Bổ sung kẽm giúp đáp ứng nhu cầu vi chất của cơ thể và góp phần duy trì chức năng bình thường của hệ miễn dịch.
+
+- **Hỗ trợ duy trì vị giác và sức khỏe tổng thể:** Kẽm tham gia vào nhiều hoạt động chuyển hóa và góp phần duy trì chức năng sinh lý bình thường của cơ thể.
+
+- **Bổ sung Selen và Crom:** Hai vi chất này tham gia vào các quá trình chuyển hóa và chống oxy hóa của cơ thể.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều lượng:** Uống 1 viên mỗi ngày.
+
+- **Thời điểm dùng:** Nên uống sau bữa ăn sáng hoặc trưa. Tránh dùng khi bụng đói nếu bạn dễ gặp cảm giác khó chịu ở dạ dày.
+
+- **Nước uống kèm:** Uống cùng nước lọc hoặc nước ấm.
+
+- **Lưu ý tương tác:** Không nên uống kẽm cùng thời điểm với các sản phẩm bổ sung sắt hoặc canxi; có thể dùng cách nhau khoảng 2 giờ.
+
+---
+
+**Đối tượng phù hợp**
+
+- Người có nhu cầu bổ sung kẽm hằng ngày.
+- Người muốn hỗ trợ chăm sóc sức khỏe da, tóc và móng.
+- Người có chế độ ăn uống thiếu cân đối hoặc ít thực phẩm giàu kẽm.
+- Người muốn bổ sung thêm vi chất hỗ trợ sức khỏe tổng thể.
+`,
   },
   {
     id: "4",
@@ -67,8 +145,39 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Viên uống bổ sung Collagen DHC Nhật Bản hỗ trợ tăng cường độ đàn hồi, giúp da mịn màng, mềm mại và hỗ trợ sức khỏe xương khớp.",
-    description:
-      "Viên uống bổ sung Collagen DHC Nhật Bản hỗ trợ tăng cường độ đàn hồi và dưỡng da mịn màng, mềm mại, hạn chế sự hình thành của các nếp nhăn. Sản phẩm bổ sung dưỡng chất hỗ trợ xương khớp chắc khỏe, dẻo dai. Quy cách: 60 viên. Xuất xứ: DHC Nhật Bản.",
+    description: `
+**Ưu điểm nổi bật của DHC Collagen**
+
+- **Collagen Peptide dễ sử dụng:** Sản phẩm bổ sung collagen peptide có nguồn gốc từ cá, phù hợp với nhu cầu bổ sung collagen hằng ngày.
+
+- **Hỗ trợ duy trì độ săn chắc và đàn hồi của da:** Collagen là thành phần cấu trúc quan trọng của da, góp phần hỗ trợ duy trì độ săn chắc và vẻ ngoài khỏe mạnh.
+
+- **Hỗ trợ duy trì độ ẩm và bề mặt da:** Bổ sung collagen có thể hỗ trợ quá trình chăm sóc làn da khô, thiếu sức sống và giúp duy trì độ mềm mại của da.
+
+- **Bổ sung Vitamin B1 và B2:** Hai vitamin nhóm B tham gia vào quá trình chuyển hóa năng lượng và hỗ trợ duy trì sức khỏe của da.
+
+- **Hỗ trợ sức khỏe tóc, móng và khớp:** Collagen peptide góp phần bổ sung dưỡng chất cần thiết cho mô liên kết trong cơ thể.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều lượng:** Uống 6 viên mỗi ngày. Có thể dùng một lần hoặc chia thành 2 - 3 lần trong ngày.
+
+- **Thời điểm dùng:** Có thể uống vào thời điểm thuận tiện trong ngày, ưu tiên sau bữa ăn và dùng đều đặn theo hướng dẫn của sản phẩm.
+
+- **Nước uống kèm:** Uống cùng nước lọc hoặc nước ấm.
+
+- **Thời gian sử dụng:** Có thể duy trì đều đặn theo nhu cầu bổ sung và hướng dẫn trên bao bì sản phẩm.
+
+---
+
+**Đối tượng phù hợp**
+
+- Người trưởng thành có nhu cầu bổ sung collagen hằng ngày.
+- Người muốn hỗ trợ chăm sóc làn da khô, thiếu sức sống hoặc có dấu hiệu lão hóa.
+- Người muốn bổ sung thêm dưỡng chất hỗ trợ sức khỏe da, tóc, móng và mô liên kết.
+`,
   },
   {
     id: "5",
@@ -84,8 +193,55 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Kem dưỡng da Aqualabel xanh 5 trong 1 hỗ trợ làm sáng da, giữ ẩm, làm săn chắc và chăm sóc các vùng da sậm màu.",
-    description:
-      "Kem dưỡng da Aqualabel xanh 5 trong 1 hỗ trợ làm sáng da, ngăn ngừa nám, tàn nhang và các vùng da sậm màu. Sản phẩm chứa collagen, axit hyaluronic và chiết xuất thảo dược giúp săn chắc da, duy trì độ ẩm và hỗ trợ nuôi dưỡng làn da. Quy cách: 90g. Nội địa Nhật Bản.",
+    description: `
+**Ưu điểm nổi bật của Aqualabel Xanh 5in1**
+
+- **Hỗ trợ dưỡng sáng và cải thiện tình trạng da xỉn màu:** Sản phẩm có chứa 4MSK, thành phần được Shiseido sử dụng trong các sản phẩm chăm sóc da hỗ trợ làm sáng và cải thiện vẻ ngoài của các vùng da không đều màu.
+
+- **Tiện lợi với công thức 5 trong 1:** Tích hợp nhiều bước chăm sóc da gồm nước hoa hồng, sữa dưỡng, serum, kem dưỡng và mặt nạ ngủ, phù hợp với người muốn tối giản chu trình skincare.
+
+- **Hỗ trợ cấp ẩm và duy trì hàng rào bảo vệ da:** Thành phần Amino Acid kết hợp Hyaluronic Acid giúp duy trì độ ẩm, hỗ trợ làm mềm da và hạn chế cảm giác khô ráp.
+
+- **Hỗ trợ duy trì độ săn chắc của da:** Collagen thủy phân, dẫn xuất Vitamin E và chiết xuất trà đen góp phần hỗ trợ chăm sóc làn da có dấu hiệu kém săn chắc và thiếu sức sống.
+
+- **Kết cấu gel nhẹ, dễ sử dụng:** Chất gel mỏng nhẹ, dễ tán và phù hợp với nhu cầu dưỡng ẩm hằng ngày mà không tạo cảm giác quá nặng trên da.
+
+---
+
+**Thành phần chính**
+
+- **4MSK:** Thành phần hỗ trợ chăm sóc làn da xỉn màu và không đều màu.
+
+- **Collagen GL & Hyaluronic Acid:** Hỗ trợ duy trì độ ẩm, độ mềm mại và vẻ căng mịn của da.
+
+- **Amino Acid Complex:** Hỗ trợ duy trì hàng rào ẩm tự nhiên của da.
+
+- **Chiết xuất trà đen & dẫn xuất Vitamin E:** Các thành phần có vai trò chống oxy hóa và hỗ trợ chăm sóc da trước tác động từ môi trường.
+
+---
+
+**Hướng dẫn sử dụng**
+
+**Dùng làm kem dưỡng hằng ngày**
+
+1. Sau khi làm sạch da, lấy một lượng gel vừa đủ và chấm lên trán, hai má, mũi và cằm.
+2. Thoa đều và massage nhẹ nhàng từ trong ra ngoài.
+3. Có thể áp nhẹ hai lòng bàn tay lên mặt để sản phẩm được dàn đều trên da.
+
+**Dùng như mặt nạ ngủ**
+
+- Lấy lượng sản phẩm nhiều hơn so với khi dùng hằng ngày.
+- Thoa đều toàn mặt, có thể tập trung thêm ở các vùng da khô hoặc cần chăm sóc nhiều hơn.
+- Để qua đêm và làm sạch da vào sáng hôm sau nếu cần.
+
+---
+
+**Đối tượng phù hợp**
+
+- Người có làn da dầu, hỗn hợp hoặc da thiếu ẩm.
+- Người có làn da xỉn màu, không đều màu hoặc có thâm sau mụn.
+- Người muốn tối giản chu trình skincare với sản phẩm đa chức năng.
+`,
   },
   {
     id: "6",
@@ -102,8 +258,25 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Viên uống Orihiro Nattokinase 2000FU 60 viên là thực phẩm chức năng hỗ trợ tuần hoàn máu và sức khỏe tim mạch.",
-    description:
-      "Viên uống Orihiro Nattokinase 2000FU 60 viên là thực phẩm chức năng của Nhật Bản hỗ trợ tuần hoàn máu. Công dụng chính: hỗ trợ lưu thông máu và sức khỏe tim mạch. Cách sử dụng: uống 2 viên/ngày, trước bữa ăn 30 phút hoặc sau khi ăn 60 phút. Lưu ý: không dùng cho người bị rối loạn đông máu, chuẩn bị phẫu thuật hoặc huyết áp quá thấp. Nên tham khảo ý kiến bác sĩ nếu đang sử dụng thuốc chống đông máu.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ tuần hoàn máu:** Nattokinase là enzyme có nguồn gốc từ natto, thường được sử dụng trong các sản phẩm bổ sung hỗ trợ tuần hoàn và sức khỏe tim mạch.
+
+- **Hỗ trợ lưu thông máu:** Sản phẩm phù hợp với người có nhu cầu bổ sung dưỡng chất hỗ trợ duy trì tuần hoàn máu và sức khỏe tổng thể.
+
+- **Hỗ trợ sức khỏe tim mạch:** Công thức có Nattokinase góp phần hỗ trợ duy trì hoạt động tuần hoàn và chức năng tim mạch bình thường.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều lượng:** Sử dụng theo đúng hướng dẫn ghi trên bao bì sản phẩm.
+
+- **Thời điểm dùng:** Có thể uống cùng nước lọc hoặc nước ấm, vào thời điểm phù hợp theo hướng dẫn của nhà sản xuất.
+
+- **Lưu ý:** Người đang dùng thuốc chống đông máu, có rối loạn đông máu, chuẩn bị phẫu thuật hoặc đang điều trị bệnh tim mạch nên tham khảo ý kiến bác sĩ trước khi sử dụng.
+`,
   },
   {
     id: "7",
@@ -120,8 +293,27 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Kem dưỡng Aqualabel Vàng Shiseido 5 trong 1 hỗ trợ dưỡng ẩm, cải thiện độ săn chắc và chăm sóc làn da có dấu hiệu lão hóa.",
-    description:
-      "Kem dưỡng Aqualabel Vàng Shiseido là sản phẩm chăm sóc da 5 trong 1, tích hợp các bước nước hoa hồng, sữa dưỡng, serum, kem dưỡng và mặt nạ ngủ. Sản phẩm chứa collagen thủy phân cùng các thành phần dầu dưỡng như jojoba, dầu mè, dầu ô liu và squalane, hỗ trợ duy trì độ ẩm, cải thiện độ mềm mại và độ săn chắc của da. Phù hợp với da khô, da có dấu hiệu lão hóa hoặc kém săn chắc. Cách sử dụng: sau khi làm sạch da, lấy một lượng vừa đủ chấm lên mặt rồi thoa đều và vỗ nhẹ. Có thể dùng lượng nhiều hơn vào buổi tối ở những vùng da khô hoặc cần chăm sóc thêm. Xuất xứ: Nhật Bản. Thương hiệu Shiseido.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ chăm sóc da có dấu hiệu lão hóa:** Thành phần collagen kết hợp squalane hỗ trợ duy trì độ ẩm, độ mềm mại và độ săn chắc của da.
+
+- **Công nghệ viên nang dầu dưỡng (Oil-In):** Chứa các thành phần dầu như jojoba, dầu mè và dầu ô liu, giúp bổ sung độ ẩm và tạo cảm giác mềm mượt khi thoa.
+
+- **Hỗ trợ cải thiện bề mặt da:** Công thức dưỡng ẩm giúp làm mềm các vùng da khô ráp và hỗ trợ chăm sóc những vùng da có nếp nhăn nhỏ hoặc kém săn chắc.
+
+- **Tiện lợi 5 trong 1:** Tích hợp nhiều bước chăm sóc da trong một sản phẩm, phù hợp với người muốn tối giản chu trình dưỡng da ban đêm.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- Sau khi làm sạch da, lấy một lượng kem vừa đủ và chấm lên trán, hai má, mũi và cằm.
+
+- Thoa đều sản phẩm trên mặt, kết hợp vỗ nhẹ để kem được dàn đều trên da.
+
+- Có thể thoa lượng nhiều hơn vào buổi tối tại các vùng da khô hoặc cần chăm sóc thêm như quanh mắt và rãnh cười.
+`,
   },
   {
     id: "8",
@@ -138,8 +330,27 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Gel dưỡng ẩm Aqualabel Đỏ Shiseido 5 trong 1 hỗ trợ cấp ẩm, làm mềm da và chăm sóc làn da có dấu hiệu lão hóa sớm.",
-    description:
-      "Kem dưỡng Aqualabel Đỏ Shiseido là gel dưỡng ẩm 5 trong 1, tích hợp các bước nước hoa hồng, sữa dưỡng, serum, kem dưỡng và mặt nạ ngủ. Sản phẩm chứa collagen thủy phân, Hyaluronic Acid và các thành phần hỗ trợ duy trì độ ẩm, giúp làm mềm vùng da khô ráp và cải thiện độ đàn hồi của da. Kết cấu gel nhẹ, dễ tán và phù hợp với da thường, da khô, hỗn hợp thiên khô hoặc da có dấu hiệu lão hóa sớm. Cách sử dụng: sau khi làm sạch da, lấy một lượng vừa đủ chấm lên trán, mũi, cằm và hai má rồi massage đều. Có thể thoa lớp dày hơn vào buổi tối như mặt nạ ngủ khi da khô. Xuất xứ: Nhật Bản. Thương hiệu Shiseido.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Công thức 5in1 tiện lợi:** Tích hợp nhiều bước chăm sóc da trong một sản phẩm, phù hợp với người muốn tối giản chu trình dưỡng ẩm hằng ngày.
+
+- **Hỗ trợ cấp nước và duy trì độ ẩm:** Phức hợp Hyaluronic Acid kết hợp Amino Acid giúp duy trì độ ẩm, làm mềm da và hỗ trợ giảm cảm giác khô ráp, bong tróc.
+
+- **Hỗ trợ duy trì độ đàn hồi và mềm mại của da:** Collagen GL góp phần chăm sóc làn da kém săn chắc, giúp bề mặt da trông căng mịn và mềm mại hơn.
+
+- **Kết cấu gel thạch nhẹ, dễ sử dụng:** Chất gel dễ tán, tạo cảm giác ẩm mượt mà không quá nặng trên da.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- Sau khi làm sạch da, lấy một lượng gel vừa đủ và chấm lên trán, mũi, cằm và hai má.
+
+- Massage nhẹ nhàng để sản phẩm được dàn đều trên da.
+
+- Khi da khô hoặc cần bổ sung độ ẩm nhiều hơn, có thể thoa lớp dày hơn vào buổi tối và sử dụng như mặt nạ ngủ.
+`,
   },
   {
     id: "9",
@@ -159,8 +370,29 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Tinh chất Transino Melano Signal Essence hỗ trợ cải thiện thâm sạm, nám và tàn nhang, đồng thời dưỡng sáng và giúp da đều màu hơn.",
-    description:
-      "Transino Melano Signal Essence là tinh chất chăm sóc da của Nhật Bản, chứa Tranexamic Acid cùng các thành phần hỗ trợ dưỡng sáng và duy trì độ ẩm cho da. Sản phẩm phù hợp với làn da có thâm sạm, nám, tàn nhang hoặc không đều màu. Kết cấu mỏng nhẹ, dễ tán và thẩm thấu nhanh. Cách sử dụng: dùng 2 lần mỗi ngày vào buổi sáng và tối sau bước làm sạch và nước hoa hồng. Lấy một lượng vừa đủ, thoa lên vùng da cần chăm sóc rồi tiếp tục với kem dưỡng. Ban ngày nên kết hợp kem chống nắng. Xuất xứ: Nhật Bản. Thương hiệu Daiichi Sankyo Healthcare.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ chăm sóc làn da có thâm sạm và không đều màu:** Tranexamic Acid là thành phần thường được sử dụng trong các sản phẩm chăm sóc da hỗ trợ cải thiện vẻ ngoài của các vùng da xỉn màu, đốm nâu và thâm sạm.
+
+- **Hỗ trợ dưỡng sáng da:** Kết hợp các thành phần dưỡng sáng giúp chăm sóc làn da xỉn màu, hỗ trợ duy trì sắc da đều và tươi sáng hơn.
+
+- **Hỗ trợ cấp ẩm và duy trì hàng rào bảo vệ da:** Công thức dưỡng ẩm giúp hạn chế cảm giác khô ráp, đồng thời hỗ trợ duy trì độ mềm mại và độ ẩm của da.
+
+- **Kết cấu mỏng nhẹ, dễ sử dụng:** Chất kem dễ tán, thẩm thấu nhanh và phù hợp với chu trình chăm sóc da hằng ngày.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Tần suất:** Dùng 2 lần mỗi ngày, vào buổi sáng và buổi tối, sau bước làm sạch và nước hoa hồng.
+
+- **Cách dùng:** Lấy một lượng vừa đủ, thoa lên các vùng da có đốm nâu, thâm sạm hoặc không đều màu, sau đó dàn đều sản phẩm trên da.
+
+- **Bước tiếp theo:** Tiếp tục với kem dưỡng để duy trì độ ẩm cho da.
+
+- **Ban ngày:** Nên kết hợp sử dụng kem chống nắng để hỗ trợ bảo vệ da trước tác động của tia UV.
+`,
   },
   {
     id: "10",
@@ -177,8 +409,37 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Kem dưỡng Curél Aging Care Moisture Facial Cream hỗ trợ cấp ẩm, củng cố hàng rào bảo vệ da và chăm sóc làn da khô, nhạy cảm có dấu hiệu lão hóa.",
-    description:
-      "Curél Aging Care Moisture Facial Cream là kem dưỡng dành cho da khô và nhạy cảm có dấu hiệu lão hóa. Sản phẩm chứa các thành phần hỗ trợ duy trì độ ẩm và củng cố hàng rào bảo vệ da, giúp da mềm mại và giảm cảm giác khô ráp. Phù hợp với da khô, da nhạy cảm hoặc da có dấu hiệu lão hóa. Cách sử dụng: dùng vào buổi sáng và tối sau bước làm sạch và nước hoa hồng. Lấy một lượng vừa đủ, thoa đều lên mặt và tập trung thêm ở những vùng da khô. Xuất xứ: Nhật Bản. Thương hiệu Curél thuộc KAO.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ cấp ẩm và duy trì độ ẩm cho da:** Công thức chứa Ceramide giúp bổ sung độ ẩm, hỗ trợ làm mềm da khô ráp và duy trì hàng rào bảo vệ tự nhiên của da.
+
+- **Hỗ trợ chăm sóc da có dấu hiệu lão hóa:** Sản phẩm góp phần duy trì độ đàn hồi và độ mềm mại của da, phù hợp với làn da khô hoặc bắt đầu xuất hiện các dấu hiệu lão hóa.
+
+- **Hỗ trợ củng cố hàng rào bảo vệ da:** Ceramide và các thành phần dưỡng ẩm giúp duy trì hàng rào ẩm tự nhiên, hỗ trợ giảm cảm giác khô căng và khó chịu ở da nhạy cảm.
+
+- **Công thức dịu nhẹ:** Phù hợp với nhu cầu chăm sóc da khô và nhạy cảm hằng ngày. Nên tham khảo thông tin chính thức trên bao bì để xác nhận các đặc tính như không cồn, không hương liệu hoặc không chất tạo màu.
+
+---
+
+**Thành phần nổi bật**
+
+- **Ceramide:** Hỗ trợ duy trì độ ẩm và hàng rào bảo vệ tự nhiên của da.
+
+- **Niacinamide (Vitamin B3):** Thành phần thường được sử dụng trong các sản phẩm chăm sóc da nhằm hỗ trợ duy trì hàng rào da và cải thiện vẻ ngoài của làn da.
+
+- **Các thành phần dầu dưỡng và chất làm mềm da:** Hỗ trợ bổ sung độ ẩm và làm mềm các vùng da khô ráp.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Tần suất:** Dùng vào buổi sáng và buổi tối sau bước làm sạch và nước hoa hồng.
+
+- **Cách dùng:** Lấy một lượng kem vừa đủ, chấm lên trán, mũi, cằm và hai má rồi thoa đều trên da.
+
+- **Vùng da khô:** Có thể thoa lượng nhiều hơn tại các vùng da khô hoặc cần được dưỡng ẩm thêm.
+`,
   },
   {
     id: "11",
@@ -197,8 +458,29 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Kem dưỡng đêm Transino Whitening Repair Cream EX hỗ trợ dưỡng sáng, duy trì độ ẩm và chăm sóc làn da có thâm sạm, không đều màu.",
-    description:
-      "Transino Whitening Repair Cream EX là kem dưỡng đêm của Nhật Bản, chứa Tranexamic Acid và Dipotassium Glycyrrhizate, hỗ trợ chăm sóc làn da có thâm sạm, không đều màu và chịu tác động từ tia UV. Sản phẩm có kết cấu gel cream mỏng nhẹ, giúp duy trì độ ẩm và hỗ trợ làm dịu da trong quá trình chăm sóc ban đêm. Phù hợp với nhiều loại da, đặc biệt là da có đốm nâu, thâm sạm hoặc không đều màu. Cách sử dụng: dùng vào buổi tối ở bước cuối của chu trình dưỡng da, sau nước hoa hồng và tinh chất. Lấy một lượng vừa đủ, thoa đều lên mặt và massage nhẹ nhàng. Xuất xứ: Nhật Bản. Thương hiệu Daiichi Sankyo Healthcare.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ dưỡng sáng da vào ban đêm:** Công thức có Tranexamic Acid và các thành phần chăm sóc da giúp hỗ trợ cải thiện vẻ ngoài của các vùng da xỉn màu, thâm sạm và không đều màu.
+
+- **Hỗ trợ chăm sóc làn da sau một ngày tiếp xúc với môi trường:** Sản phẩm giúp bổ sung độ ẩm, làm dịu cảm giác khô căng và hỗ trợ duy trì độ mềm mại, săn chắc của da.
+
+- **Duy trì độ ẩm suốt quá trình chăm sóc ban đêm:** Kết cấu dưỡng ẩm giúp hạn chế cảm giác khô ráp và hỗ trợ duy trì làn da mềm mại, căng mịn vào sáng hôm sau.
+
+- **Kết cấu gel cream mỏng nhẹ:** Chất kem dễ tán, thấm nhanh và phù hợp để sử dụng ở bước cuối của chu trình dưỡng da buổi tối.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Thời điểm dùng:** Sử dụng vào buổi tối ở bước cuối của chu trình dưỡng da, sau nước hoa hồng và tinh chất.
+
+- **Cách dùng:** Lấy một lượng kem vừa đủ, chấm lên trán, hai má, mũi và cằm rồi thoa đều trên toàn mặt.
+
+- **Massage nhẹ nhàng:** Có thể massage nhẹ theo hướng từ dưới lên trên để sản phẩm được dàn đều trên da.
+
+- **Bước hoàn thiện:** Có thể áp nhẹ hai lòng bàn tay lên mặt sau khi thoa để hoàn tất bước dưỡng da.
+`,
   },
   {
     id: "12",
@@ -218,8 +500,34 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Má hồng kem Canmake Cream Cheek có kết cấu gel kem mịn nhẹ, cho hiệu ứng ửng hồng tự nhiên, dễ tán và dễ điều chỉnh độ đậm nhạt.",
-    description:
-      "Canmake Cream Cheek là má hồng dạng kem của Nhật Bản với kết cấu gel kem mịn nhẹ, dễ tán và tiệp vào da. Sản phẩm mang lại hiệu ứng má ửng hồng tự nhiên, phù hợp với nhiều phong cách trang điểm. Chất kem cho phép điều chỉnh độ đậm nhạt linh hoạt và tạo lớp hoàn thiện mềm mại. Một số màu phổ biến gồm P01 Peach Dazzle, 19 Cinnamon Milk Tea, 21 Tangerine Tea, CL01 Clear Red Heart, 16 Almond Terracotta, 05 Sweet Apricot, P02 Rose Petal, 23 Cupid Pink, P06 Sweet Coral và 24 Peach Mousse. Xuất xứ: Nhật Bản. Thương hiệu Canmake Tokyo.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Kết cấu kem gel mịn nhẹ:** Chất kem mềm mượt, dễ tán và tiệp vào da, tạo lớp finish tự nhiên mà không gây cảm giác quá nặng hay nhờn rít.
+
+- **Màu sắc trong trẻo, dễ điều chỉnh:** Màu lên nhẹ nhàng, có thể tăng dần độ đậm theo nhu cầu, phù hợp với phong cách trang điểm tự nhiên.
+
+- **Độ bám màu tốt:** Công thức giúp màu má duy trì ổn định trong nhiều giờ và phù hợp với nhu cầu trang điểm hằng ngày.
+
+- **Bổ sung thành phần dưỡng da:** Squalane và amino acid hỗ trợ duy trì độ ẩm, giúp vùng da gò má mềm mại và hạn chế cảm giác khô ráp.
+
+---
+
+**Bảng màu**
+
+- **P01 Peach Dazzle:** Đỏ hồng
+- **19 Cinnamon Milk Tea:** Nâu trà sữa
+- **21 Tangerine Tea:** Hồng cam đào
+- **CL01 Clear Red Heart:** Đỏ táo
+- **16 Almond Terracotta:** Cam gạch ánh đào
+- **05 Sweet Apricot:** Cam đào
+- **P02 Rose Petal:** Hồng đào
+- **23 Cupid Pink:** Hồng sữa
+- **P06 Sweet Coral:** Hồng san hô ngọt ngào
+- **40th Anniversary - CL01 Clear Red Heart:** Cam đỏ
+- **40th Anniversary - 23 Cupid Pink:** Hồng sữa
+- **40th Anniversary - 24 Peach Mousse:** Kem mousse đào
+`,
   },
   {
     id: "13",
@@ -237,8 +545,29 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Nước nhỏ mắt Lion Smile 40 EX 15ml chứa vitamin A, E và B6, hỗ trợ làm dịu cảm giác mỏi, khô và khó chịu ở mắt.",
-    description:
-      "Lion Smile 40 EX là nước nhỏ mắt của Nhật Bản với công thức chứa vitamin A, vitamin E và vitamin B6. Sản phẩm hỗ trợ làm dịu cảm giác mỏi mắt và khó chịu khi mắt phải điều tiết nhiều. Có hai phiên bản: xanh lá với cảm giác dịu nhẹ và xanh dương cho cảm giác mát hơn. Hướng dẫn sử dụng theo thông tin sản phẩm: nhỏ 1 đến 3 giọt mỗi lần vào mỗi bên mắt, sử dụng 3 đến 6 lần mỗi ngày. Bảo quản nơi khô ráo, tránh ánh nắng trực tiếp và đóng chặt nắp sau khi sử dụng. Xuất xứ: Nhật Bản. Thương hiệu Lion.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Bổ sung các vitamin hỗ trợ chăm sóc mắt:** Công thức chứa Vitamin A, Vitamin E và Vitamin B6, góp phần hỗ trợ duy trì chức năng bình thường của mắt và chăm sóc mắt khi phải điều tiết nhiều.
+
+- **Hỗ trợ làm dịu cảm giác mỏi mắt:** Phù hợp với người thường xuyên sử dụng máy tính, điện thoại hoặc làm việc trong môi trường khiến mắt phải tập trung lâu.
+
+- **Hỗ trợ giảm cảm giác khó chịu ở mắt:** Sản phẩm có thể hỗ trợ làm dịu cảm giác cộm, ngứa hoặc khó chịu do các tác nhân môi trường như bụi bẩn hoặc không khí khô.
+
+- **Có nhiều mức độ the mát:** Hai phiên bản mang lại cảm giác sử dụng khác nhau, phù hợp với nhu cầu và mức độ nhạy cảm của từng người.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều dùng:** Nhỏ từ 1 đến 3 giọt mỗi lần vào từng bên mắt.
+
+- **Tần suất:** Sử dụng từ 3 đến 6 lần mỗi ngày theo hướng dẫn của sản phẩm.
+
+- **Bảo quản:** Để nơi khô ráo, tránh ánh nắng trực tiếp và đóng chặt nắp sau khi sử dụng.
+
+- **Lưu ý:** Tránh để đầu lọ tiếp xúc trực tiếp với mắt, mí mắt hoặc lông mi. Nếu đang có bệnh lý về mắt, đang điều trị bằng thuốc hoặc triệu chứng kéo dài, nên tham khảo bác sĩ hoặc dược sĩ.
+`,
   },
   {
     id: "14",
@@ -254,7 +583,48 @@ export const products: Product[] = [
     ],
     shortDescription:
       "Nước nhỏ mắt Sante Medical Guard EX 12ml hỗ trợ làm dịu tình trạng mỏi, khô và khó chịu ở mắt khi phải điều tiết nhiều.",
-    description:
-      "Sante Medical Guard EX là nước nhỏ mắt của Nhật Bản, chứa nhiều hoạt chất như Vitamin B12, Neostigmine Methylsulfate, Chondroitin Sulfate Sodium và Chlorpheniramine Maleate. Sản phẩm hỗ trợ giảm cảm giác mỏi mắt, khô rát, ngứa và khó chịu khi mắt phải điều tiết nhiều hoặc tiếp xúc lâu với màn hình. Hướng dẫn sử dụng theo thông tin sản phẩm: nhỏ 1 đến 3 giọt mỗi lần vào mỗi bên mắt, sử dụng 5 đến 6 lần mỗi ngày. Tránh để đầu lọ tiếp xúc trực tiếp với mắt, mí mắt hoặc lông mi. Xuất xứ: Nhật Bản. Thương hiệu Santen.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Công thức kết hợp nhiều hoạt chất:** Sản phẩm chứa các thành phần như Vitamin B12, Neostigmine Methylsulfate, Chondroitin Sulfate Sodium và Chlorpheniramine Maleate, hỗ trợ chăm sóc mắt khi có cảm giác mỏi hoặc khó chịu.
+
+- **Hỗ trợ khả năng điều tiết của mắt:** Neostigmine Methylsulfate kết hợp Vitamin B12 được sử dụng trong công thức nhằm hỗ trợ chức năng điều tiết của mắt khi phải tập trung nhìn trong thời gian dài.
+
+- **Hỗ trợ làm dịu cảm giác ngứa và khó chịu:** Công thức có Chlorpheniramine Maleate, phù hợp với nhu cầu chăm sóc mắt khi xuất hiện cảm giác ngứa hoặc khó chịu do các tác nhân bên ngoài.
+
+- **Hỗ trợ duy trì độ ẩm bề mặt mắt:** Chondroitin Sulfate Sodium góp phần hỗ trợ duy trì độ ẩm và bảo vệ bề mặt mắt.
+
+---
+
+**Thành phần nổi bật**
+
+- **Vitamin B12:** Thành phần được sử dụng trong công thức hỗ trợ chức năng của mắt.
+
+- **Neostigmine Methylsulfate:** Hỗ trợ chức năng điều tiết của mắt.
+
+- **Chondroitin Sulfate Sodium:** Hỗ trợ duy trì độ ẩm cho bề mặt mắt.
+
+- **Chlorpheniramine Maleate:** Thành phần hỗ trợ giảm cảm giác ngứa và khó chịu ở mắt.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều dùng:** Nhỏ từ 1 đến 3 giọt mỗi lần vào mỗi bên mắt.
+
+- **Tần suất:** Sử dụng từ 5 đến 6 lần mỗi ngày theo hướng dẫn của sản phẩm.
+
+- **Vệ sinh khi sử dụng:** Tránh để đầu lọ tiếp xúc trực tiếp với mắt, mí mắt hoặc lông mi.
+
+- **Lưu ý:** Không tự ý sử dụng vượt quá hướng dẫn trên bao bì. Nếu đang có bệnh lý về mắt, đang điều trị bằng thuốc hoặc triệu chứng kéo dài, nên tham khảo bác sĩ hoặc dược sĩ.
+
+---
+
+**Đối tượng phù hợp**
+
+- Người thường xuyên sử dụng máy tính, điện thoại hoặc phải tập trung thị giác trong thời gian dài.
+- Người thường xuyên lái xe hoặc làm việc trong môi trường điều hòa, khói bụi.
+- Người có nhu cầu chăm sóc mắt khi xuất hiện cảm giác mỏi hoặc khó chịu do phải điều tiết nhiều.
+`,
   },
 ];
