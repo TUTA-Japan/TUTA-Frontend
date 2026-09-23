@@ -1,11 +1,11 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
+import { products } from "@/data/products";
+import { ROUTES } from "@/constants/routes";
 import { HomeHero } from "@/components/home/home-hero";
 import { ProductGrid } from "@/components/products/product-grid";
-import { ROUTES } from "@/constants/routes";
-import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
@@ -34,7 +34,11 @@ const selectionPrinciples = [
 const featuredBrands = ["Rohto", "Hada Labo", "MUJI", "Kao", "Pilot", "Zebra"];
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 4);
+  const featuredIndexes = [16, 15, 2, 6, 10];
+
+  const featuredProducts = featuredIndexes
+    .map((index) => products[index])
+    .filter(Boolean);
 
   return (
     <main
@@ -123,9 +127,9 @@ export default function Home() {
           <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
             <h2
               id="home-brands-title"
-              className="text-2xl font-semibold tracking-[-0.03em] text-text-primary md:text-4xl"
+              className="text-2xl font-semibold tracking-[-0.03em] text-text-primary md:text-4xl capitalize"
             >
-              Những cái tên quen thuộc từ Nhật
+              Những thương hiệu quen thuộc từ Nhật
             </h2>
             <p className="text-sm text-[#59635b]">
               Được chọn theo từng nhu cầu

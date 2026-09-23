@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
 import { ROUTES } from "@/constants/routes";
 import type { Product } from "@/types/product";
@@ -154,9 +155,31 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </h2>
 
             <div className="max-w-3xl">
-              <p className="text-base leading-8 text-text-secondary">
+              <ReactMarkdown
+                components={{
+                  p: ({ children }) => (
+                    <p className="mb-4 text-base leading-8 text-text-secondary last:mb-0">
+                      {children}
+                    </p>
+                  ),
+                  strong: ({ children }) => (
+                    <strong className="font-semibold text-text-primary">
+                      {children}
+                    </strong>
+                  ),
+                  ul: ({ children }) => (
+                    <ul className="mb-5 space-y-2 pl-5 text-base leading-8 text-text-secondary">
+                      {children}
+                    </ul>
+                  ),
+                  li: ({ children }) => (
+                    <li className="list-disc pl-1">{children}</li>
+                  ),
+                  hr: () => <hr className="my-7 border-border" />,
+                }}
+              >
                 {product.description}
-              </p>
+              </ReactMarkdown>
             </div>
           </div>
         </section>
