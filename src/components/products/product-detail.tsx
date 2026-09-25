@@ -64,8 +64,15 @@ export function ProductDetail({ product }: ProductDetailProps) {
         </ol>
       </nav>
 
+      <div className="min-w-0 flex flex-col"></div>
+
       <section className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-        <ProductGallery images={product.images} productName={product.nameVi} />
+        <div className="min-w-0">
+          <ProductGallery
+            images={product.images}
+            productName={product.nameVi}
+          />
+        </div>
 
         <div className="flex flex-col">
           <p className="text-xs font-medium tracking-[0.16em] text-text-secondary uppercase">

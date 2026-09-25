@@ -28,7 +28,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
       </div>
 
       {images.length > 1 && (
-        <div className="mt-4 flex gap-3 overflow-x-auto pb-1">
+        <div className="mt-4 flex w-full max-w-full gap-3 overflow-x-auto pb-2">
           {images.map((image, index) => {
             const active = index === activeIndex;
 
