@@ -63,6 +63,10 @@ body {
   animation: header-panel-enter 180ms ease-out;
 }
 
+.floating-contact[open] .floating-contact__panel {
+  animation: floating-contact-enter 200ms ease-out;
+}
+
 @keyframes header-panel-enter {
   from {
     opacity: 0;
@@ -75,12 +79,28 @@ body {
   }
 }
 
+@keyframes floating-contact-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .header-panel:not([hidden]) {
+    animation: none;
+  }
+
+  .floating-contact[open] .floating-contact__panel {
     animation: none;
   }
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { FloatingContact } from "@/components/floating-contact";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -64,6 +65,7 @@ export default function RootLayout({
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />
+        <FloatingContact />
       </body>
     </html>
   );
