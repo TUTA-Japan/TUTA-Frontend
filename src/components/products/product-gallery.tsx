@@ -13,12 +13,36 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
+  const showPreviousImage = () => {
+    setActiveIndex((current) =>
+      current === 0 ? images.length - 1 : current - 1,
+    );
+  };
+
+  const showNextImage = () => {
+    setActiveIndex((current) =>
+      current === images.length - 1 ? 0 : current + 1,
+    );
+  };
+
   useEffect(() => {
     if (!isFullscreen) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsFullscreen(false);
+      }
+
+      if (event.key === "ArrowLeft") {
+        setActiveIndex((current) =>
+          current === 0 ? images.length - 1 : current - 1,
+        );
+      }
+
+      if (event.key === "ArrowRight") {
+        setActiveIndex((current) =>
+          current === images.length - 1 ? 0 : current + 1,
+        );
       }
     };
 
@@ -29,7 +53,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isFullscreen]);
+  }, [isFullscreen, images.length]);
 
   if (images.length === 0) return null;
 
@@ -40,7 +64,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           type="button"
           onClick={() => setIsFullscreen(true)}
           aria-label={`Phóng to ảnh ${productName}`}
-          className="relative block aspect-4/5 w-full cursor-zoom-in overflow-hidden bg-white"
+          className="relative block aspect-4/5 w-full cursor-zoom-in overflow-hidden"
         >
           <Image
             src={images[activeIndex]}
@@ -50,15 +74,6 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             className="object-contain"
           />
         </button>
-
-        {/* <Image
-          src={images[activeIndex]}
-          alt={`${productName} - ảnh ${activeIndex + 1}`}
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-contain p-6 md:p-8"
-        /> */}
       </div>
       {isFullscreen && (
         <div
@@ -72,10 +87,38 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             type="button"
             onClick={() => setIsFullscreen(false)}
             aria-label="Đóng ảnh"
-            className="absolute top-4 right-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-3xl text-white transition hover:bg-white/20"
+            className="absolute top-4 right-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-3xl text-white transition hover:bg-white/20"
           >
             ×
           </button>
+
+          {images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  showPreviousImage();
+                }}
+                aria-label="Xem ảnh trước"
+                className="absolute top-1/2 left-3 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-3xl text-white transition hover:bg-black/60 md:left-6"
+              >
+                ‹
+              </button>
+
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  showNextImage();
+                }}
+                aria-label="Xem ảnh tiếp theo"
+                className="absolute top-1/2 right-3 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-3xl text-white transition hover:bg-black/60 md:right-6"
+              >
+                ›
+              </button>
+            </>
+          )}
 
           <div
             className="relative h-full w-full max-w-6xl"
