@@ -34,7 +34,7 @@ const selectionPrinciples = [
 const featuredBrands = ["Rohto", "Hada Labo", "MUJI", "Kao", "Pilot", "Zebra"];
 
 export default function Home() {
-  const featuredIndexes = [16, 15, 2, 6, 10];
+  const featuredIndexes = [15, 2, 6, 10];
 
   const featuredProducts = featuredIndexes
     .map((index) => products[index])
