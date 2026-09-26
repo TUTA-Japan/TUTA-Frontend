@@ -704,4 +704,433 @@ Trong mỗi 2 viên dùng hằng ngày:
 - **Lưu ý:** Không cần rửa lại với nước, trừ khi hướng dẫn trên bao bì sản phẩm có yêu cầu khác.
 `,
   },
+  {
+    id: "17",
+    slug: "mat-na-u-ba-ruou-sake-pdc-wafood-made-170g",
+    nameVi: "Mặt nạ ủ bã rượu Sake PDC Wafood Made dạng rửa 170g",
+    brand: "PDC",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 329000,
+    specification: "Tuýp 170g",
+    images: [
+      "https://images.tutatuta.vn/image/products/sake-wafood-pack/1.png",
+      "https://images.tutatuta.vn/image/products/sake-wafood-pack/2.png",
+      "https://images.tutatuta.vn/image/products/sake-wafood-pack/3.png",
+    ],
+    shortDescription:
+      "Mặt nạ rửa Wafood Made PDC chiết xuất bã rượu sake lên men, hỗ trợ làm sạch tế bào chết, dưỡng sáng, cấp ẩm và giúp bề mặt da mềm mịn hơn.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ dưỡng sáng da:** Chứa Kojic Acid và các thành phần từ quá trình lên men sake, hỗ trợ cải thiện tình trạng da xỉn màu, không đều màu và các vùng thâm sau mụn.
+
+- **Hỗ trợ làm sạch và loại bỏ tế bào chết:** Kết cấu kem đặc giúp làm sạch bụi bẩn, bã nhờn và lớp tế bào chết trên bề mặt da, đồng thời hỗ trợ duy trì cảm giác mềm mại sau khi rửa.
+
+- **Hỗ trợ cấp ẩm:** Thành phần bã rượu sake, chiết xuất cám gạo và các dưỡng chất giúp duy trì độ ẩm, hạn chế cảm giác khô căng sau khi sử dụng.
+
+- **Hỗ trợ làm mịn bề mặt da:** Giúp chăm sóc vùng da thô ráp, hỗ trợ bề mặt da trông mềm mại, mịn màng và thông thoáng hơn.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** PDC Wafood Made.
+
+- **Quy cách:** 170g.
+
+- **Kết cấu:** Dạng kem đặc, mềm mịn và xốp, có hương nhẹ của gạo lên men.
+
+- **Thành phần nổi bật:** Chiết xuất bã rượu sake, chiết xuất cám gạo, dưa chuột và collagen thủy phân.
+
+- **Loại da phù hợp:** Phù hợp với da xỉn màu, da có bề mặt thô ráp, nhiều tế bào chết, da dầu thiếu ẩm hoặc da có lỗ chân lông dễ nhìn thấy.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Bước 1:** Sau khi rửa mặt sạch, thấm bớt nước trên da.
+
+- **Bước 2:** Lấy một lượng mặt nạ vừa đủ, khoảng cỡ một quả nho lớn, thoa đều lên toàn bộ khuôn mặt và tránh vùng mắt, môi.
+
+- **Bước 3:** Giữ mặt nạ trên da khoảng 5 - 10 phút.
+
+- **Bước 4:** Rửa sạch bằng nước ấm, có thể kết hợp massage nhẹ theo chuyển động tròn.
+
+- **Tần suất sử dụng:** Có thể sử dụng khoảng 2 - 3 lần mỗi tuần tùy theo tình trạng da.
+`,
+  },
+  {
+    id: "18",
+    slug: "sua-rua-mat-ba-ruou-sake-wafood-made-pdc-nhat-ban-100g",
+    nameVi: "Sữa rửa mặt bã rượu Sake Wafood Made PDC Nhật Bản 100g",
+    brand: "PDC",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 300000,
+    specification: "Tuýp 100g",
+    images: [
+      "https://images.tutatuta.vn/image/products/sake-wafood-made%20/1.png",
+      "https://images.tutatuta.vn/image/products/sake-wafood-made%20/2.png",
+      "https://images.tutatuta.vn/image/products/sake-wafood-made%20/3.png",
+      "https://images.tutatuta.vn/image/products/sake-wafood-made%20/4.png",
+    ],
+    shortDescription:
+      "Sữa rửa mặt Wafood Made PDC chiết xuất bã rượu sake lên men kết hợp Arbutin, hỗ trợ làm sạch bụi bẩn và dầu thừa, dưỡng sáng da và duy trì độ ẩm sau khi rửa.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Bọt kem dày mịn:** Kết cấu tạo lớp bọt xốp và mịn, hỗ trợ làm sạch bụi bẩn, dầu thừa và cặn bẩn trên da, đồng thời hạn chế ma sát trực tiếp trong quá trình rửa mặt.
+
+- **Hỗ trợ dưỡng sáng da:** Chiết xuất bã rượu sake lên men kết hợp Arbutin hỗ trợ cải thiện vẻ ngoài của làn da xỉn màu và giúp da trông sáng, đều màu hơn.
+
+- **Hỗ trợ làm sạch tế bào chết:** Giúp loại bỏ lớp tế bào chết trên bề mặt da, hỗ trợ cải thiện cảm giác thô ráp và giúp da trông mịn màng hơn sau khi làm sạch.
+
+- **Hỗ trợ duy trì độ ẩm:** Thành phần từ cám gạo và quá trình lên men sake giúp duy trì độ ẩm tự nhiên, hạn chế cảm giác khô căng sau khi rửa mặt.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** PDC Wafood Made.
+
+- **Quy cách:** Tuýp 100g.
+
+- **Kết cấu:** Dạng kem đặc, dễ tạo lớp bọt dày và mịn.
+
+- **Thành phần nổi bật:** Chiết xuất bã rượu sake Kumamoto, Arbutin, chiết xuất cám gạo và dưa chuột.
+
+- **Loại da phù hợp:** Phù hợp với nhiều loại da, đặc biệt là da dầu thiếu ẩm, da xỉn màu hoặc da có lỗ chân lông dễ nhìn thấy.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Bước 1:** Làm ướt mặt bằng nước.
+
+- **Bước 2:** Lấy một lượng sữa rửa mặt khoảng 1 - 2cm ra lòng bàn tay.
+
+- **Bước 3:** Thêm một ít nước và đánh tạo bọt kỹ. Có thể sử dụng lưới tạo bọt để tạo lớp bọt dày và xốp hơn.
+
+- **Bước 4:** Thoa lớp bọt lên mặt và massage nhẹ nhàng theo chuyển động tròn trong khoảng 1 phút.
+
+- **Bước 5:** Rửa sạch hoàn toàn bằng nước ấm hoặc nước mát.
+`,
+  },
+  {
+    id: "19",
+    slug: "mat-na-quality-1st-derma-laser-super-100-nhat-ban-7-mieng",
+    nameVi: "Mặt nạ Quality 1st Derma Laser Super 100 Nhật Bản 7 miếng",
+    brand: "Quality 1st",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 229000,
+    specification: "Gói 7 miếng",
+    images: [
+      "https://images.tutatuta.vn/image/products/derma-laser-super/1.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/2.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/3.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/4.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/5.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/6.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/7.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/8.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/9.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/10.png",
+      "https://images.tutatuta.vn/image/products/derma-laser-super/11.png",
+    ],
+    shortDescription:
+      "Mặt nạ Quality 1st Derma Laser Super 100 ứng dụng công nghệ dẫn truyền dưỡng chất, hỗ trợ cấp ẩm, chăm sóc da xỉn màu, lỗ chân lông và các dấu hiệu lão hóa chỉ trong vài phút sử dụng.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Công nghệ dẫn truyền Derma Laser:** Ứng dụng công nghệ Laser Delivery System hỗ trợ đưa các dưỡng chất tiếp xúc và phân bố hiệu quả trên bề mặt da trong thời gian ngắn.
+
+- **Hỗ trợ chăm sóc da chuyên sâu:** Công thức tập trung nhiều dưỡng chất giúp hỗ trợ cải thiện vẻ ngoài của làn da xỉn màu, thiếu sức sống, bề mặt da kém mịn và các dấu hiệu lão hóa.
+
+- **Chất liệu mặt nạ ôm sát khuôn mặt:** Miếng mask làm từ sợi cotton mềm, có khả năng giữ lượng tinh chất dồi dào và ôm sát các đường nét trên khuôn mặt.
+
+- **Thời gian sử dụng nhanh:** Chỉ cần đắp khoảng 3 - 5 phút, phù hợp với người muốn tối giản thời gian chăm sóc da hằng ngày.
+
+- **Công thức không chứa một số thành phần phổ biến:** Sản phẩm không chứa cồn, dầu khoáng và paraben theo thông tin của nhà sản xuất.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Quality 1st.
+
+- **Dòng sản phẩm:** Derma Laser Super 100.
+
+- **Quy cách:** Gói zip 7 miếng.
+
+- **Thời gian đắp:** Khoảng 3 - 5 phút.
+
+- **Loại sản phẩm:** Mặt nạ giấy chăm sóc da chuyên sâu.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Bước 1:** Làm sạch da mặt và có thể sử dụng toner trước khi đắp mặt nạ.
+
+- **Bước 2:** Lấy một miếng mặt nạ ra khỏi túi và đắp sao cho mặt nạ ôm sát khuôn mặt.
+
+- **Bước 3:** Giữ mặt nạ trên da khoảng 3 - 5 phút. Có thể kéo dài thời gian theo hướng dẫn trên bao bì nhưng không nên để mặt nạ khô hoàn toàn trên da.
+
+- **Bước 4:** Tháo mặt nạ và dùng tay vỗ nhẹ phần tinh chất còn lại để dưỡng chất được dàn đều trên bề mặt da.
+
+- **Bước 5:** Không cần rửa lại với nước. Có thể tiếp tục với kem dưỡng để hỗ trợ duy trì độ ẩm.
+`,
+  },
+  {
+    id: "20",
+    slug: "nuoc-nho-mat-sante-fx-neo-nhat-ban-12ml",
+    nameVi: "Nước nhỏ mắt Sante FX Neo Nhật Bản 12ml",
+    brand: "Sante",
+    category: "Thuốc",
+    referencePriceVnd: 85000,
+    specification: "Lọ 12ml",
+    images: [
+      "https://images.tutatuta.vn/image/products/sante-fx-neo/1.png",
+      "https://images.tutatuta.vn/image/products/sante-fx-neo/2.png",
+      "https://images.tutatuta.vn/image/products/sante-fx-neo/3.png",
+      "https://images.tutatuta.vn/image/products/sante-fx-neo/4.png",
+    ],
+    shortDescription:
+      "Nước nhỏ mắt Sante FX Neo Nhật Bản với cảm giác the mát cấp độ 5, hỗ trợ làm dịu tình trạng mỏi mắt, đỏ mắt, ngứa cộm và mang lại cảm giác tỉnh táo, dễ chịu sau thời gian dài sử dụng thiết bị điện tử.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Cảm giác mát lạnh sảng khoái:** Độ the mát cấp độ 5 mang lại cảm giác tỉnh táo và dễ chịu cho mắt, phù hợp khi mắt mệt mỏi sau thời gian dài làm việc hoặc học tập.
+
+- **Hỗ trợ giảm mỏi mắt:** Thành phần Neostigmine Methylsulfate và Taurine hỗ trợ hoạt động điều tiết của mắt và chăm sóc giác mạc.
+
+- **Hỗ trợ làm dịu tình trạng đỏ mắt:** Tetrahydrozoline Hydrochloride hỗ trợ giảm tình trạng xung huyết và đỏ mắt.
+
+- **Hỗ trợ giảm ngứa, cộm mắt:** Chlorpheniramine Maleate hỗ trợ làm dịu cảm giác ngứa hoặc khó chịu ở mắt do các tác nhân bên ngoài như bụi và khói.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Santen.
+
+- **Dòng sản phẩm:** Sante FX Neo.
+
+- **Dung tích:** Lọ 12ml.
+
+- **Độ the mát:** Cấp độ 5.
+
+- **Đối tượng tham khảo:** Người thường xuyên sử dụng máy tính, điện thoại, người lái xe hoặc người thường xuyên thức khuya.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều dùng tham khảo:** Nhỏ khoảng 2 - 3 giọt mỗi lần vào mỗi bên mắt.
+
+- **Tần suất sử dụng:** Có thể sử dụng khoảng 5 - 6 lần mỗi ngày theo hướng dẫn trên bao bì hoặc chỉ dẫn của dược sĩ, bác sĩ.
+
+- **Lưu ý:** Không để đầu lọ chạm trực tiếp vào mắt, mi mắt hoặc các bề mặt khác để hạn chế nhiễm bẩn.
+
+- **Bảo quản:** Đậy kín nắp sau khi sử dụng và bảo quản theo hướng dẫn trên bao bì sản phẩm.
+`,
+  },
+  {
+    id: "21",
+    slug: "kem-tri-ham-rom-say-sato-polybaby-nhat-ban-50g",
+    nameVi: "Kem trị hăm và rôm sảy Sato Polybaby Nhật Bản 50g",
+    brand: "Sato",
+    category: "Thuốc",
+    referencePriceVnd: 210000,
+    specification: "Tuýp 50g",
+    images: [
+      "https://images.tutatuta.vn/image/products/sato-polybaby/1.png",
+      "https://images.tutatuta.vn/image/products/sato-polybaby/2.png",
+      "https://images.tutatuta.vn/image/products/sato-polybaby/3.png",
+      "https://images.tutatuta.vn/image/products/sato-polybaby/4.png",
+    ],
+    shortDescription:
+      "Kem Sato Polybaby Nhật Bản dành cho trẻ nhỏ, hỗ trợ làm dịu vùng da bị hăm tã, rôm sảy, mẩn đỏ và ngứa, đồng thời tạo lớp bảo vệ giúp da khô thoáng và dễ chịu hơn.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ làm dịu hăm tã và rôm sảy:** Thành phần Zinc Oxide giúp tạo lớp màng bảo vệ trên bề mặt da, hạn chế tiếp xúc trực tiếp với độ ẩm và các tác nhân gây kích ứng từ tã lót.
+
+- **Không chứa Steroid (Corticoid):** Công thức không chứa thành phần steroid, phù hợp để chăm sóc các vùng da nhạy cảm theo hướng dẫn sử dụng của sản phẩm.
+
+- **Bổ sung Vitamin A và Vitamin D2:** Hỗ trợ chăm sóc, duy trì độ ẩm và giúp vùng da bị kích ứng trở nên mềm mại, dễ chịu hơn.
+
+- **Kết cấu kem dễ sử dụng:** Chất kem dễ tán trên da, tạo lớp bảo vệ nhưng không gây cảm giác quá nặng hoặc bết dính khi sử dụng lượng phù hợp.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Sato Pharmaceutical.
+
+- **Tên sản phẩm:** Sato Polybaby.
+
+- **Quy cách:** Tuýp 50g.
+
+- **Phân loại tại Nhật Bản:** Dược phẩm nhóm 3 (第3類医薬品).
+
+- **Thành phần nổi bật:** Zinc Oxide, Vitamin A và Vitamin D2.
+
+- **Đối tượng sử dụng:** Trẻ nhỏ có vùng da bị hăm tã, rôm sảy, mẩn đỏ hoặc ngứa ngoài da theo hướng dẫn của sản phẩm.
+
+---
+
+**Công dụng**
+
+- Hỗ trợ chăm sóc vùng da bị hăm tã và rôm sảy.
+
+- Hỗ trợ làm dịu tình trạng ngứa, mẩn đỏ và khó chịu trên da.
+
+- Có thể được sử dụng cho một số tình trạng kích ứng ngoài da theo chỉ định và hướng dẫn ghi trên bao bì sản phẩm.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Bước 1:** Vệ sinh sạch vùng da cần chăm sóc bằng nước ấm và lau khô nhẹ nhàng bằng khăn mềm.
+
+- **Bước 2:** Lấy một lượng kem vừa đủ, thoa nhẹ và đều lên vùng da cần chăm sóc.
+
+- **Tần suất sử dụng:** Sử dụng theo hướng dẫn trên bao bì sản phẩm hoặc hướng dẫn của dược sĩ, bác sĩ.
+
+- **Lưu ý:** Tránh để sản phẩm tiếp xúc trực tiếp với mắt, miệng hoặc vùng da có vết thương hở nếu không có hướng dẫn chuyên môn.
+
+- **Bảo quản:** Đậy kín nắp sau khi sử dụng, bảo quản nơi khô ráo, thoáng mát và tránh ánh nắng trực tiếp.
+`,
+  },
+  {
+    id: "22",
+    slug: "vien-dau-gan-ca-map-squalene-orihiro-nhat-ban-360-vien",
+    nameVi: "Viên dầu gan cá mập Squalene Orihiro Nhật Bản 360 viên",
+    brand: "Orihiro",
+    category: "Thực phẩm chức năng",
+    referencePriceVnd: 590000,
+    specification: "Hộp 360 viên",
+    images: [
+      "https://images.tutatuta.vn/image/products/squalene-orihiro/1.png",
+      "https://images.tutatuta.vn/image/products/squalene-orihiro/2.png",
+    ],
+    shortDescription:
+      "Viên uống Orihiro Squalene Nhật Bản bổ sung dầu gan cá mập chứa Squalene, hỗ trợ bồi bổ cơ thể, duy trì sức khỏe và bổ sung dưỡng chất cho người trưởng thành.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Bổ sung Squalene từ dầu gan cá mập:** Sản phẩm cung cấp Squalene từ dầu gan cá mập biển sâu, giúp bổ sung dưỡng chất cho cơ thể trong chế độ chăm sóc sức khỏe hằng ngày.
+
+- **Hỗ trợ duy trì sức khỏe tổng thể:** Squalene là thành phần tự nhiên có trong cơ thể và một số loại thực phẩm, được sử dụng như một nguồn bổ sung dinh dưỡng cho người trưởng thành.
+
+- **Hỗ trợ chăm sóc da:** Thành phần dầu giàu lipid hỗ trợ duy trì độ ẩm và giúp da hạn chế cảm giác khô ráp khi kết hợp với chế độ dinh dưỡng và chăm sóc phù hợp.
+
+- **Dạng viên nang mềm dễ sử dụng:** Viên nang mềm thuận tiện khi sử dụng hằng ngày và dễ chia thành nhiều lần uống trong ngày.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Orihiro.
+
+- **Tên sản phẩm:** Orihiro Squalene.
+
+- **Quy cách:** Hộp 360 viên nang mềm.
+
+- **Thời gian sử dụng tham khảo:** Khoảng 60 ngày khi sử dụng 6 viên mỗi ngày.
+
+- **Thành phần nổi bật:** Dầu gan cá mập chứa Squalene.
+
+- **Đối tượng tham khảo:** Người trưởng thành có nhu cầu bổ sung Squalene và chăm sóc sức khỏe hằng ngày.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều dùng tham khảo:** Uống 6 viên mỗi ngày.
+
+- **Cách dùng:** Có thể chia thành 2 - 3 lần trong ngày và uống cùng nước lọc hoặc nước ấm.
+
+- **Thời điểm sử dụng:** Nên sử dụng sau bữa ăn hoặc theo hướng dẫn trên bao bì sản phẩm.
+
+- **Lưu ý:** Đây là thực phẩm bổ sung, không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh. Người đang điều trị bệnh, đang sử dụng thuốc, phụ nữ mang thai hoặc cho con bú nên tham khảo ý kiến chuyên môn trước khi sử dụng.
+`,
+  },
+  {
+    id: "23",
+    slug: "nuoc-nho-mat-rohto-vita-40-nhat-ban-12ml",
+    nameVi: "Nước nhỏ mắt Rohto Vita 40 Nhật Bản 12ml",
+    brand: "Rohto",
+    category: "Thuốc",
+    referencePriceVnd: 69000,
+    specification: "Lọ 12ml",
+    images: [
+      "https://images.tutatuta.vn/image/products/rohto-vita/1.png",
+      "https://images.tutatuta.vn/image/products/rohto-vita/2.png",
+      "https://images.tutatuta.vn/image/products/rohto-vita/3.png",
+    ],
+    shortDescription:
+      "Nước nhỏ mắt Rohto Vita 40 Nhật Bản bổ sung các dưỡng chất hỗ trợ chăm sóc mắt, giúp làm dịu tình trạng mỏi mắt, mờ mắt, khô và khó chịu khi thường xuyên sử dụng máy tính hoặc thiết bị điện tử.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Bổ sung 4 dưỡng chất cho mắt:** Công thức chứa Vitamin E, Vitamin B6, Sodium Chondroitin Sulfate và Potassium giúp hỗ trợ chăm sóc giác mạc và duy trì trạng thái khỏe mạnh của mắt.
+
+- **Hỗ trợ giảm mỏi mắt:** Vitamin E hỗ trợ tuần hoàn tại vùng mắt, trong khi Vitamin B6 tham gia vào quá trình trao đổi chất của tế bào.
+
+- **Hỗ trợ chăm sóc giác mạc:** Sodium Chondroitin Sulfate giúp duy trì độ ẩm và bảo vệ bề mặt giác mạc, hỗ trợ giảm cảm giác khô và cộm mắt.
+
+- **Hỗ trợ giảm cảm giác mờ và khó lấy nét:** Phù hợp với người thường xuyên sử dụng máy tính, điện thoại hoặc làm việc trong thời gian dài cần tập trung thị lực.
+
+- **Có nhiều phiên bản:** Dòng Vita 40 có cảm giác sử dụng êm dịu, trong khi một số phiên bản Cool 40 mang lại cảm giác mát hơn khi nhỏ mắt.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Rohto.
+
+- **Tên sản phẩm:** Rohto Vita 40.
+
+- **Dung tích:** Lọ 12ml.
+
+- **Thành phần nổi bật:** Vitamin E, Vitamin B6, Sodium Chondroitin Sulfate và Potassium.
+
+- **Đối tượng tham khảo:** Người thường xuyên sử dụng máy tính, điện thoại, đọc sách hoặc làm việc trong thời gian dài gây mỏi mắt.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Liều dùng tham khảo:** Nhỏ khoảng 2 - 3 giọt mỗi lần vào mỗi bên mắt.
+
+- **Tần suất sử dụng:** Có thể sử dụng khoảng 5 - 6 lần mỗi ngày theo hướng dẫn trên bao bì hoặc chỉ dẫn của dược sĩ, bác sĩ.
+
+- **Lưu ý:** Không để đầu lọ chạm trực tiếp vào mắt, mi mắt hoặc các bề mặt khác để hạn chế nhiễm bẩn.
+
+- **Bảo quản:** Đậy kín nắp sau khi sử dụng và bảo quản theo hướng dẫn trên bao bì sản phẩm.
+
+---
+
+**Thông tin giá**
+
+- **Giá tham khảo:** 69.000đ/chai.
+
+- **Combo 2 chai:** 130.000đ.
+`,
+  },
 ];
