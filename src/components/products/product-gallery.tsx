@@ -60,20 +60,44 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   return (
     <div>
       <div className="relative aspect-4/5 overflow-hidden">
-        <button
-          type="button"
-          onClick={() => setIsFullscreen(true)}
-          aria-label={`Phóng to ảnh ${productName}`}
-          className="relative block aspect-4/5 w-full cursor-zoom-in overflow-hidden"
-        >
-          <Image
-            src={images[activeIndex]}
-            alt={productName}
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-contain"
-          />
-        </button>
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setIsFullscreen(true)}
+            aria-label={`Phóng to ảnh ${productName}`}
+            className="relative block aspect-4/5 w-full cursor-zoom-in overflow-hidden bg-white"
+          >
+            <Image
+              src={images[activeIndex]}
+              alt={productName}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-contain"
+            />
+          </button>
+
+          {images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={showPreviousImage}
+                aria-label="Xem ảnh trước"
+                className="absolute top-1/2 left-3 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-2xl text-white transition hover:bg-black/60"
+              >
+                ‹
+              </button>
+
+              <button
+                type="button"
+                onClick={showNextImage}
+                aria-label="Xem ảnh tiếp theo"
+                className="absolute top-1/2 right-3 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-2xl text-white transition hover:bg-black/60"
+              >
+                ›
+              </button>
+            </>
+          )}
+        </div>
       </div>
       {isFullscreen && (
         <div
@@ -85,9 +109,12 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         >
           <button
             type="button"
-            onClick={() => setIsFullscreen(false)}
+            onClick={(event) => {
+              event.stopPropagation();
+              setIsFullscreen(false);
+            }}
             aria-label="Đóng ảnh"
-            className="absolute top-4 right-4 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-3xl text-white transition hover:bg-white/20"
+            className="absolute top-4 right-4 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-3xl text-white transition hover:bg-white/20"
           >
             ×
           </button>
@@ -101,7 +128,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                   showPreviousImage();
                 }}
                 aria-label="Xem ảnh trước"
-                className="absolute top-1/2 left-3 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-3xl text-white transition hover:bg-black/60 md:left-6"
+                className="absolute top-1/2 left-3 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-3xl text-white transition hover:bg-black/60 md:left-6"
               >
                 ‹
               </button>
@@ -113,22 +140,19 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                   showNextImage();
                 }}
                 aria-label="Xem ảnh tiếp theo"
-                className="absolute top-1/2 right-3 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-3xl text-white transition hover:bg-black/60 md:right-6"
+                className="absolute top-1/2 right-3 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 text-3xl text-white transition hover:bg-black/60 md:right-6"
               >
                 ›
               </button>
             </>
           )}
 
-          <div
-            className="relative h-full w-full max-w-6xl"
-            onClick={(event) => event.stopPropagation()}
-          >
+          <div className="relative h-[90vh] w-[90vw] max-w-6xl">
             <Image
               src={images[activeIndex]}
               alt={productName}
               fill
-              sizes="100vw"
+              sizes="90vw"
               className="object-contain"
               priority
             />

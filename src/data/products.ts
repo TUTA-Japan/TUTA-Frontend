@@ -448,7 +448,6 @@ Trong mỗi 2 viên dùng hằng ngày:
     brand: "Transino",
     category: "Mỹ phẩm",
     referencePriceVnd: 588000,
-    originalPriceVnd: 0,
     specification: "Hũ 35g",
     images: [
       "https://images.tutatuta.vn/image/products/aging-care-1/1.png",
