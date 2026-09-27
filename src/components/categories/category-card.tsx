@@ -25,7 +25,7 @@ export function CategoryCard({
       </div>
 
       <div className="pt-4">
-        <h2 className="text-lg font-semibold text-text-primary group-hover:text-tuta-green-dark">
+        <h2 className="line-clamp-2 min-h-12 text-base leading-6 font-semibold text-text-primary group-hover:text-tuta-green-dark md:min-h-14 md:text-lg md:leading-7">
           {name}
         </h2>
 
