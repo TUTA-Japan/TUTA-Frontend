@@ -1,117 +1,103 @@
-import { ArrowUpRight, MessageCircle, Send, X } from "lucide-react";
+import Image, { type StaticImageData } from "next/image";
 
 import { CONTACT_LINKS } from "@/constants/contact";
+import zalo from "@/assets/zalo.png";
+import facebook from "@/assets/facebook.png";
+import youtube from "@/assets/youtube.png";
+import tiktok from "@/assets/tiktok.png";
 
-const contactLinkClassName =
-  "group/link grid min-h-16 grid-cols-[2.5rem_1fr_auto] items-center gap-3 px-4 py-3 transition-colors duration-200 hover:bg-tuta-green-light/70 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-tuta-green motion-reduce:transition-none";
+type ContactChannel = {
+  name: string;
+  href: string;
+  image: StaticImageData;
+  label: string;
+};
+
+const channels: ContactChannel[] = [
+  {
+    name: "Zalo",
+    href: CONTACT_LINKS.zalo,
+    image: zalo,
+    label: "Liên hệ TUTA qua Zalo",
+  },
+  {
+    name: "Facebook",
+    href: CONTACT_LINKS.facebook,
+    image: facebook,
+    label: "Liên hệ TUTA qua Facebook",
+  },
+  {
+    name: "YouTube",
+    href: CONTACT_LINKS.youtube,
+    image: youtube,
+    label: "Xem TUTA trên YouTube",
+  },
+  {
+    name: "TikTok",
+    href: CONTACT_LINKS.tiktok,
+    image: tiktok,
+    label: "Xem TUTA trên TikTok",
+  },
+];
 
 export function FloatingContact() {
   return (
-    <aside
-      aria-label="Liên hệ nhanh với TUTA"
-      className="fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-20"
+    <nav
+      aria-label="Kênh liên hệ TUTA"
+      className="fixed right-[max(0.75rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex flex-col items-center rounded-[1.75rem] border border-border/70 bg-background/95 p-1.5 shadow-[0_8px_32px_-8px_rgba(31,42,34,0.18),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md sm:right-6 sm:bottom-6 sm:p-2"
     >
-      <details className="floating-contact group relative">
-        <summary className="ml-auto flex min-h-12 cursor-pointer list-none items-center justify-center gap-2.5 rounded-sm border border-tuta-green-dark bg-tuta-green-dark px-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(31,42,34,0.14)] transition-colors duration-200 marker:hidden hover:bg-tuta-green focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tuta-orange sm:px-4 [&::-webkit-details-marker]:hidden motion-reduce:transition-none">
-          <span className="relative flex size-5 items-center justify-center">
-            <MessageCircle
-              aria-hidden="true"
-              strokeWidth={1.7}
-              className="size-5 group-open:hidden"
-            />
-            <X
-              aria-hidden="true"
-              strokeWidth={1.7}
-              className="hidden size-5 group-open:block"
-            />
-            <span
-              aria-hidden="true"
-              className="absolute -top-1 -right-1 size-1.5 rounded-full bg-tuta-orange ring-2 ring-tuta-green-dark group-open:hidden"
-            />
-          </span>
-          <span className="hidden sm:inline">Liên hệ</span>
-          <span className="sr-only group-open:hidden">Mở các kênh liên hệ</span>
-          <span className="sr-only hidden group-open:inline">
-            Đóng các kênh liên hệ
-          </span>
-        </summary>
+      <span className="pt-2 pb-2.5 text-[8px] font-semibold tracking-[0.18em] text-tuta-green">
+        TUTA
+      </span>
 
-        <div className="floating-contact__panel absolute right-0 bottom-[calc(100%+0.75rem)] w-[min(19rem,calc(100vw-2rem))] overflow-hidden rounded-sm border border-border bg-surface shadow-[0_16px_40px_rgba(31,42,34,0.12)]">
-          <div className="border-b border-border px-4 py-4">
-            <div className="flex items-center gap-2">
-              <span
-                aria-hidden="true"
-                className="size-1.5 rounded-full bg-tuta-orange"
+      <ul className="flex flex-col gap-1">
+        {channels.map((channel) => {
+          const content = (
+            <>
+              <Image
+                src={channel.image}
+                alt=""
+                width={28}
+                height={28}
+                className="size-6 object-contain transition-transform duration-300 ease-out group-hover:scale-110 group-focus-visible:scale-110 motion-reduce:transform-none motion-reduce:transition-none sm:size-7"
               />
-              <p className="text-sm font-semibold text-text-primary">
-                Liên hệ cùng TUTA
-              </p>
-            </div>
-            <p className="mt-1.5 text-xs leading-5 text-text-secondary">
-              Chọn kênh thuận tiện để được hỗ trợ về sản phẩm.
-            </p>
-          </div>
+              <span className="text-[9px] leading-none font-medium tracking-tight">
+                {channel.name}
+              </span>
+            </>
+          );
+          const className =
+            "group relative flex h-14 w-14 flex-col items-center justify-center gap-1.5 rounded-[1.125rem] sm:h-15 sm:w-15";
 
-          <nav
-            aria-label="Các kênh liên hệ của TUTA"
-            className="divide-y divide-border"
-          >
-            <a
-              href={CONTACT_LINKS.zalo}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Liên hệ TUTA qua Zalo, mở trong tab mới"
-              className={contactLinkClassName}
-            >
-              <span className="flex size-10 items-center justify-center rounded-sm bg-tuta-green-light text-tuta-green-dark">
-                <MessageCircle
-                  aria-hidden="true"
-                  strokeWidth={1.6}
-                  className="size-4.5"
-                />
-              </span>
-              <span>
-                <span className="block text-[13px] font-semibold text-text-primary">
-                  Zalo
+          return (
+            <li key={channel.name}>
+              {channel.href ? (
+                <a
+                  href={channel.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${channel.label} (mở tab mới)`}
+                  className={`${className} transition-[background-color,color,transform] duration-200 ease-out hover:-translate-y-0.5 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tuta-green motion-reduce:transform-none motion-reduce:transition-none text-text-primary hover:bg-white`}
+                >
+                  {content}
+                </a>
+              ) : (
+                <span
+                  role="link"
+                  aria-disabled="true"
+                  aria-label={`${channel.name}: chưa có liên kết`}
+                  title={`${channel.name}: chưa có liên kết`}
+                  className={`${className} cursor-default text-text-secondary`}
+                >
+                  <span className="flex flex-col items-center gap-1.5 opacity-45 grayscale">
+                    {content}
+                  </span>
                 </span>
-                <span className="mt-0.5 block text-[11px] text-text-secondary">
-                  Nhắn tin trực tiếp
-                </span>
-              </span>
-              <ArrowUpRight
-                aria-hidden="true"
-                strokeWidth={1.5}
-                className="size-4 text-text-secondary transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none"
-              />
-            </a>
-
-            <a
-              href={CONTACT_LINKS.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Liên hệ TUTA qua Facebook, mở trong tab mới"
-              className={contactLinkClassName}
-            >
-              <span className="flex size-10 items-center justify-center rounded-sm bg-tuta-orange-light text-tuta-orange">
-                <Send aria-hidden="true" strokeWidth={1.6} className="size-4" />
-              </span>
-              <span>
-                <span className="block text-[13px] font-semibold text-text-primary">
-                  Facebook
-                </span>
-                <span className="mt-0.5 block text-[11px] text-text-secondary">
-                  Gửi tin nhắn
-                </span>
-              </span>
-              <ArrowUpRight
-                aria-hidden="true"
-                strokeWidth={1.5}
-                className="size-4 text-text-secondary transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none"
-              />
-            </a>
-          </nav>
-        </div>
-      </details>
-    </aside>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }
