@@ -7,7 +7,7 @@ import { CONTACT_LINKS } from "@/constants/contact";
 const navigation = [
   { label: "Khám phá", href: "/" },
   { label: "Danh mục", href: "/categories" },
-  { label: "Thương hiệu", href: "/brands" },
+  // { label: "Thương hiệu", href: "/brands" },
 ];
 
 export function SiteFooter() {
