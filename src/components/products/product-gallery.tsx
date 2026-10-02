@@ -65,7 +65,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             type="button"
             onClick={() => setIsFullscreen(true)}
             aria-label={`Phóng to ảnh ${productName}`}
-            className="relative block aspect-4/5 w-full cursor-zoom-in overflow-hidden bg-white"
+            className="relative block aspect-4/5 w-full cursor-zoom-in overflow-hidden "
           >
             <Image
               src={images[activeIndex]}
