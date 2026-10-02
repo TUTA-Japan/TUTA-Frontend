@@ -1132,4 +1132,260 @@ Trong mỗi 2 viên dùng hằng ngày:
 - **Combo 2 chai:** 130.000đ.
 `,
   },
+  {
+    id: "24",
+    slug: "kem-chong-nang-by365-powdery-uv-cream-spf50-pa-60g",
+    nameVi: "Kem chống nắng by365 Powdery UV Cream SPF50+ PA++++ Nhật Bản 60g",
+    brand: "by365",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 375000,
+    specification: "Tuýp 60g",
+    images: [
+      "https://images.tutatuta.vn/image/products/powdery/1.png",
+      "https://images.tutatuta.vn/image/products/powdery/2.png",
+      "https://images.tutatuta.vn/image/products/powdery/3.png",
+      "https://images.tutatuta.vn/image/products/powdery/4.png",
+    ],
+    shortDescription:
+      "Kem chống nắng by365 Powdery UV Cream SPF50+ PA++++ với hiệu ứng khô ráo như phủ phấn, hỗ trợ bảo vệ da trước tia UVA/UVB, hạn chế bóng dầu và giúp bề mặt da trông mịn màng hơn.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Bảo vệ da trước tia UV:** Chỉ số SPF50+ PA++++ hỗ trợ bảo vệ da trước tác động của tia UVA và UVB trong các hoạt động hằng ngày.
+
+- **Hiệu ứng khô ráo dạng phấn:** Kết cấu kem sau khi tán tạo cảm giác ráo mịn trên bề mặt da, hạn chế cảm giác bóng nhờn và bết dính thường gặp ở một số sản phẩm chống nắng.
+
+- **Hỗ trợ kiểm soát dầu:** Các hạt phấn trong công thức giúp hấp thụ một phần dầu thừa, hỗ trợ giữ bề mặt da thông thoáng và hạn chế bóng dầu ở vùng chữ T.
+
+- **Hỗ trợ làm mịn bề mặt da:** Hiệu ứng powdery giúp bề mặt da trông đều và mịn hơn, đồng thời hỗ trợ làm giảm cảm giác lỗ chân lông dễ nhìn thấy.
+
+- **Khả năng kháng nước và mồ hôi:** Phù hợp khi sử dụng trong thời tiết nóng hoặc khi tham gia các hoạt động ngoài trời.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** by365.
+
+- **Nhà sản xuất:** Naris Up Cosmetics.
+
+- **Quy cách:** Tuýp 60g.
+
+- **Chỉ số chống nắng:** SPF50+ PA++++.
+
+- **Loại da phù hợp:** Phù hợp với nhiều loại da, đặc biệt là da dầu, da hỗn hợp thiên dầu hoặc người không thích cảm giác dính rít của kem chống nắng.
+
+---
+
+**Phân loại**
+
+- **No Color – Tuýp vàng nhạt:** Không nâng tông rõ rệt, phù hợp với người muốn giữ màu da tự nhiên.
+
+- **Tone Up – Tuýp trắng:** Hỗ trợ nâng tông và làm bề mặt da trông sáng, đều màu hơn, có thể sử dụng như một lớp lót trước khi trang điểm.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Bước 1:** Sử dụng sau các bước dưỡng da buổi sáng.
+
+- **Bước 2:** Lấy lượng kem phù hợp và tán đều trên toàn bộ khuôn mặt, vùng cổ và các vùng da tiếp xúc với ánh nắng.
+
+- **Bước 3:** Nên thoa trước khi ra ngoài khoảng 15 - 20 phút.
+
+- **Thoa lại:** Có thể thoa lại sau khoảng 2 - 3 giờ khi hoạt động ngoài trời, đổ nhiều mồ hôi hoặc sau khi lau mặt.
+
+- **Lưu ý:** Nên sử dụng đủ lượng sản phẩm để duy trì hiệu quả bảo vệ da theo chỉ số chống nắng công bố.
+`,
+  },
+  {
+    id: "25",
+    slug: "phan-phu-duong-da-club-suppin-powder-nhat-ban-26g",
+    nameVi: "Phấn phủ dưỡng da Club Suppin Powder 26g Nhật Bản",
+    brand: "Club Cosmetics",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 390000,
+    specification: "Hộp 26g kèm bông phấn",
+    images: [
+      "https://images.tutatuta.vn/image/products/suppin-powder/1.png",
+      "https://images.tutatuta.vn/image/products/suppin-powder/2.png",
+      "https://images.tutatuta.vn/image/products/suppin-powder/3.png",
+      "https://images.tutatuta.vn/image/products/suppin-powder/4.png",
+      "https://images.tutatuta.vn/image/products/suppin-powder/5.png",
+      "https://images.tutatuta.vn/image/products/suppin-powder/6.png",
+      "https://images.tutatuta.vn/image/products/suppin-powder/7.png",
+    ],
+    shortDescription:
+      "Phấn phủ dưỡng da Club Suppin Powder Nhật Bản hỗ trợ kiềm dầu, làm mờ lỗ chân lông và tạo hiệu ứng da mịn tự nhiên, có thể sử dụng cả ban ngày lẫn ban đêm.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Kết hợp dưỡng da và trang điểm:** Có thể sử dụng ban ngày để hỗ trợ kiềm dầu, làm mịn bề mặt da và tạo hiệu ứng trang điểm nhẹ tự nhiên.
+
+- **Có thể sử dụng ban đêm:** Phù hợp để dùng sau các bước dưỡng da nhằm giảm cảm giác nhờn rít trên bề mặt da và tạo cảm giác khô thoáng hơn khi ngủ.
+
+- **Không cần tẩy trang riêng khi dùng theo hướng dẫn:** Công thức được thiết kế để có thể sử dụng trong thời gian dài, kể cả qua đêm, theo hướng dẫn của sản phẩm.
+
+- **Hỗ trợ kiểm soát dầu:** Hạt phấn mịn giúp hấp thụ dầu thừa trên bề mặt da, hạn chế tình trạng bóng nhờn và giúp da trông khô thoáng hơn.
+
+- **Hỗ trợ làm mờ lỗ chân lông:** Lớp phấn mịn giúp bề mặt da trông đều màu và mịn màng hơn, đồng thời tạo hiệu ứng mặt mộc tự nhiên.
+
+- **Kèm bông phấn mềm:** Sản phẩm đi kèm bông phấn giúp lấy và dặm phấn đều hơn trên bề mặt da.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Club Cosmetics.
+
+- **Tên sản phẩm:** Club Suppin Powder.
+
+- **Quy cách:** Hộp 26g kèm bông phấn.
+
+- **Loại sản phẩm:** Phấn phủ dưỡng da.
+
+- **Loại da phù hợp:** Phù hợp với nhiều loại da, bao gồm da dầu, da hỗn hợp và da nhạy cảm.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Ban ngày:** Dặm một lượng phấn vừa đủ lên da sau kem chống nắng hoặc sau các bước trang điểm nền.
+
+- **Ban đêm:** Có thể sử dụng sau bước kem dưỡng cuối cùng để giảm cảm giác nhờn rít trên da.
+
+- **Cách sử dụng:** Dùng bông phấn lấy lượng sản phẩm vừa đủ rồi dặm nhẹ và đều trên toàn bộ khuôn mặt.
+
+- **Lưu ý:** Nên vệ sinh bông phấn định kỳ để hạn chế tích tụ dầu thừa và bụi bẩn.
+`,
+  },
+  {
+    id: "26",
+    slug: "chuot-mi-mascara-heroine-make-kissme-nhat-ban-6g",
+    nameVi: "Chuốt mi Mascara Heroine Make Kissme Nhật Bản 6g",
+    brand: "Kissme Heroine Make",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 280000,
+    specification: "Tuýp 6g",
+    images: [
+      "https://images.tutatuta.vn/image/products/mascara-heroine/1.png",
+      "https://images.tutatuta.vn/image/products/mascara-heroine/2.png",
+      "https://images.tutatuta.vn/image/products/mascara-heroine/3.png",
+      "https://images.tutatuta.vn/image/products/mascara-heroine/4.png",
+    ],
+    shortDescription:
+      "Mascara Heroine Make Kissme Nhật Bản hỗ trợ giữ nếp mi cong dài, tơi sợi và hạn chế lem trôi khi gặp nước, mồ hôi hoặc dầu thừa, đồng thời chứa các thành phần dưỡng giúp chăm sóc sợi mi.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ giữ nếp mi cong lâu:** Công thức giúp duy trì độ cong của hàng mi trong thời gian dài, đồng thời tạo hiệu ứng mi dài và tơi tự nhiên.
+
+- **Kháng nước và hạn chế lem trôi:** Hỗ trợ duy trì lớp mascara khi tiếp xúc với nước, mồ hôi hoặc dầu thừa, giúp hạn chế tình trạng lem màu xuống vùng bọng mắt.
+
+- **Dễ làm sạch hơn so với mascara chống nước truyền thống:** Dòng mascara thế hệ mới được thiết kế để duy trì độ bám tốt nhưng vẫn thuận tiện hơn khi làm sạch theo hướng dẫn của sản phẩm.
+
+- **Chứa thành phần dưỡng mi:** Công thức bổ sung dầu hoa trà, sữa ong chúa và dầu argan, hỗ trợ duy trì độ ẩm và chăm sóc sợi mi trong quá trình sử dụng.
+
+- **Đầu cọ cong dễ thao tác:** Thiết kế đầu cọ ôm theo đường cong hàng mi, giúp chải sản phẩm từ chân đến ngọn và thuận tiện khi sử dụng cho cả mi trên lẫn mi dưới.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Isehan - Kissme Heroine Make.
+
+- **Dung tích:** 6g.
+
+- **Loại sản phẩm:** Mascara chuốt mi.
+
+- **Đặc tính:** Hỗ trợ làm cong, làm dài và giữ nếp mi; kháng nước, mồ hôi và dầu thừa.
+
+- **Loại mi phù hợp:** Phù hợp với mi ngắn, mi thưa hoặc mi thẳng dễ bị sụp nếp.
+
+- **Thành phần dưỡng nổi bật:** Dầu hoa trà, sữa ong chúa và dầu argan.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Bước 1:** Kẹp cong mi trước khi sử dụng mascara.
+
+- **Bước 2:** Đặt đầu cọ sát phần chân mi và chải theo chuyển động zíc zắc từ gốc lên ngọn.
+
+- **Bước 3:** Có thể chuốt thêm 1 - 2 lớp tùy theo hiệu ứng độ dài và độ đậm mong muốn.
+
+- **Lưu ý:** Nên để lớp mascara trước khô nhẹ trước khi chuốt thêm lớp tiếp theo để hạn chế vón cục.
+`,
+  },
+  {
+    id: "27",
+    slug: "phan-ma-hong-shiseido-majolica-majorca-puff-de-cheek-7g",
+    nameVi: "Phấn má hồng Shiseido Majolica Majorca Puff de Cheek 7g",
+    brand: "Majolica Majorca",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 390000,
+    specification: "Hộp 7g kèm bông phấn",
+    images: [
+      "https://images.tutatuta.vn/image/products/shiseido-majolica/1.png",
+      "https://images.tutatuta.vn/image/products/shiseido-majolica/2.png",
+      "https://images.tutatuta.vn/image/products/shiseido-majolica/3.png",
+      "https://images.tutatuta.vn/image/products/shiseido-majolica/4.png",
+      "https://images.tutatuta.vn/image/products/shiseido-majolica/5.png",
+      "https://images.tutatuta.vn/image/products/shiseido-majolica/6.png",
+      "https://images.tutatuta.vn/image/products/shiseido-majolica/7.png",
+    ],
+    shortDescription:
+      "Phấn má hồng Majolica Majorca Puff de Cheek với thiết kế phối màu dạng xoáy và hạt nhũ mịn, giúp tạo hiệu ứng gò má ửng hồng tự nhiên, bắt sáng nhẹ và bề mặt da trông mịn màng.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Thiết kế phối màu dạng xoáy:** Các dải màu được kết hợp cùng hạt phấn ngọc trai mịn, giúp màu má có chiều sâu và tạo hiệu ứng bắt sáng nhẹ nhàng trên da.
+
+- **Chất phấn mịn, dễ tán:** Hạt phấn có kết cấu mịn, dễ hòa vào lớp nền và giúp hạn chế cảm giác bột hoặc khô trên bề mặt da.
+
+- **Hiệu ứng má hồng tự nhiên:** Giúp đôi gò má trông tươi tắn, rạng rỡ và có độ bóng nhẹ tự nhiên.
+
+- **Khả năng bám màu tốt:** Hỗ trợ duy trì sắc má trong nhiều giờ và hạn chế tình trạng màu bị xỉn khi da tiết dầu nhẹ.
+
+- **Kèm bông phấn mềm:** Bông phấn nhung đính nơ giúp lấy lượng sản phẩm vừa phải và dặm màu đều trên da mà hạn chế làm xê dịch lớp nền.
+
+- **Thiết kế hộp nhỏ gọn:** Hộp thiếc phong cách cổ điển, thuận tiện mang theo để sử dụng hoặc dặm lại trong ngày.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Shiseido - Majolica Majorca.
+
+- **Dòng sản phẩm:** Puff de Cheek (Flower Harmony).
+
+- **Quy cách:** Hộp 7g kèm bông phấn.
+
+- **Loại sản phẩm:** Phấn má hồng dạng nén phối màu.
+
+- **Hiệu ứng:** Má hồng tự nhiên, bắt sáng nhẹ và hỗ trợ làm bề mặt da trông mịn màng.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Bước 1:** Dùng bông phấn xoay nhẹ khoảng 1 - 2 vòng trên bề mặt phấn để hòa trộn các dải màu.
+
+- **Bước 2:** Vỗ nhẹ bông phấn lên mu bàn tay để loại bỏ lượng phấn thừa.
+
+- **Bước 3:** Dặm nhẹ lên điểm cao của gò má theo chuyển động tròn để tạo hiệu ứng má hồng tự nhiên.
+
+- **Tùy chỉnh:** Có thể tán nhẹ theo hướng chếch về phía thái dương nếu muốn tạo hiệu ứng khuôn mặt thanh thoát hơn.
+
+- **Lưu ý:** Nên bắt đầu với lượng phấn nhỏ và tăng dần để dễ kiểm soát độ đậm của màu.
+`,
+  },
 ];
