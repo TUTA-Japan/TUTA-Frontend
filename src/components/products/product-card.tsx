@@ -96,6 +96,25 @@ export function ProductCard({
               className="mb-0.5 hidden size-5 shrink-0 text-tuta-green opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transform-none motion-reduce:transition-none sm:block sm:opacity-100"
             />
           </div>
+          <p className="mt-3 inline-flex max-w-full items-start gap-1.5 self-start rounded-md bg-tuta-green-light px-2 py-1.5 text-[11px] leading-4 text-tuta-green-dark sm:gap-2 sm:px-2.5 sm:text-xs sm:leading-5">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-4 shrink-0 sm:mt-0.5"
+            >
+              <path d="M3 16V5h11v11H3Zm11-8h4l3 4v4h-7M14 12h7" />
+              <circle cx="7" cy="17" r="2" />
+              <circle cx="18" cy="17" r="2" />
+            </svg>
+            <span>
+              <span className="font-semibold">Freeship</span> từ 3 sản phẩm
+            </span>
+          </p>
         </div>
       </Link>
     </article>
