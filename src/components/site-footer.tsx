@@ -3,10 +3,12 @@ import Link from "next/link";
 
 import { BrandLogo } from "@/components/brand-logo";
 import { CONTACT_LINKS } from "@/constants/contact";
+import { ROUTES } from "@/constants/routes";
 
 const navigation = [
   { label: "Khám phá", href: "/" },
   { label: "Danh mục", href: "/categories" },
+  { label: "Hướng dẫn mua hàng", href: ROUTES.purchaseGuide },
   // { label: "Thương hiệu", href: "/brands" },
 ];
 
