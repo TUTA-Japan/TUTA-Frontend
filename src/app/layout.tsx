@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { FloatingContact } from "@/components/floating-contact";
+import { SiteShell } from "@/components/site-shell";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -62,10 +60,7 @@ export default function RootLayout({
         id="top"
         className={`${montserrat.variable} flex min-h-dvh flex-col`}
       >
-        <SiteHeader />
-        <div className="flex-1">{children}</div>
-        <SiteFooter />
-        <FloatingContact />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
