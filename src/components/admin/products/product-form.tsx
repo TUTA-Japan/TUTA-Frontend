@@ -2,13 +2,13 @@
 
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Plus, Trash2 } from "lucide-react";
+import { Upload, Trash2 } from "lucide-react";
 
 import {
   productFormSchema,
   type ProductFormValues,
 } from "@/schemas/product-form-schema";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 type ProductFormProps = {
   defaultValues?: Partial<ProductFormValues>;
@@ -39,10 +39,9 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
     },
   });
 
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: "images",
-  });
+  const images = watch("images");
+  const [imagePreviews, setImagePreviews] = useState<string[]>([]);
+  const [imageError, setImageError] = useState("");
 
   const nameVi = watch("nameVi");
 
@@ -64,10 +63,72 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
       .replace(/^-+|-+$/g, "");
   }
 
+  function handleImagesChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const selectedFiles = Array.from(event.target.files ?? []);
+
+    setImageError("");
+
+    const validTypes = ["image/jpeg", "image/png", "image/webp"];
+
+    const maxFileSize = 5 * 1024 * 1024;
+
+    const invalidType = selectedFiles.find(
+      (file) => !validTypes.includes(file.type),
+    );
+
+    if (invalidType) {
+      setImageError("Chỉ hỗ trợ JPG, PNG và WebP.");
+      event.target.value = "";
+      return;
+    }
+
+    const oversizedFile = selectedFiles.find((file) => file.size > maxFileSize);
+
+    if (oversizedFile) {
+      setImageError("Mỗi hình ảnh không được lớn hơn 5MB.");
+      event.target.value = "";
+      return;
+    }
+
+    if (selectedFiles.length > 10) {
+      setImageError("Tối đa 10 hình ảnh cho một sản phẩm.");
+      event.target.value = "";
+      return;
+    }
+
+    setValue("images", selectedFiles, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+
+    event.target.value = "";
+  }
+
+  function removeImage(index: number) {
+    const nextImages = images.filter((_, imageIndex) => imageIndex !== index);
+
+    setValue("images", nextImages, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+  }
+
+  useEffect(() => {
+    const urls = images.map((file) => URL.createObjectURL(file));
+
+    setImagePreviews(urls);
+
+    return () => {
+      urls.forEach((url) => {
+        URL.revokeObjectURL(url);
+      });
+    };
+  }, [images]);
+
   async function onSubmit(values: ProductFormValues) {
     const payload = {
       ...values,
-      images: values.images.map((image) => image.url),
+      images: values.images.map((image) => image.name),
     };
 
     // TODO: Send payload to backend when API is available.
@@ -139,12 +200,6 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
               {...register("slug")}
               className="h-11 w-full cursor-default rounded-lg border border-border bg-surface px-3 text-sm text-text-secondary outline-none"
             />
-
-            {errors.slug && (
-              <p className="mt-1.5 text-xs text-red-600">
-                {errors.slug.message}
-              </p>
-            )}
           </div>
 
           <div>
@@ -288,65 +343,79 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
 
       {/* Images */}
       <section className="rounded-xl border border-border bg-background p-5 md:p-6">
-        <div className="mb-6 flex items-start justify-between gap-4">
-          <div>
-            <h2 className="text-lg font-semibold text-text-primary">
-              Hình ảnh
-            </h2>
+        <div className="mb-6">
+          <h2 className="text-lg font-semibold text-text-primary">Hình ảnh</h2>
 
-            <p className="mt-1 text-sm text-text-secondary">
-              Hiện tại nhập URL hình ảnh. Upload file sẽ được kết nối với
-              backend sau.
-            </p>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => append({ url: "" })}
-            className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg border border-border px-3 text-sm font-medium text-text-primary transition hover:border-tuta-green"
-          >
-            <Plus className="size-4" />
-            Thêm ảnh
-          </button>
+          <p className="mt-1 text-sm text-text-secondary">
+            Tải hình ảnh sản phẩm từ máy tính. Tối đa 10 ảnh, mỗi ảnh không quá
+            5MB.
+          </p>
         </div>
 
-        <div className="space-y-3">
-          {fields.map((field, index) => (
-            <div key={field.id}>
-              <div className="flex gap-2">
-                <input
-                  placeholder="https://images.tutatuta.vn/..."
-                  {...register(`images.${index}.url`)}
-                  className="h-11 min-w-0 flex-1 rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
+        <label
+          htmlFor="product-images"
+          className="flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-border bg-surface px-6 py-10 text-center transition hover:border-tuta-green"
+        >
+          <Upload className="size-6 text-tuta-green" />
+
+          <span className="mt-3 text-sm font-medium text-text-primary">
+            Chọn hình ảnh
+          </span>
+
+          <span className="mt-1 text-xs text-text-secondary">
+            JPG, PNG hoặc WebP
+          </span>
+        </label>
+
+        <input
+          id="product-images"
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          multiple
+          onChange={handleImagesChange}
+          className="sr-only"
+        />
+
+        {imageError && (
+          <p className="mt-2 text-xs text-red-600">{imageError}</p>
+        )}
+
+        {errors.images?.message && (
+          <p className="mt-2 text-xs text-red-600">{errors.images.message}</p>
+        )}
+
+        {imagePreviews.length > 0 && (
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+            {imagePreviews.map((src, index) => (
+              <div
+                key={src}
+                className="group relative aspect-4/5 overflow-hidden rounded-lg border border-border bg-surface"
+              >
+                <img
+                  src={src}
+                  alt={`Ảnh sản phẩm ${index + 1}`}
+                  className="h-full w-full object-contain p-2"
                 />
 
                 <button
                   type="button"
-                  disabled={fields.length === 1}
-                  onClick={() => remove(index)}
+                  onClick={() => removeImage(index)}
                   aria-label={`Xóa ảnh ${index + 1}`}
-                  className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border text-text-secondary transition hover:border-red-300 hover:text-red-600 disabled:cursor-not-allowed disabled:opacity-30"
+                  className="absolute top-2 right-2 flex size-8 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-red-600"
                 >
                   <Trash2 className="size-4" />
                 </button>
+
+                {index === 0 && (
+                  <span className="absolute bottom-2 left-2 rounded-full bg-tuta-green px-2 py-1 text-[10px] font-semibold text-white">
+                    Ảnh đại diện
+                  </span>
+                )}
               </div>
-
-              {errors.images?.[index]?.url && (
-                <p className="mt-1.5 text-xs text-red-600">
-                  {errors.images[index]?.url?.message}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {errors.images?.root && (
-          <p className="mt-2 text-xs text-red-600">
-            {errors.images.root.message}
-          </p>
+            ))}
+          </div>
         )}
       </section>
-
       {/* Description */}
       <section className="rounded-xl border border-border bg-background p-5 md:p-6">
         <div className="mb-6">

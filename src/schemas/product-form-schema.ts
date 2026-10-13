@@ -18,9 +18,7 @@ export const productFormSchema = z.object({
 
   category: z.string().trim().min(1, "Vui lòng nhập danh mục"),
 
-  referencePriceVnd: z
-    .number()
-    .nonnegative("Giá bán không được nhỏ hơn 0"),
+  referencePriceVnd: z.number().nonnegative("Giá bán không được nhỏ hơn 0"),
 
   originalPriceVnd: z
     .number()
@@ -34,12 +32,9 @@ export const productFormSchema = z.object({
   description: z.string().trim().optional(),
 
   images: z
-    .array(
-      z.object({
-        url: z.string().trim().url("URL hình ảnh không hợp lệ"),
-      }),
-    )
-    .min(1, "Sản phẩm cần ít nhất một hình ảnh"),
+    .array(z.custom<File>())
+    .min(1, "Sản phẩm cần ít nhất một hình ảnh")
+    .max(10, "Tối đa 10 hình ảnh"),
 
   status: z.enum(["draft", "published"]),
 });
