@@ -1,13 +1,41 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ProductGrid } from "@/components/products/product-grid";
-import { getCategoryBySlug, getProductsByCategory } from "@/lib/catalog";
+import { ROUTES } from "@/constants/routes";
+import {
+  getCategoryBySlug,
+  getCategorySlugs,
+  getProductsByCategory,
+} from "@/lib/catalog";
+import { buildPageMetadata } from "@/lib/metadata";
 
 type CategoryDetailPageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export async function generateStaticParams() {
+  const slugs = await getCategorySlugs();
+
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: CategoryDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const category = await getCategoryBySlug(slug);
+
+  if (!category) return {};
+
+  return buildPageMetadata({
+    title: category.name,
+    description: category.description,
+    path: ROUTES.categoryDetail(category.slug),
+  });
+}
 
 export default async function CategoryDetailPage({
   params,

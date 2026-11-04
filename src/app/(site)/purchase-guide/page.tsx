@@ -5,7 +5,7 @@ import { CONTACT_LINKS } from "@/constants/contact";
 import { ROUTES } from "@/constants/routes";
 
 export const metadata: Metadata = {
-  title: "Hướng dẫn mua hàng | TUTA",
+  title: "Hướng dẫn mua hàng",
   description:
     "Hướng dẫn cách xem sản phẩm, liên hệ, xác nhận đơn hàng và nhận hàng tại TUTA.",
 };

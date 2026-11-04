@@ -21,7 +21,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
   const { price, discount } = getProductPricing(product);
 
   return (
-    <main className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12 lg:px-12">
+    <div className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12 lg:px-12">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-text-secondary">
         <ol className="flex flex-wrap items-center gap-2">
           <li>
@@ -193,6 +193,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

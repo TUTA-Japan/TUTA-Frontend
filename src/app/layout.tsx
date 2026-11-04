@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { SiteShell } from "@/components/site-shell";
+
+import { SITE } from "@/constants/site";
+import { SITE_OPEN_GRAPH } from "@/lib/metadata";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -10,11 +12,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tutatuta.vn"),
+  metadataBase: new URL(SITE.url),
 
-  title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
-  description:
-    "Khám phá sản phẩm nội địa Nhật được tuyển chọn cho cuộc sống hằng ngày.",
+  title: {
+    default: SITE.title,
+    template: "%s | TUTA",
+  },
+  description: SITE.description,
 
   icons: {
     icon: "/favicon.ico",
@@ -23,29 +27,18 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
-    description:
-      "Khám phá sản phẩm nội địa Nhật được tuyển chọn cho cuộc sống hằng ngày.",
-    url: "https://tutatuta.vn",
-    siteName: "TUTA Japan Select",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "TUTA Japan Select",
-      },
-    ],
-    locale: "vi_VN",
-    type: "website",
+    ...SITE_OPEN_GRAPH,
+    title: SITE.title,
+    description: SITE.description,
+    url: SITE.url,
+    images: [SITE.ogImage],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
-    description:
-      "Khám phá sản phẩm nội địa Nhật được tuyển chọn cho cuộc sống hằng ngày.",
-    images: ["/og-image.jpg"],
+    title: SITE.title,
+    description: SITE.description,
+    images: [SITE.ogImage.url],
   },
 };
 
@@ -60,7 +53,7 @@ export default function RootLayout({
         id="top"
         className={`${montserrat.variable} flex min-h-dvh flex-col`}
       >
-        <SiteShell>{children}</SiteShell>
+        {children}
       </body>
     </html>
   );

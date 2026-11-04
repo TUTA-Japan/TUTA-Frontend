@@ -37,6 +37,14 @@ export async function getCategories(): Promise<Category[]> {
   return categories;
 }
 
+export async function getProductSlugs(): Promise<string[]> {
+  return products.map((product) => product.slug);
+}
+
+export async function getCategorySlugs(): Promise<string[]> {
+  return categories.map((category) => category.slug);
+}
+
 export async function getFeaturedProducts(): Promise<Product[]> {
   return FEATURED_PRODUCT_SLUGS.map((slug) => productsBySlug.get(slug)).filter(
     (product): product is Product => product !== undefined,

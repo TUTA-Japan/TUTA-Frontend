@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 
 import { ROUTES } from "@/constants/routes";
+import { SITE } from "@/constants/site";
 import { HomeHero } from "@/components/home/home-hero";
 import { ProductGrid } from "@/components/products/product-grid";
 import { getFeaturedProducts } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
+  title: { absolute: SITE.title },
   description:
     "TUTA tuyển chọn và giới thiệu sản phẩm nội địa Nhật dành cho người Việt.",
 };
