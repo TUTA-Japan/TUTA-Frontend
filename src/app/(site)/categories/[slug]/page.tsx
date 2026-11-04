@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ProductGrid } from "@/components/products/product-grid";
-import { categories } from "@/data/categories";
-import { products } from "@/data/products";
+import { ROUTES } from "@/constants/routes";
+import {
+  getCategoryBySlug,
+  getCategorySlugs,
+  getProductsByCategory,
+} from "@/lib/catalog";
+import { buildPageMetadata } from "@/lib/metadata";
 
 type CategoryDetailPageProps = {
   params: Promise<{
@@ -10,20 +16,39 @@ type CategoryDetailPageProps = {
   }>;
 };
 
+export async function generateStaticParams() {
+  const slugs = await getCategorySlugs();
+
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: CategoryDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const category = await getCategoryBySlug(slug);
+
+  if (!category) return {};
+
+  return buildPageMetadata({
+    title: category.name,
+    description: category.description,
+    path: ROUTES.categoryDetail(category.slug),
+  });
+}
+
 export default async function CategoryDetailPage({
   params,
 }: CategoryDetailPageProps) {
   const { slug } = await params;
 
-  const category = categories.find((item) => item.slug === slug);
+  const category = await getCategoryBySlug(slug);
 
   if (!category) {
     notFound();
   }
 
-  const categoryProducts = products.filter(
-    (product) => product.category === category.name,
-  );
+  const categoryProducts = await getProductsByCategory(category);
 
   return (
     <main className="mx-auto max-w-7xl px-5 py-12 md:px-8 lg:px-12">

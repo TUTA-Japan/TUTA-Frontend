@@ -72,6 +72,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               alt={productName}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
+              fetchPriority="high"
               className="object-contain"
             />
           </button>
@@ -154,7 +155,6 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               fill
               sizes="90vw"
               className="object-contain"
-              priority
             />
           </div>
         </div>

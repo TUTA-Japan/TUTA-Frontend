@@ -4,6 +4,8 @@ import ReactMarkdown from "react-markdown";
 import { ROUTES } from "@/constants/routes";
 import type { Product } from "@/types/product";
 import { CONTACT_LINKS } from "@/constants/contact";
+import { getProductPricing } from "@/lib/pricing";
+import { formatVnd } from "@/utils/currency";
 import { ProductContact } from "@/components/products/product-contact";
 import { ProductGallery } from "@/components/products/product-gallery";
 
@@ -11,26 +13,15 @@ type ProductDetailProps = {
   product: Product;
 };
 
-function formatVnd(value: number) {
-  return `${value.toLocaleString("vi-VN")} ₫`;
+function formatPrice(value: number) {
+  return `${formatVnd(value)} ₫`;
 }
 
 export function ProductDetail({ product }: ProductDetailProps) {
-  const hasDiscount =
-    product.referencePriceVnd &&
-    product.originalPriceVnd &&
-    product.originalPriceVnd > product.referencePriceVnd;
-
-  const discountPercent = hasDiscount
-    ? Math.round(
-        ((product.originalPriceVnd! - product.referencePriceVnd!) /
-          product.originalPriceVnd!) *
-          100,
-      )
-    : null;
+  const { price, discount } = getProductPricing(product);
 
   return (
-    <main className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12 lg:px-12">
+    <div className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-12 lg:px-12">
       <nav aria-label="Breadcrumb" className="mb-8 text-sm text-text-secondary">
         <ol className="flex flex-wrap items-center gap-2">
           <li>
@@ -64,8 +55,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
         </ol>
       </nav>
 
-      <div className="min-w-0 flex flex-col"></div>
-
       <section className="grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="min-w-0">
           <ProductGallery
@@ -89,21 +78,21 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </p>
           )} */}
 
-          {product.referencePriceVnd !== undefined && (
+          {price !== null && (
             <div className="mt-7">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
                 <p className="text-2xl font-semibold text-text-primary">
-                  {formatVnd(product.referencePriceVnd)}
+                  {formatPrice(price)}
                 </p>
 
-                {hasDiscount && (
+                {discount && (
                   <>
                     <p className="text-sm text-text-secondary line-through">
-                      {formatVnd(product.originalPriceVnd!)}
+                      {formatPrice(discount.originalPrice)}
                     </p>
 
                     <span className="text-xs font-medium text-tuta-orange">
-                      -{discountPercent}%
+                      -{discount.percent}%
                     </span>
                   </>
                 )}
@@ -204,6 +193,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

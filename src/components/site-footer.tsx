@@ -2,15 +2,9 @@ import { ArrowUp, MessageCircle, Send } from "lucide-react";
 import Link from "next/link";
 
 import { BrandLogo } from "@/components/brand-logo";
-import { CONTACT_LINKS } from "@/constants/contact";
+import { CONTACT_CHANNELS } from "@/constants/contact";
+import { FOOTER_NAVIGATION_ITEMS } from "@/constants/navigation";
 import { ROUTES } from "@/constants/routes";
-
-const navigation = [
-  { label: "Khám phá", href: "/" },
-  { label: "Danh mục", href: "/categories" },
-  { label: "Hướng dẫn mua hàng", href: ROUTES.purchaseGuide },
-  // { label: "Thương hiệu", href: "/brands" },
-];
 
 export function SiteFooter() {
   return (
@@ -19,7 +13,7 @@ export function SiteFooter() {
         <div className="grid gap-8 pt-10 pb-8 md:grid-cols-[1fr_auto] md:gap-16 md:py-12">
           <div>
             <Link
-              href="/"
+              href={ROUTES.home}
               aria-label="TUTA Japan Select — Trang chủ"
               className="-m-2 block w-fit rounded-sm p-2"
             >
@@ -35,7 +29,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-6 md:items-end">
             <nav aria-label="Điều hướng chân trang">
               <ul className="flex flex-wrap items-center gap-x-7 gap-y-1 md:gap-x-9">
-                {navigation.map(({ label, href }) => (
+                {FOOTER_NAVIGATION_ITEMS.map(({ label, href }) => (
                   <li key={href}>
                     <Link
                       href={href}
@@ -54,10 +48,10 @@ export function SiteFooter() {
 
               <div className="flex items-center gap-2">
                 <a
-                  href={CONTACT_LINKS.zalo}
+                  href={CONTACT_CHANNELS.zalo.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Liên hệ TUTA qua Zalo"
+                  aria-label={CONTACT_CHANNELS.zalo.label}
                   className="flex size-9 items-center justify-center border border-border text-text-primary transition-colors duration-200 hover:border-tuta-green hover:text-tuta-green-dark"
                 >
                   <MessageCircle
@@ -68,10 +62,10 @@ export function SiteFooter() {
                 </a>
 
                 <a
-                  href={CONTACT_LINKS.facebook}
+                  href={CONTACT_CHANNELS.facebook.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Liên hệ TUTA qua Facebook"
+                  aria-label={CONTACT_CHANNELS.facebook.label}
                   className="flex size-9 items-center justify-center border border-border text-text-primary transition-colors duration-200 hover:border-tuta-green hover:text-tuta-green-dark"
                 >
                   <Send aria-hidden="true" className="size-3.5" />

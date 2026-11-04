@@ -2,13 +2,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 
-import { products } from "@/data/products";
 import { ROUTES } from "@/constants/routes";
+import { SITE } from "@/constants/site";
 import { HomeHero } from "@/components/home/home-hero";
 import { ProductGrid } from "@/components/products/product-grid";
+import { getFeaturedProducts } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "TUTA Japan Select | Khám phá sản phẩm nội địa Nhật",
+  title: { absolute: SITE.title },
   description:
     "TUTA tuyển chọn và giới thiệu sản phẩm nội địa Nhật dành cho người Việt.",
 };
@@ -33,12 +34,8 @@ const selectionPrinciples = [
 
 const featuredBrands = ["Rohto", "Hada Labo", "MUJI", "Kao", "Pilot", "Zebra"];
 
-export default function Home() {
-  const featuredIndexes = [15, 2, 6, 10];
-
-  const featuredProducts = featuredIndexes
-    .map((index) => products[index])
-    .filter(Boolean);
+export default async function Home() {
+  const featuredProducts = await getFeaturedProducts();
 
   return (
     <main

@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { ROUTES } from "@/constants/routes";
+
 type ProductPaginationProps = {
   currentPage: number;
   totalPages: number;
@@ -14,7 +16,7 @@ export function ProductPagination({
   }
 
   const getPageHref = (page: number) =>
-    page === 1 ? "/products" : `/products?page=${page}`;
+    page === 1 ? ROUTES.products : `${ROUTES.products}?page=${page}`;
 
   return (
     <nav
