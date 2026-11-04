@@ -64,8 +64,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
         </ol>
       </nav>
 
-      <div className="min-w-0 flex flex-col"></div>
-
       <section className="grid gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="min-w-0">
           <ProductGallery

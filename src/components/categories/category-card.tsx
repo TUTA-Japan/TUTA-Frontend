@@ -19,6 +19,7 @@ export function CategoryCard({
             src={image}
             alt={name}
             fill
+            sizes="(min-width: 1280px) 379px, (min-width: 1024px) 33vw, 50vw"
             className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
           />
         )}

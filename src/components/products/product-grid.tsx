@@ -2,8 +2,6 @@ import type { Product } from "@/types/product";
 
 import { ProductCard } from "@/components/products/product-card";
 import { ProductEmptyState } from "@/components/products/product-empty-state";
-{
-}
 
 type ProductGridProps = {
   products: Product[];

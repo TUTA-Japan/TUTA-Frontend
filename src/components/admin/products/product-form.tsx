@@ -1,6 +1,7 @@
 "use client";
 
-import { useFieldArray, useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Upload, Trash2 } from "lucide-react";
 
@@ -8,7 +9,6 @@ import {
   productFormSchema,
   type ProductFormValues,
 } from "@/schemas/product-form-schema";
-import { useEffect, useState } from "react";
 
 type ProductFormProps = {
   defaultValues?: Partial<ProductFormValues>;
@@ -17,7 +17,6 @@ type ProductFormProps = {
 export function ProductForm({ defaultValues }: ProductFormProps) {
   const {
     register,
-    control,
     handleSubmit,
     watch,
     setValue,
@@ -391,6 +390,7 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
                 key={src}
                 className="group relative aspect-4/5 overflow-hidden rounded-lg border border-border bg-surface"
               >
+                {/* eslint-disable-next-line @next/next/no-img-element -- blob: preview URL cannot go through next/image */}
                 <img
                   src={src}
                   alt={`Ảnh sản phẩm ${index + 1}`}
