@@ -2,12 +2,13 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 import { ProductForm } from "@/components/admin/products/product-form";
+import { ROUTES } from "@/constants/routes";
 
 export default function NewProductPage() {
   return (
     <div className="mx-auto max-w-5xl">
       <Link
-        href="/admin/products"
+        href={ROUTES.admin.products}
         className="inline-flex items-center gap-2 text-sm text-text-secondary transition hover:text-tuta-green-dark"
       >
         <ArrowLeft className="size-4" />

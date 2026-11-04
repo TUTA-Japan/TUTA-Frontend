@@ -1,7 +1,9 @@
 import { CategoryCard } from "@/components/categories/category-card";
-import { categories } from "@/data/categories";
+import { getCategories } from "@/lib/catalog";
 
-export default function CategoriesPage() {
+export default async function CategoriesPage() {
+  const categories = await getCategories();
+
   return (
     <main className="mx-auto max-w-7xl px-5 py-12 md:px-8 lg:px-12">
       <div className="mb-10">

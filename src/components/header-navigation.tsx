@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, Search, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { NAVIGATION_ITEMS } from "@/constants/navigation";
+import { ROUTES } from "@/constants/routes";
 
 type Panel = "menu" | "search" | null;
 
@@ -153,7 +154,7 @@ export function HeaderNavigation() {
           className="absolute inset-x-0 top-full border-b border-border bg-background"
         >
           <form
-            action="/search"
+            action={ROUTES.search}
             method="get"
             role="search"
             className="mx-auto flex max-w-xl items-center gap-3 px-5 py-6"

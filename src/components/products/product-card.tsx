@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { ROUTES } from "@/constants/routes";
+import { getProductPricing } from "@/lib/pricing";
 import { formatVnd } from "@/utils/currency";
 import type { Product } from "@/types/product";
 import { TooltipTitle } from "@/components/tooltip-title";
@@ -19,16 +20,10 @@ export function ProductCard({
   const Heading = headingLevel;
   const coverImage = product.images[0];
 
-  const currentPrice =
-    product.referencePriceVnd === undefined
-      ? null
-      : formatVnd(product.referencePriceVnd);
-
+  const { price, compareAtPrice } = getProductPricing(product);
+  const currentPrice = price === null ? null : formatVnd(price);
   const originalPrice =
-    product.originalPriceVnd !== undefined &&
-    product.originalPriceVnd > (product.referencePriceVnd ?? 0)
-      ? formatVnd(product.originalPriceVnd)
-      : null;
+    compareAtPrice === null ? null : formatVnd(compareAtPrice);
 
   return (
     <article className="group h-full">

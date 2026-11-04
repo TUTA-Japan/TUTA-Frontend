@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { LayoutDashboard, Package, Tags } from "lucide-react";
+
+import { ADMIN_NAVIGATION_ITEMS } from "@/constants/navigation";
+import { ROUTES } from "@/constants/routes";
 
 export function AdminSidebar() {
   return (
     <aside className="fixed inset-y-0 left-0 hidden w-64 border-r border-border bg-background md:block">
       <div className="flex h-16 items-center border-b border-border px-6">
         <Link
-          href="/admin"
+          href={ROUTES.admin.dashboard}
           className="text-base font-semibold text-tuta-green-dark"
         >
           TUTA Admin
@@ -15,29 +17,16 @@ export function AdminSidebar() {
 
       <nav className="p-4">
         <div className="space-y-1">
-          <Link
-            href="/admin"
-            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-primary transition hover:bg-surface"
-          >
-            <LayoutDashboard className="size-4" />
-            Tổng quan
-          </Link>
-
-          <Link
-            href="/admin/products"
-            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-primary transition hover:bg-surface"
-          >
-            <Package className="size-4" />
-            Sản phẩm
-          </Link>
-
-          <Link
-            href="/admin/categories"
-            className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-primary transition hover:bg-surface"
-          >
-            <Tags className="size-4" />
-            Danh mục
-          </Link>
+          {ADMIN_NAVIGATION_ITEMS.map(({ label, href, icon: Icon }) => (
+            <Link
+              key={href}
+              href={href}
+              className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-text-primary transition hover:bg-surface"
+            >
+              <Icon className="size-4" />
+              {label}
+            </Link>
+          ))}
         </div>
       </nav>
     </aside>

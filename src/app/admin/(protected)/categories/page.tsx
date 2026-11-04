@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Plus } from "lucide-react";
 
+import { ROUTES } from "@/constants/routes";
+
 export default function AdminCategoriesPage() {
   return (
     <div>
@@ -20,7 +22,7 @@ export default function AdminCategoriesPage() {
         </div>
 
         <Link
-          href="/admin/categories/new"
+          href={ROUTES.admin.newCategory}
           className="inline-flex h-10 items-center gap-2 rounded-lg bg-tuta-green px-4 text-sm font-semibold text-white transition hover:bg-tuta-green-dark"
         >
           <Plus className="size-4" />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ROUTES } from "@/constants/routes";
 import type { Category } from "@/types/category";
 
 type CategoryCardProps = Category;
@@ -12,7 +13,7 @@ export function CategoryCard({
   image,
 }: CategoryCardProps) {
   return (
-    <Link href={`/categories/${slug}`} className="group block">
+    <Link href={ROUTES.categoryDetail(slug)} className="group block">
       <div className="relative aspect-4/3 overflow-hidden bg-surface">
         {image && (
           <Image

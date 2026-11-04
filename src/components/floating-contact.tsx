@@ -3,11 +3,18 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 
-import { CONTACT_LINKS } from "@/constants/contact";
+import { CONTACT_CHANNELS, type ContactChannelId } from "@/constants/contact";
 import zalo from "@/assets/zalo.png";
 import facebook from "@/assets/facebook.png";
 import youtube from "@/assets/youtube.png";
 import tiktok from "@/assets/tiktok.png";
+
+const channelIcons: Record<ContactChannelId, StaticImageData> = {
+  zalo,
+  facebook,
+  youtube,
+  tiktok,
+};
 
 type ContactChannel = {
   name: string;
@@ -16,32 +23,9 @@ type ContactChannel = {
   label: string;
 };
 
-const channels: ContactChannel[] = [
-  {
-    name: "Zalo",
-    href: CONTACT_LINKS.zalo,
-    image: zalo,
-    label: "Liên hệ TUTA qua Zalo",
-  },
-  {
-    name: "Facebook",
-    href: CONTACT_LINKS.facebook,
-    image: facebook,
-    label: "Liên hệ TUTA qua Facebook",
-  },
-  {
-    name: "YouTube",
-    href: CONTACT_LINKS.youtube,
-    image: youtube,
-    label: "Xem TUTA trên YouTube",
-  },
-  {
-    name: "TikTok",
-    href: CONTACT_LINKS.tiktok,
-    image: tiktok,
-    label: "Xem TUTA trên TikTok",
-  },
-];
+const channels: ContactChannel[] = (
+  Object.keys(CONTACT_CHANNELS) as ContactChannelId[]
+).map((id) => ({ ...CONTACT_CHANNELS[id], image: channelIcons[id] }));
 
 export function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false);

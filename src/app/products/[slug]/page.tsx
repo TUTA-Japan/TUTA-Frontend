@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import { ProductDetail } from "@/components/products/product-detail";
 import { RelatedProducts } from "@/components/products/related-products";
-import { products } from "@/data/products";
+import { getProductBySlug, getRelatedProducts } from "@/lib/catalog";
 
 type ProductDetailPageProps = {
   params: Promise<{
@@ -15,28 +15,13 @@ export default async function ProductDetailPage({
 }: ProductDetailPageProps) {
   const { slug } = await params;
 
-  const product = products.find((item) => item.slug === slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
-  const sameCategoryProducts = products.filter(
-    (item) => item.id !== product.id && item.category === product.category,
-  );
-
-  const fallbackProducts = products.filter(
-    (item) =>
-      item.id !== product.id &&
-      !sameCategoryProducts.some(
-        (relatedProduct) => relatedProduct.id === item.id,
-      ),
-  );
-
-  const relatedProducts = [...sameCategoryProducts, ...fallbackProducts].slice(
-    0,
-    4,
-  );
+  const relatedProducts = await getRelatedProducts(product);
 
   return (
     <>
