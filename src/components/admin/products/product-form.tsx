@@ -1,24 +1,83 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useLayoutEffect, useRef, useState, type ChangeEvent } from "react";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Upload, Trash2 } from "lucide-react";
 
 import {
+  FormField,
+  FormSection,
+  inputClassName,
+  primaryButtonClassName,
+  textareaClassName,
+} from "@/components/admin/form-primitives";
+import {
+  PRODUCT_IMAGE_RULES,
   productFormSchema,
   type ProductFormValues,
 } from "@/schemas/product-form-schema";
+import { createSlug } from "@/utils/slug";
 
 type ProductFormProps = {
   defaultValues?: Partial<ProductFormValues>;
 };
 
+const optionalNumber = {
+  setValueAs: (value: string) => (value === "" ? undefined : Number(value)),
+};
+
+function validateImageFiles(files: File[]) {
+  if (
+    files.some((file) => !PRODUCT_IMAGE_RULES.acceptedTypes.includes(file.type))
+  ) {
+    return "Chỉ hỗ trợ JPG, PNG và WebP.";
+  }
+
+  if (files.some((file) => file.size > PRODUCT_IMAGE_RULES.maxFileSize)) {
+    return "Mỗi hình ảnh không được lớn hơn 5MB.";
+  }
+
+  if (files.length > PRODUCT_IMAGE_RULES.maxFiles) {
+    return "Tối đa 10 hình ảnh cho một sản phẩm.";
+  }
+
+  return null;
+}
+
+type ImagePreviewProps = {
+  file: File;
+  alt: string;
+};
+
+function ImagePreview({ file, alt }: ImagePreviewProps) {
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  useLayoutEffect(() => {
+    const url = URL.createObjectURL(file);
+
+    if (imageRef.current) {
+      imageRef.current.src = url;
+    }
+
+    return () => URL.revokeObjectURL(url);
+  }, [file]);
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element -- blob: preview URL cannot go through next/image
+    <img
+      ref={imageRef}
+      alt={alt}
+      className="h-full w-full object-contain p-2"
+    />
+  );
+}
+
 export function ProductForm({ defaultValues }: ProductFormProps) {
   const {
     register,
+    control,
     handleSubmit,
-    watch,
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<ProductFormValues>({
@@ -38,91 +97,31 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
     },
   });
 
-  const images = watch("images");
-  const [imagePreviews, setImagePreviews] = useState<string[]>([]);
+  const images = useWatch({ control, name: "images" });
   const [imageError, setImageError] = useState("");
 
-  const nameVi = watch("nameVi");
-
-  useEffect(() => {
-    setValue("slug", createSlug(nameVi), {
-      shouldValidate: true,
-    });
-  }, [nameVi, setValue]);
-
-  function createSlug(value: string) {
-    return value
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/đ/g, "d")
-      .replace(/Đ/g, "D")
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-  }
-
-  function handleImagesChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const selectedFiles = Array.from(event.target.files ?? []);
-
-    setImageError("");
-
-    const validTypes = ["image/jpeg", "image/png", "image/webp"];
-
-    const maxFileSize = 5 * 1024 * 1024;
-
-    const invalidType = selectedFiles.find(
-      (file) => !validTypes.includes(file.type),
-    );
-
-    if (invalidType) {
-      setImageError("Chỉ hỗ trợ JPG, PNG và WebP.");
-      event.target.value = "";
-      return;
-    }
-
-    const oversizedFile = selectedFiles.find((file) => file.size > maxFileSize);
-
-    if (oversizedFile) {
-      setImageError("Mỗi hình ảnh không được lớn hơn 5MB.");
-      event.target.value = "";
-      return;
-    }
-
-    if (selectedFiles.length > 10) {
-      setImageError("Tối đa 10 hình ảnh cho một sản phẩm.");
-      event.target.value = "";
-      return;
-    }
-
-    setValue("images", selectedFiles, {
-      shouldValidate: true,
-      shouldDirty: true,
-    });
-
-    event.target.value = "";
-  }
-
-  function removeImage(index: number) {
-    const nextImages = images.filter((_, imageIndex) => imageIndex !== index);
-
+  function updateImages(nextImages: File[]) {
     setValue("images", nextImages, {
       shouldValidate: true,
       shouldDirty: true,
     });
   }
 
-  useEffect(() => {
-    const urls = images.map((file) => URL.createObjectURL(file));
+  function handleImagesChange(event: ChangeEvent<HTMLInputElement>) {
+    const selectedFiles = Array.from(event.target.files ?? []);
+    event.target.value = "";
 
-    setImagePreviews(urls);
+    const error = validateImageFiles(selectedFiles);
+    setImageError(error ?? "");
 
-    return () => {
-      urls.forEach((url) => {
-        URL.revokeObjectURL(url);
-      });
-    };
-  }, [images]);
+    if (!error) {
+      updateImages(selectedFiles);
+    }
+  }
+
+  function removeImage(index: number) {
+    updateImages(images.filter((_, imageIndex) => imageIndex !== index));
+  }
 
   async function onSubmit(values: ProductFormValues) {
     const payload = {
@@ -136,221 +135,125 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-      {/* Basic information */}
-      <section className="rounded-xl border border-border bg-background p-5 md:p-6">
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold text-text-primary">
-            Thông tin sản phẩm
-          </h2>
-
-          <p className="mt-1 text-sm text-text-secondary">
-            Thông tin cơ bản được hiển thị trên website.
-          </p>
-        </div>
-
+      <FormSection
+        title="Thông tin sản phẩm"
+        description="Thông tin cơ bản được hiển thị trên website."
+      >
         <div className="grid gap-5 md:grid-cols-2">
-          <div className="md:col-span-2">
-            <label
-              htmlFor="nameVi"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Tên sản phẩm
-            </label>
-
+          <FormField
+            id="nameVi"
+            label="Tên sản phẩm"
+            error={errors.nameVi?.message}
+            className="md:col-span-2"
+          >
             <input
               id="nameVi"
-              {...register("nameVi")}
-              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
+              {...register("nameVi", {
+                onChange: (event: ChangeEvent<HTMLInputElement>) =>
+                  setValue("slug", createSlug(event.target.value), {
+                    shouldValidate: true,
+                  }),
+              })}
+              className={inputClassName}
             />
+          </FormField>
 
-            {errors.nameVi && (
-              <p className="mt-1.5 text-xs text-red-600">
-                {errors.nameVi.message}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="nameJp"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Tên tiếng Nhật (optional)
-            </label>
-
+          <FormField id="nameJp" label="Tên tiếng Nhật (optional)">
             <input
               id="nameJp"
               {...register("nameJp")}
-              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
+              className={inputClassName}
             />
-          </div>
+          </FormField>
 
-          <div>
-            <label
-              htmlFor="slug"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Slug
-            </label>
-
+          <FormField id="slug" label="Slug" error={errors.slug?.message}>
             <input
               id="slug"
               readOnly
               {...register("slug")}
               className="h-11 w-full cursor-default rounded-lg border border-border bg-surface px-3 text-sm text-text-secondary outline-none"
             />
-          </div>
+          </FormField>
 
-          <div>
-            <label
-              htmlFor="brand"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Thương hiệu
-            </label>
-
+          <FormField id="brand" label="Thương hiệu" error={errors.brand?.message}>
             <input
               id="brand"
               {...register("brand")}
-              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
+              className={inputClassName}
             />
+          </FormField>
 
-            {errors.brand && (
-              <p className="mt-1.5 text-xs text-red-600">
-                {errors.brand.message}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="category"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Danh mục
-            </label>
-
+          <FormField
+            id="category"
+            label="Danh mục"
+            error={errors.category?.message}
+          >
             <input
               id="category"
               {...register("category")}
-              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
+              className={inputClassName}
             />
+          </FormField>
 
-            {errors.category && (
-              <p className="mt-1.5 text-xs text-red-600">
-                {errors.category.message}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="specification"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Quy cách
-            </label>
-
+          <FormField id="specification" label="Quy cách">
             <input
               id="specification"
               placeholder="30 viên, 7g, 100ml..."
               {...register("specification")}
-              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
+              className={inputClassName}
             />
-          </div>
+          </FormField>
 
-          <div>
-            <label
-              htmlFor="status"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Trạng thái
-            </label>
-
+          <FormField id="status" label="Trạng thái">
             <select
               id="status"
               {...register("status")}
-              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
+              className={inputClassName}
             >
               <option value="draft">Bản nháp</option>
 
               <option value="published">Công khai</option>
             </select>
-          </div>
+          </FormField>
         </div>
-      </section>
+      </FormSection>
 
-      {/* Prices */}
-      <section className="rounded-xl border border-border bg-background p-5 md:p-6">
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold text-text-primary">
-            Giá sản phẩm
-          </h2>
-        </div>
-
+      <FormSection title="Giá sản phẩm">
         <div className="grid gap-5 sm:grid-cols-2">
-          <div>
-            <label
-              htmlFor="referencePriceVnd"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Giá bán
-            </label>
+          <FormField
+            id="referencePriceVnd"
+            label="Giá bán"
+            error={errors.referencePriceVnd?.message}
+          >
+            <input
+              id="referencePriceVnd"
+              type="number"
+              min="0"
+              {...register("referencePriceVnd", optionalNumber)}
+              className={inputClassName}
+            />
+          </FormField>
 
+          <FormField
+            id="originalPriceVnd"
+            label="Giá gốc"
+            error={errors.originalPriceVnd?.message}
+          >
             <input
               id="originalPriceVnd"
               type="number"
               min="0"
-              {...register("originalPriceVnd", {
-                setValueAs: (value) =>
-                  value === "" ? undefined : Number(value),
-              })}
-              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
+              {...register("originalPriceVnd", optionalNumber)}
+              className={inputClassName}
             />
-
-            {errors.referencePriceVnd && (
-              <p className="mt-1.5 text-xs text-red-600">
-                {errors.referencePriceVnd.message}
-              </p>
-            )}
-          </div>
-
-          <div>
-            <label
-              htmlFor="originalPriceVnd"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Giá gốc
-            </label>
-
-            <input
-              id="originalPriceVnd"
-              type="number"
-              min="0"
-              {...register("originalPriceVnd")}
-              className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm outline-none transition focus:border-tuta-green"
-            />
-
-            {errors.originalPriceVnd && (
-              <p className="mt-1.5 text-xs text-red-600">
-                {errors.originalPriceVnd.message}
-              </p>
-            )}
-          </div>
+          </FormField>
         </div>
-      </section>
+      </FormSection>
 
-      {/* Images */}
-      <section className="rounded-xl border border-border bg-background p-5 md:p-6">
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold text-text-primary">Hình ảnh</h2>
-
-          <p className="mt-1 text-sm text-text-secondary">
-            Tải hình ảnh sản phẩm từ máy tính. Tối đa 10 ảnh, mỗi ảnh không quá
-            5MB.
-          </p>
-        </div>
-
+      <FormSection
+        title="Hình ảnh"
+        description="Tải hình ảnh sản phẩm từ máy tính. Tối đa 10 ảnh, mỗi ảnh không quá 5MB."
+      >
         <label
           htmlFor="product-images"
           className="flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-border bg-surface px-6 py-10 text-center transition hover:border-tuta-green"
@@ -369,7 +272,7 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
         <input
           id="product-images"
           type="file"
-          accept="image/jpeg,image/png,image/webp"
+          accept={PRODUCT_IMAGE_RULES.acceptedTypes.join(",")}
           multiple
           onChange={handleImagesChange}
           className="sr-only"
@@ -383,19 +286,14 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
           <p className="mt-2 text-xs text-red-600">{errors.images.message}</p>
         )}
 
-        {imagePreviews.length > 0 && (
+        {images.length > 0 && (
           <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-            {imagePreviews.map((src, index) => (
+            {images.map((file, index) => (
               <div
-                key={src}
+                key={`${file.name}-${file.size}-${file.lastModified}`}
                 className="group relative aspect-4/5 overflow-hidden rounded-lg border border-border bg-surface"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element -- blob: preview URL cannot go through next/image */}
-                <img
-                  src={src}
-                  alt={`Ảnh sản phẩm ${index + 1}`}
-                  className="h-full w-full object-contain p-2"
-                />
+                <ImagePreview file={file} alt={`Ảnh sản phẩm ${index + 1}`} />
 
                 <button
                   type="button"
@@ -415,55 +313,36 @@ export function ProductForm({ defaultValues }: ProductFormProps) {
             ))}
           </div>
         )}
-      </section>
-      {/* Description */}
-      <section className="rounded-xl border border-border bg-background p-5 md:p-6">
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold text-text-primary">Nội dung</h2>
-        </div>
+      </FormSection>
 
+      <FormSection title="Nội dung">
         <div className="space-y-5">
-          <div>
-            <label
-              htmlFor="shortDescription"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Mô tả ngắn
-            </label>
-
+          <FormField id="shortDescription" label="Mô tả ngắn">
             <textarea
               id="shortDescription"
               rows={3}
               {...register("shortDescription")}
-              className="w-full resize-y rounded-lg border border-border bg-background px-3 py-2.5 text-sm leading-6 outline-none transition focus:border-tuta-green"
+              className={textareaClassName}
             />
-          </div>
+          </FormField>
 
-          <div>
-            <label
-              htmlFor="description"
-              className="mb-2 block text-sm font-medium text-text-primary"
-            >
-              Mô tả chi tiết
-            </label>
-
+          <FormField id="description" label="Mô tả chi tiết">
             <textarea
               id="description"
               rows={12}
               placeholder="Có thể nhập Markdown..."
               {...register("description")}
-              className="w-full resize-y rounded-lg border border-border bg-background px-3 py-2.5 font-mono text-sm leading-6 outline-none transition focus:border-tuta-green"
+              className={`${textareaClassName} font-mono`}
             />
-          </div>
+          </FormField>
         </div>
-      </section>
+      </FormSection>
 
-      {/* Actions */}
       <div className="flex justify-end gap-3">
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex h-11 items-center justify-center rounded-lg bg-tuta-green px-6 text-sm font-semibold text-white transition hover:bg-tuta-green-dark disabled:cursor-not-allowed disabled:opacity-60"
+          className={`inline-flex items-center justify-center px-6 ${primaryButtonClassName}`}
         >
           {isSubmitting ? "Đang xử lý..." : "Lưu sản phẩm"}
         </button>

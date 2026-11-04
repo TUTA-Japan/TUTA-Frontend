@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { ProductForm } from "@/components/admin/products/product-form";
 import { ROUTES } from "@/constants/routes";
 
@@ -16,17 +17,11 @@ export default function NewProductPage() {
       </Link>
 
       <div className="mt-6 mb-8">
-        <p className="text-xs font-medium tracking-[0.16em] text-tuta-green uppercase">
-          Sản phẩm
-        </p>
-
-        <h1 className="mt-2 text-2xl font-semibold text-text-primary">
-          Thêm sản phẩm
-        </h1>
-
-        <p className="mt-2 text-sm text-text-secondary">
-          Tạo sản phẩm mới cho website TUTA.
-        </p>
+        <AdminPageHeader
+          eyebrow="Sản phẩm"
+          title="Thêm sản phẩm"
+          description="Tạo sản phẩm mới cho website TUTA."
+        />
       </div>
 
       <ProductForm />

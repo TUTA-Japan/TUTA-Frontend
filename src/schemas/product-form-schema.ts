@@ -1,5 +1,15 @@
 import { z } from "zod";
 
+export const PRODUCT_IMAGE_RULES: {
+  acceptedTypes: readonly string[];
+  maxFileSize: number;
+  maxFiles: number;
+} = {
+  acceptedTypes: ["image/jpeg", "image/png", "image/webp"],
+  maxFileSize: 5 * 1024 * 1024,
+  maxFiles: 10,
+};
+
 export const productFormSchema = z.object({
   nameVi: z.string().trim().min(1, "Vui lòng nhập tên sản phẩm"),
 
@@ -18,10 +28,12 @@ export const productFormSchema = z.object({
 
   category: z.string().trim().min(1, "Vui lòng nhập danh mục"),
 
-  referencePriceVnd: z.number().nonnegative("Giá bán không được nhỏ hơn 0"),
+  referencePriceVnd: z
+    .number({ error: "Vui lòng nhập giá bán" })
+    .nonnegative("Giá bán không được nhỏ hơn 0"),
 
   originalPriceVnd: z
-    .number()
+    .number({ error: "Giá gốc không hợp lệ" })
     .nonnegative("Giá gốc không được nhỏ hơn 0")
     .optional(),
 
@@ -32,9 +44,9 @@ export const productFormSchema = z.object({
   description: z.string().trim().optional(),
 
   images: z
-    .array(z.custom<File>())
+    .array(z.instanceof(File))
     .min(1, "Sản phẩm cần ít nhất một hình ảnh")
-    .max(10, "Tối đa 10 hình ảnh"),
+    .max(PRODUCT_IMAGE_RULES.maxFiles, "Tối đa 10 hình ảnh"),
 
   status: z.enum(["draft", "published"]),
 });
