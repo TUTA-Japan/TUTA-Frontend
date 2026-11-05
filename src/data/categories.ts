@@ -27,4 +27,11 @@ export const categories: Category[] = [
       "Các sản phẩm thuốc và chăm sóc sức khỏe chính hãng từ Nhật Bản.",
     image: thuoc,
   },
+  {
+    id: "4",
+    slug: "gia-dung-me-be",
+    name: "Gia dụng & Mẹ bé",
+    description:
+      "Các sản phẩm gia dụng và chăm sóc mẹ bé tiện ích từ Nhật Bản.",
+  },
 ];
