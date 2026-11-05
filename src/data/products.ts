@@ -891,7 +891,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Nước nhỏ mắt Sante FX Neo Nhật Bản 12ml",
     brand: "Sante",
     category: "Thuốc",
-    referencePriceVnd: 85000,
+    referencePriceVnd: 95000,
     specification: "Lọ 12ml",
     images: [
       "https://images.tutatuta.vn/image/products/sante-fx-neo/1.png",
@@ -1386,6 +1386,235 @@ Trong mỗi 2 viên dùng hằng ngày:
 - **Tùy chỉnh:** Có thể tán nhẹ theo hướng chếch về phía thái dương nếu muốn tạo hiệu ứng khuôn mặt thanh thoát hơn.
 
 - **Lưu ý:** Nên bắt đầu với lượng phấn nhỏ và tăng dần để dễ kiểm soát độ đậm của màu.
+`,
+  },
+  {
+    id: "28",
+    slug: "kem-cham-mun-che-khuyet-diem-kose-acne-care-cover-cream-15g",
+    nameVi:
+      "Kem chấm mụn che khuyết điểm Kosé Cosmeport Acne Care & Cover Cream 15g",
+    brand: "Kosé Cosmeport",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 297000,
+    specification: "Tuýp 15g",
+    images: [
+      "https://images.tutatuta.vn/image/products/kose-cosmeport/1.png",
+      "https://images.tutatuta.vn/image/products/kose-cosmeport/2.png",
+      "https://images.tutatuta.vn/image/products/kose-cosmeport/3.png",
+      "https://images.tutatuta.vn/image/products/kose-cosmeport/4.png",
+      "https://images.tutatuta.vn/image/products/kose-cosmeport/5.png",
+      "https://images.tutatuta.vn/image/products/kose-cosmeport/6.png",
+    ],
+    shortDescription:
+      "Kem chấm mụn Kosé Cosmeport 2 trong 1 vừa hỗ trợ làm dịu nốt mụn sưng đỏ, vừa che khuyết điểm với tone Natural Beige tự nhiên, giúp che phủ nốt mụn và vết thâm với kết cấu mỏng nhẹ, hạn chế cảm giác bí da.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Chăm sóc mụn và che khuyết điểm 2 trong 1:** Công thức kết hợp hoạt chất hỗ trợ kháng viêm, kháng khuẩn giúp làm dịu nốt mụn sưng đỏ, đồng thời che mờ vết thâm ngay khi thoa.
+
+- **Độ che phủ tự nhiên với tone Natural Beige:** Màu be tự nhiên dễ hòa vào nhiều tông da châu Á, che phủ gọn vùng da ửng đỏ quanh nốt mụn mà không để lại vệt trắng hay cảm giác dày cộm.
+
+- **Kết cấu mỏng nhẹ, hạn chế bí da:** Kem bám êm trên vùng da mụn, hạn chế cảm giác nặng mặt và phù hợp dùng trước khi trang điểm.
+
+- **Bổ sung dưỡng chất làm dịu da:** Chứa dẫn xuất Vitamin C, Panthenol, chiết xuất rau má (CICA) và Niacinamide, hỗ trợ làm dịu và phục hồi vùng da đang gặp vấn đề về mụn.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Kosé Cosmeport - Clear Turn.
+
+- **Tên sản phẩm:** Gomenne Suhada Kinishinai Acne Care & Cover Cream.
+
+- **Quy cách:** Tuýp 15g.
+
+- **Tone màu:** Natural Beige (tone be tự nhiên).
+
+- **Phù hợp với:** Da có mụn sưng viêm, thâm mụn hoặc da dễ nổi mụn khi trang điểm.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Thời điểm dùng:** Sử dụng ở bước cuối của chu trình dưỡng da hoặc trước khi trang điểm.
+
+- **Cách dùng:** Lấy một lượng kem vừa đủ ra đầu ngón tay, chấm nhẹ lên nốt mụn hoặc vết thâm cần che phủ, tránh chà xát mạnh.
+
+- **Dặm lại:** Có thể dặm lại trong ngày khi cần.
+`,
+  },
+  {
+    id: "29",
+    slug: "highlight-che-khuyet-diem-cezanne-bright-colorcealer-spf31-9g",
+    nameVi:
+      "Highlight che khuyết điểm Cezanne Bright Colorcealer dạng lỏng đẩy sáng tự nhiên SPF31 PA+++ 9g",
+    brand: "Cezanne",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 210000,
+    specification: "9g",
+    images: [
+      "https://images.tutatuta.vn/image/products/cezanne-bright-colorcealer%20/1.png",
+      "https://images.tutatuta.vn/image/products/cezanne-bright-colorcealer%20/2.png",
+      "https://images.tutatuta.vn/image/products/cezanne-bright-colorcealer%20/3.png",
+      "https://images.tutatuta.vn/image/products/cezanne-bright-colorcealer%20/4.png",
+      "https://images.tutatuta.vn/image/products/cezanne-bright-colorcealer%20/5.png",
+      "https://images.tutatuta.vn/image/products/cezanne-bright-colorcealer%20/6.png",
+    ],
+    shortDescription:
+      "Che khuyết điểm kiêm bắt sáng dạng lỏng Cezanne Bright Colorcealer với kết cấu serum mỏng nhẹ và chỉ số SPF31 PA+++, hỗ trợ cân bằng sắc tố, làm sáng vùng da xỉn màu và tạo điểm nhấn tự nhiên, hạn chế dày cộm hay đọng vào rãnh nhăn.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hiệu chỉnh sắc da và đẩy sáng tự nhiên:** Hỗ trợ trung hòa các vùng da không đều màu như thâm sạm, ửng đỏ, đồng thời tạo hiệu ứng bắt sáng trong trẻo và có chiều sâu cho gương mặt.
+
+- **Kết cấu serum mỏng nhẹ:** Thấm nhanh và hòa mịn vào da, hạn chế cảm giác bí da và tình trạng mốc nền (cakey).
+
+- **Chống nắng và bền màu:** Chỉ số SPF31 PA+++ hỗ trợ bảo vệ da trước tia UV, khả năng kháng nước nhẹ giúp lớp trang điểm bền màu hơn trong ngày.
+
+- **Bổ sung dưỡng chất giữ ẩm:** Chứa Squalane, Hyaluronic Acid và Ceramide, hỗ trợ giữ ẩm để vùng da quanh mắt và khóe miệng luôn mềm mượt.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Cezanne.
+
+- **Tên sản phẩm:** Bright Colorcealer.
+
+- **Trọng lượng:** 9g.
+
+- **Loại sản phẩm:** Che khuyết điểm kiêm bắt sáng dạng lỏng.
+
+- **Chỉ số chống nắng:** SPF31 / PA+++.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Cách dùng:** Chấm nhẹ một lượng kem vừa đủ lên vùng da cần làm sáng hoặc hiệu chỉnh sắc da như vùng chữ T, quầng thâm mắt, khóe mũi.
+
+- **Tán đều:** Dùng ngón tay hoặc mút vỗ nhẹ để kem hòa đều vào da trước khi dùng kem nền hoặc phấn phủ.
+`,
+  },
+  {
+    id: "30",
+    slug: "vong-deo-chong-muoi-kincho-30-chiec",
+    nameVi: "Vòng đeo chống muỗi, đuổi côn trùng Kincho Nhật Bản 30 chiếc",
+    brand: "Kincho",
+    category: "Gia dụng & Mẹ bé",
+    referencePriceVnd: 218000,
+    specification: "Túi zip 30 chiếc",
+    images: [
+      "https://images.tutatuta.vn/image/products/duoi-muoi-silicon/1.png",
+      "https://images.tutatuta.vn/image/products/duoi-muoi-silicon/2.png",
+      "https://images.tutatuta.vn/image/products/duoi-muoi-silicon/3.png",
+      "https://images.tutatuta.vn/image/products/duoi-muoi-silicon/4.png",
+    ],
+    shortDescription:
+      "Vòng đeo đuổi muỗi Kincho bằng silicon mềm tẩm tinh dầu thực vật, hỗ trợ xua muỗi và côn trùng đến 12 giờ, kháng nước, giúp bảo vệ bé khi đi học, đi chơi ngoài trời mà không cần xịt hay bôi trực tiếp lên da.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Xua muỗi bằng tinh dầu thực vật:** Cơ chế xua đuổi dựa trên hương thơm từ tinh dầu thực vật, không cần xịt hay bôi trực tiếp lên da, phù hợp với trẻ nhỏ và người có làn da nhạy cảm.
+
+- **Tác dụng kéo dài đến 12 giờ:** Mỗi chiếc vòng hỗ trợ xua muỗi, dĩn và ruồi nhỏ trong suốt cả ngày, giúp bảo vệ bé khi vận động ngoài trời.
+
+- **Chất liệu silicon mềm dẻo, kháng nước:** Vòng co giãn tốt, êm tay và hạn chế gây hằn da; khả năng kháng nước giúp hạn chế suy giảm mùi hương khi dính nước.
+
+- **Thiết kế hình thú ngộ nghĩnh:** Các hình dập dễ thương với màu sắc tươi sáng giúp bé hứng thú đeo như một món phụ kiện hằng ngày.
+
+- **Túi zip tiện bảo quản:** Túi zip khóa kín giúp giữ mùi hương cho các vòng còn lại sau mỗi lần mở.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Kincho (Dainihon Jochugiku).
+
+- **Quy cách:** Túi zip 30 chiếc.
+
+- **Chất liệu:** Silicon tẩm tinh dầu hương thơm tự nhiên.
+
+- **Đối tượng phù hợp:** Trẻ em từ giai đoạn biết bò hoặc đi học; người lớn khi dã ngoại, du lịch hoặc chơi thể thao ngoài trời.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Đeo vòng:** Mở khóa zip, lấy vòng và kéo nhẹ để đeo vào cổ tay hoặc cổ chân của bé. Có thể đeo 2 - 4 chiếc cùng lúc ở cả tay và chân để tăng phạm vi bảo vệ.
+
+- **Cách dùng khác:** Có thể móc vòng vào quai cặp sách, xe đẩy hoặc treo ở đầu giường của bé.
+
+- **Bảo quản:** Khóa kín miệng túi zip sau khi lấy vòng để giữ hương cho các vòng còn lại.
+`,
+  },
+  {
+    id: "31",
+    slug: "mascara-majolica-majorca-lash-expander-neo-lash-6g",
+    nameVi: "Mascara thế hệ mới Majolica Majorca Lash Expander Neo Lash 6g",
+    brand: "Majolica Majorca",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 460000,
+    specification: "6g",
+    images: [
+      "https://images.tutatuta.vn/image/products/mascara-shiseido/1.png",
+      "https://images.tutatuta.vn/image/products/mascara-shiseido/2.png",
+      "https://images.tutatuta.vn/image/products/mascara-shiseido/3.png",
+      "https://images.tutatuta.vn/image/products/mascara-shiseido/4.png",
+      "https://images.tutatuta.vn/image/products/mascara-shiseido/5.png",
+    ],
+    shortDescription:
+      "Mascara Majolica Majorca Lash Expander Neo Lash hỗ trợ uốn cong và giữ nếp mi trong ngày, giúp mi dài và tơi tự nhiên, kháng mồ hôi và bã nhờn với công nghệ NEO Waterproof nhưng vẫn dễ làm sạch bằng nước ấm.",
+    description: `
+**Ưu điểm nổi bật**
+
+- **Hỗ trợ giữ nếp mi cong trong ngày:** Công nghệ định hình nếp mi giúp giữ dáng mi hướng lên, hạn chế cảm giác nặng mi hay sụp nếp sau nhiều giờ.
+
+- **Kéo dài và tơi mi tự nhiên:** Các sợi fiber siêu mảnh bao phủ từng sợi mi từ gốc đến ngọn, tạo hiệu ứng mi dài thanh lịch và hạn chế vón cục, bết dính.
+
+- **Hạn chế lem trôi với NEO Waterproof:** Hỗ trợ kháng mồ hôi, nước mắt và bã nhờn, hạn chế tình trạng lem màu xuống vùng bọng mắt.
+
+- **Dễ làm sạch bằng nước ấm:** Chỉ cần làm ướt mi bằng nước ấm để lớp mascara mềm ra và trôi nhẹ nhàng, hạn chế chà xát mạnh gây gãy rụng mi.
+
+- **Đầu cọ cong Moon Slim:** Thân cọ mảnh, ôm theo viền mắt, giúp dễ chuốt cả những sợi mi ngắn ở khóe mắt và hàng mi dưới.
+
+---
+
+**Bảng màu**
+
+- **BK909 Dark Black** (無重力 - Không trọng lực): Sắc đen tuyền tự nhiên, tạo chiều sâu và giúp đôi mắt trông sắc nét hơn.
+
+- **BR606 Dark Brown** (進化論 - Thuyết tiến hóa): Sắc nâu đen mềm mại, mang lại ánh nhìn trong trẻo, dịu dàng, phù hợp với phong cách trang điểm nhẹ nhàng hằng ngày.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản.
+
+- **Thương hiệu:** Shiseido - Majolica Majorca.
+
+- **Tên sản phẩm:** Lash Expander Neo Lash.
+
+- **Khối lượng:** 6g.
+
+- **Đặc tính:** NEO Waterproof (kháng nước, bền màu) và làm sạch bằng nước ấm.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Bước 1:** Đặt mặt cong của đầu cọ sát chân mi trên, chuốt từ gốc lên ngọn theo chuyển động nâng mi.
+
+- **Bước 2:** Dùng đầu nhỏ của cọ để chuốt kỹ những sợi mi ngắn ở khóe mắt và hàng mi dưới.
+
+- **Tẩy trang:** Làm ướt mi bằng nước ấm trong khoảng 5 - 10 giây để mascara mềm ra, sau đó vuốt nhẹ xuôi theo chiều mi để làm sạch.
 `,
   },
 ];
