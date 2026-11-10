@@ -63,10 +63,9 @@ export type ProductPage = {
   totalPages: number;
 };
 
-export async function getProductPage(
-  requestedPage: number,
-): Promise<ProductPage> {
-  const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);
+/** Invalid pages fall back to 1; pages past the end clamp to the last page. */
+function paginateProducts(list: Product[], requestedPage: number): ProductPage {
+  const totalPages = Math.ceil(list.length / PRODUCTS_PER_PAGE);
   const currentPage =
     Number.isInteger(requestedPage) && requestedPage > 0
       ? Math.min(requestedPage, Math.max(totalPages, 1))
@@ -74,9 +73,53 @@ export async function getProductPage(
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
 
   return {
-    items: products.slice(startIndex, startIndex + PRODUCTS_PER_PAGE),
+    items: list.slice(startIndex, startIndex + PRODUCTS_PER_PAGE),
     currentPage,
     totalPages,
+  };
+}
+
+export async function getProductPage(
+  requestedPage: number,
+): Promise<ProductPage> {
+  return paginateProducts(products, requestedPage);
+}
+
+export type ProductSearchResult = ProductPage & {
+  /** Number of matching products across all pages. */
+  total: number;
+};
+
+/** Longest accepted search query. */
+export const SEARCH_QUERY_MAX_LENGTH = 200;
+
+/** Lowercase and strip Vietnamese accents (đ → d) for matching. */
+function normalizeSearchText(value: string): string {
+  return value
+    .replace(/[đĐ]/g, (letter) => (letter === "đ" ? "d" : "D"))
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase();
+}
+
+/**
+ * UC-P07: match nameVi, nameJp, and brand, ignoring case and Vietnamese
+ * accents, so "vien uong" finds "Viên uống".
+ */
+export async function searchProducts(
+  query: string,
+  requestedPage: number,
+): Promise<ProductSearchResult> {
+  const needle = normalizeSearchText(query.trim());
+  const matches = products.filter((product) =>
+    normalizeSearchText(
+      `${product.nameVi} ${product.nameJp ?? ""} ${product.brand}`,
+    ).includes(needle),
+  );
+
+  return {
+    ...paginateProducts(matches, requestedPage),
+    total: matches.length,
   };
 }
 

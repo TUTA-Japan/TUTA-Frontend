@@ -5,18 +5,28 @@ import { ROUTES } from "@/constants/routes";
 type ProductPaginationProps = {
   currentPage: number;
   totalPages: number;
+  /** Page the links point to. Defaults to the product listing. */
+  basePath?: string;
+  /** Query params kept on every page link (e.g. `{ q }` for search). */
+  searchParams?: Record<string, string>;
 };
 
 export function ProductPagination({
   currentPage,
   totalPages,
+  basePath = ROUTES.products,
+  searchParams,
 }: ProductPaginationProps) {
   if (totalPages <= 1) {
     return null;
   }
 
-  const getPageHref = (page: number) =>
-    page === 1 ? ROUTES.products : `${ROUTES.products}?page=${page}`;
+  const getPageHref = (page: number) => {
+    const params = new URLSearchParams(searchParams);
+    if (page > 1) params.set("page", String(page));
+    const query = params.toString();
+    return query ? `${basePath}?${query}` : basePath;
+  };
 
   return (
     <nav
