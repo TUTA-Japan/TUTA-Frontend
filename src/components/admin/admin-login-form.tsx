@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,7 +11,7 @@ import {
   primaryButtonClassName,
 } from "@/components/admin/form-primitives";
 import { ROUTES } from "@/constants/routes";
-import { login } from "@/lib/api/admin";
+import { getCurrentAdmin, login } from "@/lib/api/admin";
 import { isApiError } from "@/lib/api/errors";
 import {
   adminLoginSchema,
@@ -33,8 +34,38 @@ function getLoginErrorMessage(error: unknown): string {
   return "Đã có lỗi xảy ra. Vui lòng thử lại.";
 }
 
+/**
+ * Where to go after login: the `next` query param set by the session guard,
+ * accepted only for paths inside the admin area (no open redirect).
+ */
+function getRedirectTarget(): string {
+  const next = new URLSearchParams(window.location.search).get("next");
+  const isAdminPath =
+    next !== null &&
+    /^\/admin(?:[/?#]|$)/.test(next) &&
+    !next.startsWith(ROUTES.admin.login);
+  return isAdminPath ? next : ROUTES.admin.dashboard;
+}
+
 export function AdminLoginForm() {
   const router = useRouter();
+
+  // Already logged in (e.g. opened /admin/login directly): skip the form.
+  useEffect(() => {
+    let active = true;
+    getCurrentAdmin().then(
+      (admin) => {
+        if (active && admin) router.replace(getRedirectTarget());
+      },
+      () => {
+        // Backend unreachable: keep the form; submitting reports the error.
+      },
+    );
+    return () => {
+      active = false;
+    };
+  }, [router]);
+
   const {
     register,
     handleSubmit,
@@ -52,7 +83,7 @@ export function AdminLoginForm() {
   async function onSubmit({ email, password }: AdminLoginFormValues) {
     try {
       await login(email, password);
-      router.replace(ROUTES.admin.dashboard);
+      router.replace(getRedirectTarget());
     } catch (error) {
       setError("root", { message: getLoginErrorMessage(error) });
     }

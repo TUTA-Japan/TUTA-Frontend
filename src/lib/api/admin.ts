@@ -25,8 +25,11 @@ import type {
  * - Login sets an HTTP-only session cookie, so every call uses
  *   `credentials: "include"`.
  * - Mutations must echo the CSRF token in `X-CSRF-Token`. The token comes from
- *   the login response; it is kept in memory + sessionStorage (to survive
- *   reloads), falling back to the readable `tuta_admin_csrf` cookie.
+ *   the login response; it is kept in memory + localStorage (shared by tabs,
+ *   survives reloads), falling back to the readable `tuta_admin_csrf` cookie,
+ *   which is only visible when the API shares the frontend's host.
+ * - A 401 on an authenticated call means the session ended: listeners
+ *   registered with `onSessionExpired` are notified (to redirect to login).
  */
 
 const CSRF_COOKIE = "tuta_admin_csrf";
@@ -54,7 +57,7 @@ function readCookie(name: string): string | null {
 function getCsrfToken(): string | null {
   if (csrfToken) return csrfToken;
   try {
-    csrfToken = sessionStorage.getItem(CSRF_STORAGE_KEY);
+    csrfToken = localStorage.getItem(CSRF_STORAGE_KEY);
   } catch {
     // Storage can be unavailable (private mode, blocked site data).
   }
@@ -65,18 +68,43 @@ function getCsrfToken(): string | null {
 function setCsrfToken(token: string | null): void {
   csrfToken = token;
   try {
-    if (token) sessionStorage.setItem(CSRF_STORAGE_KEY, token);
-    else sessionStorage.removeItem(CSRF_STORAGE_KEY);
+    if (token) localStorage.setItem(CSRF_STORAGE_KEY, token);
+    else localStorage.removeItem(CSRF_STORAGE_KEY);
   } catch {
     // Memory copy is still used for this page.
   }
 }
 
-type AdminRequestInit = Omit<RequestInit, "body"> & { json?: unknown };
+const sessionExpiredListeners = new Set<() => void>();
+
+/**
+ * Subscribe to "the admin session ended" (an authenticated call got 401).
+ * Returns the unsubscribe function, so it can be returned from `useEffect`.
+ */
+export function onSessionExpired(listener: () => void): () => void {
+  sessionExpiredListeners.add(listener);
+  return () => {
+    sessionExpiredListeners.delete(listener);
+  };
+}
+
+type AdminRequestInit = Omit<RequestInit, "body"> & {
+  json?: unknown;
+  /**
+   * Whether a 401 means "the session expired". False for login (401 = wrong
+   * credentials) and for calls whose caller handles 401 itself.
+   */
+  notifySessionExpired?: boolean;
+};
 
 async function adminRequest<T>(
   path: string,
-  { json, headers: initHeaders, ...init }: AdminRequestInit = {},
+  {
+    json,
+    headers: initHeaders,
+    notifySessionExpired = true,
+    ...init
+  }: AdminRequestInit = {},
 ): Promise<T> {
   const method = (init.method ?? "GET").toUpperCase();
   const headers = new Headers(initHeaders);
@@ -96,8 +124,13 @@ async function adminRequest<T>(
       cache: "no-store",
     });
   } catch (error) {
-    // Session is gone: drop the stale CSRF token too.
-    if (isApiError(error, "UNAUTHENTICATED")) setCsrfToken(null);
+    if (isApiError(error, "UNAUTHENTICATED")) {
+      // Session is gone: drop the stale CSRF token too.
+      setCsrfToken(null);
+      if (notifySessionExpired) {
+        sessionExpiredListeners.forEach((listener) => listener());
+      }
+    }
     throw error;
   }
 }
@@ -112,14 +145,24 @@ export async function login(
   const result = await adminRequest<LoginResultDto>("/admin/auth/login", {
     method: "POST",
     json: { email, password },
+    notifySessionExpired: false,
   });
   setCsrfToken(result.csrfToken);
   return result;
 }
 
+/**
+ * UC-A02: revoke the session. An already-ended session (401) counts as
+ * logged out. Other failures (e.g. CSRF_REJECTED, network) are re-thrown.
+ */
 export async function logout(): Promise<void> {
   try {
-    await adminRequest<void>("/admin/auth/logout", { method: "POST" });
+    await adminRequest<void>("/admin/auth/logout", {
+      method: "POST",
+      notifySessionExpired: false,
+    });
+  } catch (error) {
+    if (!isApiError(error, "UNAUTHENTICATED")) throw error;
   } finally {
     setCsrfToken(null);
   }
@@ -130,6 +173,7 @@ export async function getCurrentAdmin(): Promise<AdminUserDto | null> {
   try {
     const { admin } = await adminRequest<{ admin: AdminUserDto }>(
       "/admin/auth/me",
+      { notifySessionExpired: false },
     );
     return admin;
   } catch (error) {
