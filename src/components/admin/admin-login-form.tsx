@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -8,15 +9,36 @@ import {
   inputClassName,
   primaryButtonClassName,
 } from "@/components/admin/form-primitives";
+import { ROUTES } from "@/constants/routes";
+import { login } from "@/lib/api/admin";
+import { isApiError } from "@/lib/api/errors";
 import {
   adminLoginSchema,
   type AdminLoginFormValues,
 } from "@/schemas/admin-login-schema";
 
+function getLoginErrorMessage(error: unknown): string {
+  if (isApiError(error, "UNAUTHENTICATED")) {
+    return "Email hoặc mật khẩu không đúng.";
+  }
+  if (isApiError(error, "RATE_LIMITED")) {
+    return "Bạn đã thử đăng nhập quá nhiều lần. Vui lòng thử lại sau 15 phút.";
+  }
+  if (isApiError(error, "VALIDATION_ERROR")) {
+    return "Thông tin đăng nhập không hợp lệ.";
+  }
+  if (isApiError(error, "NETWORK_ERROR")) {
+    return "Không thể kết nối tới máy chủ. Vui lòng thử lại.";
+  }
+  return "Đã có lỗi xảy ra. Vui lòng thử lại.";
+}
+
 export function AdminLoginForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm<AdminLoginFormValues>({
     resolver: zodResolver(adminLoginSchema),
@@ -26,8 +48,14 @@ export function AdminLoginForm() {
     },
   });
 
-  async function onSubmit() {
-    // TODO: Send credentials to the auth API. Never log them.
+  // Never log the submitted credentials.
+  async function onSubmit({ email, password }: AdminLoginFormValues) {
+    try {
+      await login(email, password);
+      router.replace(ROUTES.admin.dashboard);
+    } catch (error) {
+      setError("root", { message: getLoginErrorMessage(error) });
+    }
   }
 
   return (
@@ -51,6 +79,12 @@ export function AdminLoginForm() {
           className={inputClassName}
         />
       </FormField>
+
+      {errors.root?.message && (
+        <p role="alert" className="text-sm text-red-600">
+          {errors.root.message}
+        </p>
+      )}
 
       <button
         type="submit"
