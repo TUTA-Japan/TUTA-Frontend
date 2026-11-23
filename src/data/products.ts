@@ -1617,4 +1617,56 @@ Trong mỗi 2 viên dùng hằng ngày:
 - **Tẩy trang:** Làm ướt mi bằng nước ấm trong khoảng 5 - 10 giây để mascara mềm ra, sau đó vuốt nhẹ xuôi theo chiều mi để làm sạch.
 `,
   },
+  {
+    id: "32",
+    slug: "vien-uong-eisai-chocola-bb-plus-nhat-ban-60-vien",
+    nameVi:
+      "Viên Uống Giảm Mụn, Nhiệt Miệng & Phục Hồi Da Eisai Chocola BB Plus Nhật Bản (60 viên)",
+    brand: "Eisai",
+    category: "Thuốc",
+    referencePriceVnd: 390000,
+    specification: "Lọ 60 viên",
+    images: [
+      "https://images.tutatuta.vn/image/products/Eisai%20Chocola%20BB%20Plus/1.png",
+      "https://images.tutatuta.vn/image/products/Eisai%20Chocola%20BB%20Plus/2.png",
+      "https://images.tutatuta.vn/image/products/Eisai%20Chocola%20BB%20Plus/3.png",
+    ],
+    shortDescription:
+      "Viên uống Eisai Chocola BB Plus bổ sung Vitamin B2 dạng hoạt tính cùng 4 loại Vitamin nhóm B, hỗ trợ cải thiện mụn trứng cá, da thô ráp, nhiệt miệng và phục hồi thể lực khi cơ thể mệt mỏi.",
+    description: `
+Sản phẩm chăm sóc sức khỏe và làn da nổi tiếng tại Nhật Bản. Với hàm lượng cao Vitamin B2 dạng hoạt tính dễ hấp thu cùng 4 loại Vitamin nhóm B thiết yếu, sản phẩm hỗ trợ thúc đẩy tái tạo tế bào da, cải thiện tình trạng mụn trứng cá, da sần sùi thô ráp, nhiệt miệng và phục hồi thể lực khi cơ thể mệt mỏi.
+
+---
+
+**Ưu điểm nổi bật**
+
+- **Cải thiện mụn & da thô ráp:** Vitamin B2 hoạt tính giúp điều tiết bã nhờn, thúc đẩy quá trình trao đổi chất của tế bào da, hỗ trợ giảm mụn trứng cá và làm mịn bề mặt da.
+
+- **Làm dịu nhiệt miệng, viêm niêm mạc:** Hỗ trợ cải thiện nhanh các tình trạng nhiệt miệng, lở miệng, khô nứt khóe môi và viêm lưỡi do thiếu hụt vitamin.
+
+- **Chuyển hóa năng lượng & giảm mệt mỏi:** Kết hợp 5 loại Vitamin nhóm B (B2, B6, B1, Nicotinamide, Calcium Pantothenate) giúp chuyển hóa dưỡng chất thành năng lượng, giảm mệt mỏi thể chất.
+
+- **Viên nén nhỏ dễ uống:** Thiết kế viên nhỏ gọn, dễ nuốt, phù hợp bổ sung mỗi ngày.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản (Hãng dược phẩm Eisai).
+
+- **Quy cách:** Lọ 60 viên (Dùng trong 30 ngày).
+
+- **Phân loại:** Dược phẩm nhóm 3 nội địa Nhật (第3類医薬品).
+
+- **Đối tượng:** Người từ 15 tuổi trở lên gặp tình trạng mụn trứng cá, da thô ráp, hay bị nhiệt miệng hoặc thường xuyên mệt mỏi.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- **Người lớn (từ 15 tuổi trở lên):** Uống 1 viên/lần, ngày uống 2 lần sau bữa ăn sáng và tối với nước lọc hoặc nước ấm (không ngậm vì viên có vị đắng nhẹ).
+
+- **Lưu ý:** Không dùng cho trẻ dưới 15 tuổi. Nước tiểu có thể có màu vàng tươi trong quá trình sử dụng do đào thải lượng Vitamin B2 dư thừa (hoàn toàn bình thường).
+`,
+  },
 ];

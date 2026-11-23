@@ -2,9 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 
+import { FEATURED_BRANDS } from "@/constants/brands";
 import { ROUTES } from "@/constants/routes";
 import { SITE } from "@/constants/site";
 import { HomeHero } from "@/components/home/home-hero";
+import { LogoLoop, type LogoLoopItem } from "@/components/logo-loop";
 import { ProductGrid } from "@/components/products/product-grid";
 import { getFeaturedProducts } from "@/lib/catalog";
 
@@ -32,7 +34,11 @@ const selectionPrinciples = [
   },
 ];
 
-const featuredBrands = ["Rohto", "Hada Labo", "MUJI", "Kao", "Pilot", "Zebra"];
+const brandLoopItems: LogoLoopItem[] = FEATURED_BRANDS.map((brand) => ({
+  label: brand.name,
+  href: ROUTES.searchFor(brand.name),
+  logo: brand.logo,
+}));
 
 export default async function Home() {
   const featuredProducts = await getFeaturedProducts();
@@ -133,16 +139,12 @@ export default async function Home() {
             </p>
           </div>
 
-          <ul className="mt-10 grid grid-cols-2 border-t border-l border-tuta-green/25 sm:grid-cols-3 lg:grid-cols-6">
-            {featuredBrands.map((brand) => (
-              <li
-                key={brand}
-                className="flex min-h-24 items-center justify-center border-r border-b border-tuta-green/25 px-4 text-center text-sm font-semibold tracking-wide text-tuta-green-dark md:min-h-28"
-              >
-                {brand}
-              </li>
-            ))}
-          </ul>
+          <LogoLoop
+            items={brandLoopItems}
+            ariaLabel="Thương hiệu có tại TUTA"
+            fadeColor="var(--tuta-green-light)"
+            className="mt-10"
+          />
         </div>
       </section>
 
