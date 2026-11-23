@@ -26,6 +26,7 @@ export const FEATURED_BRANDS: readonly Brand[] = [
   { name: "ORIHIRO" },
   { name: "Sante" },
   { name: "Rohto" },
+  { name: "Eisai" },
   { name: "Cezanne" },
   { name: "Curél" },
   { name: "Kosé Cosmeport" },
