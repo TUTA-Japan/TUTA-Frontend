@@ -8,6 +8,7 @@ export const ROUTES = {
 
   productDetail: (slug: string) => `/products/${slug}`,
   categoryDetail: (slug: string) => `/categories/${slug}`,
+  searchFor: (query: string) => `/search?${new URLSearchParams({ q: query })}`,
 
   admin: {
     dashboard: "/admin",
