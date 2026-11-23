@@ -17,16 +17,55 @@ export function parseApiResponse<T>(status: number, body: unknown): T {
   return (body as { data: T }).data;
 }
 
+/** Longest wait for a read (GET) request, including reading the body. */
+export const API_READ_TIMEOUT_MS = 10_000;
+
 /**
  * Thin wrapper over the native `fetch`.
  *
  * Native `fetch` is used on purpose: Next.js caches, tags, revalidates, and
  * de-duplicates `fetch` calls, which a third-party HTTP client would bypass.
+ *
+ * GET requests reject with `TIMEOUT` after `timeoutMs` (default
+ * `API_READ_TIMEOUT_MS`), so an unresponsive backend fails a render or build
+ * quickly instead of hanging it. Other methods have no default timeout: giving
+ * up on a write the server may still complete invites a duplicate retry.
+ *
+ * The timeout races the request instead of passing an `AbortSignal`, because a
+ * signal opts the `fetch` out of Next.js request memoization.
  */
-export async function apiRequest<T>(
+export function apiRequest<T>(
   url: string,
   init?: RequestInit,
+  timeoutMs: number | undefined = isRead(init)
+    ? API_READ_TIMEOUT_MS
+    : undefined,
 ): Promise<T> {
+  const request = send<T>(url, init);
+  if (timeoutMs === undefined) return request;
+
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(
+      () =>
+        reject(
+          new ApiError(
+            0,
+            "TIMEOUT",
+            `Máy chủ không phản hồi sau ${timeoutMs / 1000} giây`,
+          ),
+        ),
+      timeoutMs,
+    );
+  });
+  return Promise.race([request, timeout]).finally(() => clearTimeout(timer));
+}
+
+function isRead(init?: RequestInit): boolean {
+  return (init?.method ?? "GET").toUpperCase() === "GET";
+}
+
+async function send<T>(url: string, init?: RequestInit): Promise<T> {
   let response: Response;
   try {
     response = await fetch(url, init);

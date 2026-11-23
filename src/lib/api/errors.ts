@@ -6,7 +6,8 @@ export type ApiFieldErrors = Record<string, string[]>;
  * `code` mirrors the backend `error.code` (e.g. VALIDATION_ERROR, SLUG_TAKEN,
  * PRODUCT_NOT_FOUND, RATE_LIMITED, CSRF_REJECTED, UNAUTHENTICATED).
  * `fields` holds per-field messages for 422 responses, keyed by request field.
- * Network failures use `status: 0` and `code: "NETWORK_ERROR"`.
+ * Network failures use `status: 0` and `code: "NETWORK_ERROR"`; reads that
+ * exceed their time limit use `status: 0` and `code: "TIMEOUT"`.
  */
 export class ApiError extends Error {
   constructor(
