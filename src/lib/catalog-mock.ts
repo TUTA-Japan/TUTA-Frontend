@@ -21,6 +21,15 @@ const FEATURED_PRODUCT_SLUGS = [
   "kem-duong-dem-transino-whitening-repair-cream-ex-35g",
 ] as const;
 
+/**
+ * Newest first, like the backend (`createdAt DESC`). Mock products have no
+ * creation date, but ids are assigned in the order products are added, so a
+ * higher id means a newer product. Every public list reads from this order.
+ */
+const productsNewestFirst = [...products].sort(
+  (a, b) => Number(b.id) - Number(a.id),
+);
+
 const productsBySlug = new Map(
   products.map((product) => [product.slug, product]),
 );
@@ -67,7 +76,7 @@ export const mockCatalog: CatalogSource = {
   },
 
   async getProductSlugs() {
-    return products.map((product) => product.slug);
+    return productsNewestFirst.map((product) => product.slug);
   },
 
   async getCategorySlugs() {
@@ -81,16 +90,18 @@ export const mockCatalog: CatalogSource = {
   },
 
   async getProductsByCategory(category) {
-    return products.filter((product) => product.category === category.name);
+    return productsNewestFirst.filter(
+      (product) => product.category === category.name,
+    );
   },
 
   async getProductPage(requestedPage) {
-    return paginateProducts(products, requestedPage);
+    return paginateProducts(productsNewestFirst, requestedPage);
   },
 
   async searchProducts(query, requestedPage) {
     const needle = normalizeSearchText(query.trim());
-    const matches = products.filter((product) =>
+    const matches = productsNewestFirst.filter((product) =>
       normalizeSearchText(
         `${product.nameVi} ${product.nameJp ?? ""} ${product.brand}`,
       ).includes(needle),
@@ -105,7 +116,8 @@ export const mockCatalog: CatalogSource = {
     const sameCategory: Product[] = [];
     const others: Product[] = [];
 
-    for (const item of products) {
+    // Same category first, then others, each newest first (as the backend).
+    for (const item of productsNewestFirst) {
       if (item.id === product.id) continue;
 
       if (item.category === product.category) {
