@@ -238,11 +238,20 @@ export function LogoLoop({
   );
 }
 
+const LOGO_HEIGHT = { base: 28, md: 36 };
+
+function logoSizes(logo: StaticImageData): string {
+  const aspect = logo.width / logo.height;
+  const width = (height: number) => `${Math.ceil(height * aspect)}px`;
+  return `(min-width: 768px) ${width(LOGO_HEIGHT.md)}, ${width(LOGO_HEIGHT.base)}`;
+}
+
 function LoopItem({ item }: { item: LogoLoopItem }) {
   const content = item.logo ? (
     <Image
       src={item.logo}
       alt={item.label}
+      sizes={logoSizes(item.logo)}
       className="h-7 w-auto select-none md:h-9"
       draggable={false}
     />
