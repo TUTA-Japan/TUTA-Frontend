@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { JsonLd } from "@/components/json-ld";
 import { ProductDetail } from "@/components/products/product-detail";
 import { RelatedProducts } from "@/components/products/related-products";
 import { ROUTES } from "@/constants/routes";
@@ -10,6 +11,7 @@ import {
   getRelatedProducts,
 } from "@/lib/catalog";
 import { buildPageMetadata } from "@/lib/metadata";
+import { productStructuredData } from "@/lib/structured-data";
 
 type ProductDetailPageProps = {
   params: Promise<{
@@ -54,6 +56,7 @@ export default async function ProductDetailPage({
 
   return (
     <main>
+      <JsonLd data={productStructuredData(product)} />
       <ProductDetail product={product} />
       <RelatedProducts products={relatedProducts} />
     </main>

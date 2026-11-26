@@ -8,6 +8,10 @@ export const SITE_OPEN_GRAPH = {
   type: "website",
 } satisfies Metadata["openGraph"];
 
+export function absoluteUrl(path: string): string {
+  return new URL(path, SITE.url).toString();
+}
+
 type PageMetadataInput = {
   title: string;
   description?: string;
@@ -15,8 +19,6 @@ type PageMetadataInput = {
   image?: string;
 };
 
-// openGraph and twitter are merged shallowly across segments, so pages that
-// override them must restate the shared fields.
 export function buildPageMetadata({
   title,
   description = SITE.description,
@@ -28,6 +30,7 @@ export function buildPageMetadata({
   return {
     title,
     description,
+    alternates: { canonical: path },
     openGraph: { ...SITE_OPEN_GRAPH, title, description, url: path, images },
     twitter: { card: "summary_large_image", title, description, images },
   };

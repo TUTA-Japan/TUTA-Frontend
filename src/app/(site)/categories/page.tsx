@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
+
 import { CategoryCard } from "@/components/categories/category-card";
+import { ROUTES } from "@/constants/routes";
 import { getCategories } from "@/lib/catalog";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Danh mục",
+  description:
+    "Khám phá sản phẩm nội địa Nhật tại TUTA theo nhóm: mỹ phẩm, thực phẩm chức năng, thuốc, gia dụng và mẹ bé.",
+  path: ROUTES.categories,
+});
 
 export default async function CategoriesPage() {
   const categories = await getCategories();
