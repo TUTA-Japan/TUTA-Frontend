@@ -6,11 +6,6 @@ import type { Product } from "@/types/product";
 
 import type { CatalogSource, ProductPage } from "./catalog-types";
 
-/**
- * Catalog served from the local mock data in `src/data/*`.
- * Enabled with CATALOG_SOURCE=mock (e.g. to work without the backend).
- */
-
 const PRODUCTS_PER_PAGE = 8;
 const RELATED_PRODUCTS_LIMIT = 4;
 
@@ -21,11 +16,6 @@ const FEATURED_PRODUCT_SLUGS = [
   "kem-duong-dem-transino-whitening-repair-cream-ex-35g",
 ] as const;
 
-/**
- * Newest first, like the backend (`createdAt DESC`). Mock products have no
- * creation date, but ids are assigned in the order products are added, so a
- * higher id means a newer product. Every public list reads from this order.
- */
 const productsNewestFirst = [...products].sort(
   (a, b) => Number(b.id) - Number(a.id),
 );
