@@ -3,12 +3,14 @@ import Link from "next/link";
 
 import { CONTACT_LINKS } from "@/constants/contact";
 import { ROUTES } from "@/constants/routes";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Hướng dẫn mua hàng",
   description:
     "Hướng dẫn cách xem sản phẩm, liên hệ, xác nhận đơn hàng và nhận hàng tại TUTA.",
-};
+  path: ROUTES.purchaseGuide,
+});
 
 const steps = [
   {

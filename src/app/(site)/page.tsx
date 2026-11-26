@@ -6,14 +6,17 @@ import { FEATURED_BRANDS } from "@/constants/brands";
 import { ROUTES } from "@/constants/routes";
 import { SITE } from "@/constants/site";
 import { HomeHero } from "@/components/home/home-hero";
+import { JsonLd } from "@/components/json-ld";
 import { LogoLoop, type LogoLoopItem } from "@/components/logo-loop";
 import { ProductGrid } from "@/components/products/product-grid";
 import { getFeaturedProducts } from "@/lib/catalog";
+import { siteStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: { absolute: SITE.title },
   description:
     "TUTA tuyển chọn và giới thiệu sản phẩm nội địa Nhật dành cho người Việt.",
+  alternates: { canonical: ROUTES.home },
 };
 
 const selectionPrinciples = [
@@ -48,6 +51,7 @@ export default async function Home() {
       id="main-content"
       className="home-page w-full max-w-full overflow-x-hidden"
     >
+      <JsonLd data={siteStructuredData()} />
       <HomeHero />
 
       <section
