@@ -1669,4 +1669,302 @@ Sản phẩm chăm sóc sức khỏe và làn da nổi tiếng tại Nhật Bả
 - **Lưu ý:** Không dùng cho trẻ dưới 15 tuổi. Nước tiểu có thể có màu vàng tươi trong quá trình sử dụng do đào thải lượng Vitamin B2 dư thừa (hoàn toàn bình thường).
 `,
   },
+  {
+    id: "33",
+    slug: "kem-duong-nang-tong-ngay-dem-sana-suhada-kinenbi-50g",
+    nameVi: "Kem Dưỡng Nâng Tông Ngày & Đêm SANA Suhada Kinenbi (50g)",
+    brand: "SANA",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 420000,
+    specification: "Hũ 50g",
+    images: [
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
+    ],
+    shortDescription:
+      "Kem dưỡng nâng tông 24h SANA Suhada Kinenbi Skincare Tone Up Cream với 85% thành phần dưỡng da và sắc hồng sữa tự nhiên, giúp hiệu chỉnh da xỉn màu, mờ lỗ chân lông và cấp ẩm suốt 24 giờ mà không cần tẩy trang trước khi ngủ.",
+    description: `
+Dòng kem dưỡng 2 trong 1 kết hợp hiệu ứng trang điểm nhẹ nhàng từ SANA Nhật Bản. Chứa 85% thành phần dưỡng da cùng sắc hồng sữa (Milky Pink) tự nhiên, kem giúp hiệu chỉnh sắc da xỉn màu, mờ lỗ chân lông và cấp ẩm suốt 24 giờ mà không cần tẩy trang trước khi ngủ.
+
+---
+
+**Ưu điểm nổi bật**
+
+- **Dưỡng da kết hợp trang điểm 24h:** Dùng ban ngày làm kem lót/nâng tông nhẹ, dùng ban đêm để dưỡng ẩm sâu và khóa ẩm.
+
+- **Nâng tông hồng sữa tự nhiên (Milky Pink):** Khắc phục da vàng và mệt mỏi, mang lại lớp nền trong trẻo, tự nhiên như mặt mộc mà không bị trắng bệch.
+
+- **Chứa 85% dưỡng chất:** Bổ sung Ceramide, Niacinamide, Squalane và Hyaluronic Acid giúp duy trì độ ẩm mịn, hạn chế khô mốc da.
+
+- **Không cần tẩy trang:** Công thức lành tính, an toàn để qua đêm mà không lo bít tắc lỗ chân lông hay sinh mụn.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản (SANA).
+
+- **Quy cách:** Hũ 50g.
+
+- **Tone màu:** Milky Pink (Hồng sữa).
+
+- **Loại da:** Phù hợp mọi loại da; người thích phong cách trang điểm tự nhiên hàng ngày.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- Sau bước toner/lotion, lấy lượng kem bằng hạt ngọc trai thoa đều khắp mặt (dùng sáng và tối).
+`,
+  },
+  {
+    id: "34",
+    slug: "sua-chong-nang-shiseido-elixir-day-care-revolution-spf50-35ml",
+    nameVi:
+      "Sữa Chống Nắng Shiseido Elixir Day Care Revolution SPF50+ PA++++ (35ml) – Chống Lão Hóa & Nâng Tông Căng Bóng",
+    brand: "Elixir",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 691000,
+    specification: "Tuýp 35ml",
+    images: [
+      "https://images.tutatuta.vn/image/products/Elixir%20Day%20Care%20Revolution/1.png",
+      "https://images.tutatuta.vn/image/products/Elixir%20Day%20Care%20Revolution/2.png",
+      "https://images.tutatuta.vn/image/products/Elixir%20Day%20Care%20Revolution/3.png",
+      "https://images.tutatuta.vn/image/products/Elixir%20Day%20Care%20Revolution/4.png",
+      "https://images.tutatuta.vn/image/products/Elixir%20Day%20Care%20Revolution/5.png",
+      "https://images.tutatuta.vn/image/products/Elixir%20Day%20Care%20Revolution/6.png",
+      "https://images.tutatuta.vn/image/products/Elixir%20Day%20Care%20Revolution/7.png",
+    ],
+    shortDescription:
+      "Sữa chống nắng Shiseido Elixir Day Care Revolution SPF50+ PA++++ 3 trong 1: sữa dưỡng chống lão hóa, kem chống nắng phổ rộng và kem lót trang điểm, giúp bảo vệ da trước tia UV, duy trì độ đàn hồi và tạo hiệu ứng da căng bóng suốt ngày dài.",
+    description: `
+Dòng sản phẩm chăm sóc ban ngày cao cấp thuộc Shiseido Nhật Bản. Tích hợp công dụng 3 trong 1 (sữa dưỡng chống lão hóa, kem chống nắng phổ rộng và kem lót trang điểm), sản phẩm bảo vệ da tối ưu trước tia UV, duy trì độ đàn hồi săn chắc và tạo hiệu ứng làn da căng bóng rạng rỡ (Tsuyadama) suốt ngày dài.
+
+---
+
+**Ưu điểm nổi bật**
+
+- **Bảo vệ da toàn diện:** Chỉ số SPF50+ PA++++ bảo vệ da mạnh mẽ trước tác hại của tia UVA/UVB, ngăn ngừa thâm nám và dấu hiệu lão hóa sớm.
+
+- **Tích hợp 3 trong 1 tiện lợi:** Đóng vai trò như sữa dưỡng ngày cấp ẩm sâu, kem chống nắng bảo vệ và kem lót hỗ trợ lớp nền bám mịn lâu trôi.
+
+- **Chống lão hóa & nuôi dưỡng Collagen:** Ứng dụng công nghệ dưỡng ẩm độc quyền của Shiseido, kích thích sản sinh collagen giúp da săn chắc, căng mọng và cải thiện nếp nhăn li ti.
+
+- **Kết cấu mỏng nhẹ, thoáng mịn:** Dạng sữa lỏng êm ái, thẩm thấu nhanh vào biểu bì, không gây nhờn dính, bí da hay vón cục khi thoa.
+
+---
+
+**Bảng phân loại các dòng Elixir Day Care Revolution**
+
+- **Dòng Vàng (Dưỡng ẩm & Chống lão hóa):** Cấp ẩm sâu, nâng cơ săn chắc, giữ hiệu ứng da căng bóng tự nhiên không màu.
+
+- **Dòng Trắng (Brightening):** Bổ sung hoạt chất dưỡng trắng chuyên sâu, làm mờ đốm nâu và thâm sạm.
+
+- **Dòng Tone Up Beige (Tuýp be):** Hiệu chỉnh da không đều màu, làm mờ nám sạm cho lớp nền tệp da tự nhiên.
+
+- **Dòng Tone Up Pink (Tuýp hồng):** Nâng tông sáng hồng trong trẻo, khử sắc da vàng vọt và xỉn màu mệt mỏi.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản (Shiseido - Thương hiệu Elixir).
+
+- **Quy cách:** Tuýp 35ml.
+
+- **Chỉ số chống nắng:** SPF50+ / PA++++.
+
+- **Loại da phù hợp:** Mọi loại da; đặc biệt là da bắt đầu xuất hiện dấu hiệu lão hóa, da khô thiếu ẩm hoặc da xỉn màu.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- Dùng vào buổi sáng sau bước làm sạch và thoa nước hoa hồng (lotion).
+
+- Lấy lượng sữa vừa đủ (khoảng 2 hạt ngọc trai) thoa đều khắp mặt và cổ.
+
+- Massage nhẹ nhàng để dưỡng chất thẩm thấu trước khi tiếp tục các bước trang điểm tiếp theo (nếu có).
+`,
+  },
+  {
+    id: "35",
+    slug: "kem-cham-mun-pair-acne-cream-w-nhat-ban-24g",
+    nameVi:
+      "Kem Chấm Mụn Pair Acne Cream W Nhật Bản (24g) – Giảm Sưng Viêm, Kháng Khuẩn & Mờ Thâm",
+    brand: "Lion",
+    category: "Thuốc",
+    referencePriceVnd: 249000,
+    originalPriceVnd: 285600,
+    specification: "Tuýp 24g",
+    images: [
+      "https://images.tutatuta.vn/image/products/Pair%20Acne%20Cream%20/1.png",
+      "https://images.tutatuta.vn/image/products/Pair%20Acne%20Cream%20/2.png",
+      "https://images.tutatuta.vn/image/products/Pair%20Acne%20Cream%20/3.png",
+      "https://images.tutatuta.vn/image/products/Pair%20Acne%20Cream%20/4.png",
+    ],
+    shortDescription:
+      "Kem chấm mụn Pair Acne Cream W của Lion Nhật Bản với hoạt chất kép chống viêm và kháng khuẩn, giúp làm dịu nhanh nốt mụn sưng đỏ, gom cồi mụn và hạn chế thâm sẹo sau mụn mà không làm khô bong tróc da.",
+    description: `
+Sản phẩm chăm sóc da mụn "quốc dân" của tập đoàn Lion Nhật Bản. Nhờ bộ đôi hoạt chất kép chống viêm và kháng khuẩn chuyên sâu, sản phẩm giúp làm dịu nhanh nốt mụn sưng đỏ, gom cồi mụn và hạn chế thâm sẹo sau mụn. Chất kem mỏng nhẹ chuyển trong suốt ngay khi thoa, cực kỳ lành tính và không làm khô bong tróc da.
+
+---
+
+**Ưu điểm nổi bật**
+
+- **Tác động kép chống viêm & kháng khuẩn:** Kết hợp hoạt chất Ibuprofen Piconol (IPPN) giảm sưng tấy tức thì và Isopropyl Methylphenol (IPMP) tiêu diệt vi khuẩn gây mụn, ngăn mụn lây lan.
+
+- **Hiệu quả trên nhiều loại mụn:** Cải thiện tốt tình trạng mụn bọc, mụn viêm đỏ, mụn đầu trắng và mụn trứng cá trưởng thành vùng viền hàm.
+
+- **Chất kem trong suốt, thấm nhanh:** Khi mới lấy có màu trắng sữa nhưng tệp ngay vào da thành lớp màng trong suốt, không gây bết dính hay lộ vệt kem, dùng được cả trước khi trang điểm.
+
+- **Dịu nhẹ, không gây khô tróc:** Độ pH cân bằng gần với tự nhiên của da, không chứa chất tẩy lột mạnh nên không làm khô rát hay kích ứng vùng da mụn nhạy cảm.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản (Tập đoàn Lion).
+
+- **Quy cách:** Tuýp 24g.
+
+- **Phân loại:** Dược phẩm nhóm 2 nội địa Nhật (第2類医薬品).
+
+- **Loại da phù hợp:** Mọi loại da đang gặp tình trạng mụn viêm, mụn sưng đỏ, mụn trứng cá.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- Rửa sạch mặt và lau khô nhẹ nhàng.
+
+- Lấy lượng kem vừa đủ chấm trực tiếp lên từng nốt mụn (tránh bôi lan rộng ra vùng da lành), vỗ nhẹ cho kem thấm hoàn toàn trước khi tiếp tục các bước dưỡng ẩm.
+
+- Dùng 2 - 3 lần/ngày ngay từ khi mụn mới chớm sưng để đạt hiệu quả tối ưu.
+`,
+  },
+  {
+    id: "36",
+    slug: "kem-nen-majolica-majorca-milky-wrapping-foundation-spf30-30g",
+    nameVi:
+      "Kem Nền Dưỡng Da Shiseido Majolica Majorca Milky Wrapping Foundation SPF30 PA+++ (30g)",
+    brand: "Majolica Majorca",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 419000,
+    specification: "Tuýp 30g",
+    images: [
+      "https://images.tutatuta.vn/image/products/Shiseido%20Majolica/1.png",
+      "https://images.tutatuta.vn/image/products/Shiseido%20Majolica/2.png",
+      "https://images.tutatuta.vn/image/products/Shiseido%20Majolica/3.png",
+      "https://images.tutatuta.vn/image/products/Shiseido%20Majolica/4.png",
+      "https://images.tutatuta.vn/image/products/Shiseido%20Majolica/5.png",
+      "https://images.tutatuta.vn/image/products/Shiseido%20Majolica/6.png",
+    ],
+    shortDescription:
+      "Kem nền kiêm dưỡng da Majolica Majorca Milky Wrapping Foundation SPF30 PA+++ với kết cấu dạng sữa mỏng nhẹ, tạo lớp nền căng bóng trong veo, che phủ lỗ chân lông và thâm mụn mà không gây dày bí, giữ nền tươi tắn đến 12 giờ.",
+    description: `
+Dòng kem nền kiêm dưỡng da mỏng nhẹ từ Nhật Bản. Với kết cấu dạng sữa mượt mà, sản phẩm tạo hiệu ứng nền da căng bóng trong veo ("Milky Skin"), che phủ khéo léo lỗ chân lông và thâm mụn mà không gây dày bí, giữ lớp nền tươi tắn bền màu đến 12 giờ.
+
+---
+
+**Ưu điểm nổi bật**
+
+- **Lớp nền căng mịn tự nhiên:** Tạo hiệu ứng da sáng khỏe trong trẻo như da thật, tiệp mịn nhanh chóng mà không gây nặng mặt hay mốc nền (cakey).
+
+- **Che phủ khuyết điểm nhẹ nhàng:** Làm mờ lỗ chân lông, quầng thâm và các vùng da không đều màu chỉ sau một lớp thoa mỏng.
+
+- **Kiềm dầu & giữ ẩm suốt 12 giờ:** Cân bằng lượng dầu - nước trên da, hạn chế bóng nhờn vùng chữ T nhưng vẫn duy trì độ ẩm mượt không gây khô da.
+
+- **Chống nắng bảo vệ da hàng ngày:** Tích hợp chỉ số SPF30 PA+++ hỗ trợ bảo vệ da trước tia UV.
+
+---
+
+**Bảng màu**
+
+- **00 Pink Beige:** Da sáng hồng.
+
+- **01 Light Beige:** Da trung bình sáng.
+
+- **02 Beige:** Da tự nhiên.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản (Shiseido - Majolica Majorca).
+
+- **Quy cách:** Tuýp 30g.
+
+- **Chỉ số chống nắng:** SPF30 / PA+++.
+
+- **Loại da phù hợp:** Mọi loại da, đặc biệt là da thường đến da hỗn hợp thiên dầu.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- Sau bước dưỡng da và kem chống nắng/kem lót, lấy lượng kem vừa đủ (khoảng 1 hạt ngọc trai) chấm lên 5 điểm trên mặt.
+
+- Dùng tay, bông mút hoặc cọ tán đều từ trong ra ngoài (có thể dặm thêm một lớp mỏng ở vùng khuyết điểm để tăng độ che phủ).
+`,
+  },
+  {
+    id: "37",
+    slug: "nuoc-hoa-hong-meishoku-bigansui-skin-lotion-90ml",
+    nameVi:
+      "Nước Hoa Hồng Ngăn Ngừa Mụn Meishoku Bigansui Skin Lotion Nhật Bản (90ml) – Kiềm Dầu, Sạch Sâu Lỗ Chân Lông",
+    brand: "Meishoku",
+    category: "Mỹ phẩm",
+    referencePriceVnd: 247000,
+    specification: "Chai thủy tinh 90ml",
+    images: [
+      "https://images.tutatuta.vn/image/products/Meishoku%20Bigansui/1.png",
+      "https://images.tutatuta.vn/image/products/Meishoku%20Bigansui/2.png",
+      "https://images.tutatuta.vn/image/products/Meishoku%20Bigansui/3.png",
+      "https://images.tutatuta.vn/image/products/Meishoku%20Bigansui/4.png",
+      "https://images.tutatuta.vn/image/products/Meishoku%20Bigansui/5.png",
+    ],
+    shortDescription:
+      "Nước hoa hồng Meishoku Bigansui Skin Lotion kết hợp Salicylic Acid (BHA) và hoạt chất kháng khuẩn Pionin, giúp làm sạch sâu lỗ chân lông, kiểm soát bã nhờn, làm dịu nốt mụn sưng đỏ và giữ da khô thoáng, mịn màng.",
+    description: `
+Dòng dược mỹ phẩm kinh điển của Meishoku Nhật Bản từ năm 1885. Với sự kết hợp của Salicylic Acid (BHA) và hoạt chất kháng khuẩn Pionin, sản phẩm giúp làm sạch sâu lỗ chân lông, kiểm soát bã nhờn dư thừa, làm dịu nốt mụn sưng đỏ và giữ bề mặt da khô thoáng, mịn màng.
+
+---
+
+**Ưu điểm nổi bật**
+
+- **Làm sạch sâu & thông thoáng lỗ chân lông:** Salicylic Acid (BHA) nhẹ nhàng loại bỏ tế bào chết và sợi bã nhờn tích tụ, hạn chế bít tắc và mụn ẩn, mụn đầu đen.
+
+- **Kháng khuẩn & làm dịu nốt mụn:** Hoạt chất Pionin hỗ trợ tiêu diệt vi khuẩn gây mụn, làm dịu vùng da sưng đỏ và giúp se khô cồi mụn nhanh chóng.
+
+- **Kiểm soát dầu thừa hiệu quả:** Điều tiết lượng bã nhờn trên da, mang lại cảm giác sạch thoáng, không bóng dầu.
+
+- **Đa năng & tiện lợi:** Có thể dùng cho cả nam và nữ sau bước rửa mặt, sau khi cạo râu hoặc vận động ra nhiều mồ hôi.
+
+---
+
+**Thông tin sản phẩm**
+
+- **Xuất xứ:** Nhật Bản (Thương hiệu Meishoku).
+
+- **Quy cách:** Chai thủy tinh 90ml.
+
+- **Phân loại:** Dược mỹ phẩm nội địa Nhật (薬用化粧水).
+
+- **Loại da phù hợp:** Da dầu, da hỗn hợp thiên dầu, da có mụn ẩn, mụn đầu đen hoặc mụn trứng cá.
+
+---
+
+**Hướng dẫn sử dụng**
+
+- Sau khi rửa mặt sạch, thấm một lượng lotion vừa đủ vào bông tẩy trang.
+
+- Lau nhẹ nhàng khắp mặt, tập trung kỹ ở vùng chữ T (trán, mũi, cằm) hoặc chấm trực tiếp lên các nốt mụn sưng.
+
+- Tiếp tục các bước dưỡng ẩm (serum, kem dưỡng) để cân bằng độ ẩm cho da.
+`,
+  },
 ];
