@@ -1679,10 +1679,10 @@ Sản phẩm chăm sóc sức khỏe và làn da nổi tiếng tại Nhật Bả
     specification: "Hũ 50g",
     images: [
       "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
-      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
-      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
-      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
-      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/1.png",
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/2.png",
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/3.png",
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/4.png",
+      "https://images.tutatuta.vn/image/products/SANA%20Suhada%20Kinenbi/5.png",
     ],
     shortDescription:
       "Kem dưỡng nâng tông 24h SANA Suhada Kinenbi Skincare Tone Up Cream với 85% thành phần dưỡng da và sắc hồng sữa tự nhiên, giúp hiệu chỉnh da xỉn màu, mờ lỗ chân lông và cấp ẩm suốt 24 giờ mà không cần tẩy trang trước khi ngủ.",
