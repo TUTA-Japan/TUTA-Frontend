@@ -46,6 +46,16 @@ export function ProductFilterSidebar({
   return (
     <div className="space-y-10">
       <FilterGroup
+        title="Tình trạng"
+        field="availability"
+        allLabel="Tất cả"
+        allCount={facets.inStock.total}
+        options={[
+          { value: "in-stock", label: "Có sẵn", count: facets.inStock.count },
+        ]}
+        query={query}
+      />
+      <FilterGroup
         title="Danh mục"
         field="category"
         allLabel="Tất cả danh mục"
@@ -68,7 +78,7 @@ export function ProductFilterSidebar({
 
 type FilterGroupProps = {
   title: string;
-  field: "category" | "brand";
+  field: "category" | "brand" | "availability";
   allLabel: string;
   allCount: number;
   options: Option[];
@@ -200,6 +210,10 @@ export function ActiveFilters({
   query: ProductFilterQuery;
 }) {
   const chips = [
+    filters.inStockOnly && {
+      label: "Có sẵn",
+      href: productListHref({ ...query, availability: "" }),
+    },
     filters.category && {
       label: filters.category.name,
       href: productListHref({ ...query, category: "" }),
@@ -208,7 +222,7 @@ export function ActiveFilters({
       label: filters.brand.name,
       href: productListHref({ ...query, brand: "" }),
     },
-  ].filter((chip) => chip !== undefined);
+  ].filter((chip) => typeof chip === "object");
 
   if (chips.length === 0) return null;
 
@@ -228,7 +242,12 @@ export function ActiveFilters({
       ))}
       {chips.length > 1 && (
         <Link
-          href={productListHref({ ...query, category: "", brand: "" })}
+          href={productListHref({
+            ...query,
+            category: "",
+            brand: "",
+            availability: "",
+          })}
           scroll={false}
           className="px-2 text-sm font-medium text-tuta-green-dark underline-offset-4 hover:underline"
         >

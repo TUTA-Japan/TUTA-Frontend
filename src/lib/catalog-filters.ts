@@ -22,12 +22,14 @@ export type ProductBrand = { slug: string; name: string };
 export type ProductFilters = {
   category?: Pick<Category, "slug" | "name">;
   brand?: ProductBrand;
+  inStockOnly: boolean;
   sort: ProductSort;
 };
 
 export type ProductFilterQuery = {
   category: string;
   brand: string;
+  availability: "" | "in-stock";
   sort: ProductSort;
 };
 
@@ -56,13 +58,17 @@ export function resolveProductFilters(
   return {
     category: options.categories.find(({ slug }) => slug === query.category),
     brand: options.brands.find(({ slug }) => slug === query.brand),
+    inStockOnly: query.availability === "in-stock",
     sort: isProductSort(query.sort) ? query.sort : DEFAULT_PRODUCT_SORT,
   };
 }
 
 export function hasActiveFilters(filters: ProductFilters): boolean {
   return Boolean(
-    filters.category || filters.brand || filters.sort !== DEFAULT_PRODUCT_SORT,
+    filters.category ||
+    filters.brand ||
+    filters.inStockOnly ||
+    filters.sort !== DEFAULT_PRODUCT_SORT,
   );
 }
 
@@ -70,6 +76,7 @@ export function toFilterQuery(filters: ProductFilters): ProductFilterQuery {
   return {
     category: filters.category?.slug ?? "",
     brand: filters.brand?.slug ?? "",
+    availability: filters.inStockOnly ? "in-stock" : "",
     sort: filters.sort,
   };
 }
@@ -80,6 +87,7 @@ export function filterQueryParams(
   const params: Record<string, string> = {};
   if (query.category) params.category = query.category;
   if (query.brand) params.brand = query.brand;
+  if (query.availability) params.availability = query.availability;
   if (query.sort !== DEFAULT_PRODUCT_SORT) params.sort = query.sort;
   return params;
 }
@@ -92,10 +100,34 @@ export function productListHref(query: ProductFilterQuery): string {
 type FacetCounts = { total: number; counts: Record<string, number> };
 
 /** Category counts keyed by category name, brand counts by brand slug. */
-export type ProductFacets = { categories: FacetCounts; brands: FacetCounts };
+export type ProductFacets = {
+  categories: FacetCounts;
+  brands: FacetCounts;
+  inStock: { total: number; count: number };
+};
+
+type FilterGroup = "category" | "brand" | "availability";
+
+function matchesFilters(
+  product: Product,
+  filters: ProductFilters,
+  ignore?: FilterGroup,
+): boolean {
+  return (
+    (ignore === "category" ||
+      !filters.category ||
+      product.category === filters.category.name) &&
+    (ignore === "brand" ||
+      !filters.brand ||
+      createSlug(product.brand) === filters.brand.slug) &&
+    (ignore === "availability" ||
+      !filters.inStockOnly ||
+      product.availability === "in-stock")
+  );
+}
 
 /**
- * Each group is counted with the other group's filter applied, so a number
+ * Each group is counted with the other groups' filters applied, so a number
  * is exactly what the listing shows after picking that option.
  */
 export function countFacets(
@@ -105,19 +137,24 @@ export function countFacets(
   const facets: ProductFacets = {
     categories: { total: 0, counts: {} },
     brands: { total: 0, counts: {} },
+    inStock: { total: 0, count: 0 },
   };
 
   for (const product of products) {
-    const brandSlug = createSlug(product.brand);
-    if (!filters.brand || brandSlug === filters.brand.slug) {
+    if (matchesFilters(product, filters, "category")) {
       facets.categories.total += 1;
       facets.categories.counts[product.category] =
         (facets.categories.counts[product.category] ?? 0) + 1;
     }
-    if (!filters.category || product.category === filters.category.name) {
+    if (matchesFilters(product, filters, "brand")) {
+      const brandSlug = createSlug(product.brand);
       facets.brands.total += 1;
       facets.brands.counts[brandSlug] =
         (facets.brands.counts[brandSlug] ?? 0) + 1;
+    }
+    if (matchesFilters(product, filters, "availability")) {
+      facets.inStock.total += 1;
+      if (product.availability === "in-stock") facets.inStock.count += 1;
     }
   }
 
@@ -128,15 +165,12 @@ export function applyProductFilters(
   products: Product[],
   filters: ProductFilters,
 ): Product[] {
-  const { category, brand, sort } = filters;
-  const matches = products.filter(
-    (product) =>
-      (!category || product.category === category.name) &&
-      (!brand || createSlug(product.brand) === brand.slug),
+  const matches = products.filter((product) =>
+    matchesFilters(product, filters),
   );
-  if (sort === "newest") return matches;
+  if (filters.sort === "newest") return matches;
 
-  const direction = sort === "price-asc" ? 1 : -1;
+  const direction = filters.sort === "price-asc" ? 1 : -1;
   return matches.toSorted((a, b) => {
     const priceA = a.referencePriceVnd;
     const priceB = b.referencePriceVnd;

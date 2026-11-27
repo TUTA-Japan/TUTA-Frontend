@@ -27,7 +27,12 @@ import { buildPageMetadata } from "@/lib/metadata";
 
 type ProductsPageProps = {
   searchParams: Promise<
-    Partial<Record<"page" | "category" | "brand" | "sort", string | string[]>>
+    Partial<
+      Record<
+        "page" | "category" | "brand" | "availability" | "sort",
+        string | string[]
+      >
+    >
   >;
 };
 
@@ -45,6 +50,7 @@ async function readListing(searchParams: ProductsPageProps["searchParams"]) {
     {
       category: firstValue(params.category),
       brand: firstValue(params.brand),
+      availability: firstValue(params.availability),
       sort: firstValue(params.sort),
     },
     { categories, brands },
@@ -87,8 +93,11 @@ export default async function ProductsPage({
     await readListing(searchParams);
   const facets = await getProductFacets(filters);
   const query = toFilterQuery(filters);
-  const activeCount =
-    Number(Boolean(filters.category)) + Number(Boolean(filters.brand));
+  const activeCount = [
+    filters.category,
+    filters.brand,
+    filters.inStockOnly,
+  ].filter(Boolean).length;
 
   return (
     <main className="mx-auto max-w-7xl px-5 py-12 md:px-8 lg:px-12">
