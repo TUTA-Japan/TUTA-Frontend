@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Check } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
 import { ROUTES } from "@/constants/routes";
@@ -71,6 +72,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
           <h1 className="mt-3 text-3xl leading-tight font-semibold tracking-tight text-text-primary md:text-4xl">
             {product.nameVi}
           </h1>
+
+          {product.availability === "in-stock" && (
+            <p className="mt-4 inline-flex uppercase items-center gap-2 self-start rounded-sm bg-tuta-green-light px-2.5 py-1.5 text-sm font-semibold text-tuta-green-dark">
+              <Check aria-hidden="true" strokeWidth={2} className="size-4" />
+              Có sẵn
+            </p>
+          )}
 
           {/* {product.nameJp && (
             <p className="mt-3 text-sm leading-relaxed text-text-secondary">

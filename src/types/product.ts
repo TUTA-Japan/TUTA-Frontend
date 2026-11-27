@@ -1,3 +1,5 @@
+export type ProductAvailability = "in-stock" | "pre-order";
+
 export type Product = {
   id: string;
   slug: string;
@@ -8,6 +10,7 @@ export type Product = {
   referencePriceVnd?: number;
   originalPriceVnd?: number;
   specification?: string;
+  availability?: ProductAvailability;
   images: string[];
   shortDescription?: string;
   description?: string;

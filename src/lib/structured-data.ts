@@ -2,11 +2,16 @@ import { CONTACT_LINKS } from "@/constants/contact";
 import { ROUTES } from "@/constants/routes";
 import { SITE } from "@/constants/site";
 import { getProductPricing } from "@/lib/pricing";
-import type { Product } from "@/types/product";
+import type { Product, ProductAvailability } from "@/types/product";
 
 import { absoluteUrl } from "./metadata";
 
 export type StructuredData = Record<string, unknown>;
+
+const SCHEMA_AVAILABILITY: Record<ProductAvailability, string> = {
+  "in-stock": "https://schema.org/InStock",
+  "pre-order": "https://schema.org/PreOrder",
+};
 
 const SOCIAL_PROFILES = [
   CONTACT_LINKS.facebook,
@@ -60,6 +65,9 @@ export function productStructuredData(product: Product): StructuredData {
             url,
             price,
             priceCurrency: "VND",
+            ...(product.availability && {
+              availability: SCHEMA_AVAILABILITY[product.availability],
+            }),
             seller: { "@type": "Organization", name: SITE.name },
           },
         }),
