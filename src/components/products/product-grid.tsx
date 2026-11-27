@@ -6,11 +6,13 @@ import { ProductEmptyState } from "@/components/products/product-empty-state";
 type ProductGridProps = {
   products: Product[];
   headingLevel?: "h2" | "h3";
+  besideSidebar?: boolean;
 };
 
 export function ProductGrid({
   products,
   headingLevel = "h2",
+  besideSidebar = false,
 }: ProductGridProps) {
   if (products.length === 0) {
     return (
@@ -22,7 +24,9 @@ export function ProductGrid({
   }
 
   return (
-    <div className="grid grid-cols-2 items-stretch gap-x-4 gap-y-12 sm:gap-x-5 md:grid-cols-3 md:gap-x-6 md:gap-y-14 lg:grid-cols-4">
+    <div
+      className={`grid grid-cols-2 items-stretch gap-x-4 gap-y-12 sm:gap-x-5 md:grid-cols-3 md:gap-x-6 md:gap-y-14 ${besideSidebar ? "xl:grid-cols-4 xl:gap-x-5" : "lg:grid-cols-4"}`}
+    >
       {products.map((product) => (
         <ProductCard
           key={product.id}

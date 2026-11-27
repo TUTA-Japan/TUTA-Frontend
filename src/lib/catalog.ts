@@ -7,14 +7,8 @@ import type { CatalogSource } from "./catalog-types";
 
 export type { ProductPage, ProductSearchResult } from "./catalog-types";
 export { SEARCH_QUERY_MAX_LENGTH } from "./catalog-types";
+export { PRODUCTS_PER_PAGE } from "./catalog-filters";
 
-export const PRODUCTS_PER_PAGE = 8;
-
-/**
- * Data source for every catalog page.
- * - default: the TUTA backend (API_URL)
- * - CATALOG_SOURCE=mock: local mock data in src/data/* (no backend needed)
- */
 const source: CatalogSource =
   process.env.CATALOG_SOURCE === "mock" ? mockCatalog : apiCatalog;
 
@@ -44,7 +38,13 @@ export const getProductsByCategory: CatalogSource["getProductsByCategory"] = (
 
 export const getProductPage: CatalogSource["getProductPage"] = (
   requestedPage,
-) => source.getProductPage(requestedPage);
+  filters,
+) => source.getProductPage(requestedPage, filters);
+
+export const getBrands: CatalogSource["getBrands"] = () => source.getBrands();
+
+export const getProductFacets: CatalogSource["getProductFacets"] = (filters) =>
+  source.getProductFacets(filters);
 
 export const searchProducts: CatalogSource["searchProducts"] = (
   query,
