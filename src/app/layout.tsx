@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
+import { SiteAnalytics } from "@/components/site-analytics";
 import { SITE } from "@/constants/site";
 import { SITE_OPEN_GRAPH } from "@/lib/metadata";
 import "./globals.css";
@@ -48,6 +49,7 @@ export default function RootLayout({
         className={`${montserrat.variable} flex min-h-dvh flex-col`}
       >
         {children}
+        <SiteAnalytics />
       </body>
     </html>
   );
