@@ -1015,7 +1015,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     id: "22",
     slug: "vien-dau-gan-ca-map-squalene-orihiro-nhat-ban-360-vien",
     nameVi: "Viên dầu gan cá mập Squalene Orihiro Nhật Bản 360 viên",
-    brand: "Orihiro",
+    brand: "ORIHIRO",
     category: "Thực phẩm chức năng",
     referencePriceVnd: 590000,
     specification: "Hộp 360 viên",
