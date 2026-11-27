@@ -20,12 +20,6 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
 
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-
   openGraph: {
     ...SITE_OPEN_GRAPH,
     title: SITE.title,

@@ -141,7 +141,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     brand: "DHC",
     category: "Thực phẩm chức năng",
     availability: "in-stock",
-    originalPriceVnd: 485000,
+    referencePriceVnd: 485000,
     specification: "60 viên",
     images: [
       "https://images.tutatuta.vn/image/products/collagen-dhc/collagen-dhc.png",

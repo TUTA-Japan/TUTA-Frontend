@@ -18,6 +18,21 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    // Product slugs that changed after going live.
+    return [
+      {
+        source: "/products/vien-uong-dhc-vitamin-c-20-ngay",
+        destination: "/products/vien-uong-dhc-vitamin-c-60-ngay",
+        permanent: true,
+      },
+      {
+        source: "/products/vien-uong-bo-sung-collagen-dhc",
+        destination: "/products/vien-uong-bo-sung-collagen-dhc-60-ngay",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
