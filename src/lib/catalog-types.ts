@@ -1,21 +1,23 @@
 import type { Category } from "@/types/category";
 import type { Product } from "@/types/product";
 
+import type {
+  ProductBrand,
+  ProductFacets,
+  ProductFilters,
+} from "./catalog-filters";
+
 export type ProductPage = {
   items: Product[];
   currentPage: number;
   totalPages: number;
-};
-
-export type ProductSearchResult = ProductPage & {
-  /** Number of matching products across all pages. */
   total: number;
 };
 
-/** Backend limit for the search query (longer queries are rejected). */
+export type ProductSearchResult = ProductPage;
+
 export const SEARCH_QUERY_MAX_LENGTH = 200;
 
-/** What pages need from the catalog, independent of where the data lives. */
 export type CatalogSource = {
   getProductBySlug(slug: string): Promise<Product | undefined>;
   getCategoryBySlug(slug: string): Promise<Category | undefined>;
@@ -24,11 +26,12 @@ export type CatalogSource = {
   getCategorySlugs(): Promise<string[]>;
   getFeaturedProducts(): Promise<Product[]>;
   getProductsByCategory(category: Category): Promise<Product[]>;
-  getProductPage(requestedPage: number): Promise<ProductPage>;
-  /**
-   * UC-P07: match nameVi, nameJp, and brand, ignoring case and Vietnamese
-   * accents. `query` must be non-empty and at most SEARCH_QUERY_MAX_LENGTH.
-   */
+  getProductPage(
+    requestedPage: number,
+    filters?: ProductFilters,
+  ): Promise<ProductPage>;
+  getBrands(): Promise<ProductBrand[]>;
+  getProductFacets(filters: ProductFilters): Promise<ProductFacets>;
   searchProducts(
     query: string,
     requestedPage: number,

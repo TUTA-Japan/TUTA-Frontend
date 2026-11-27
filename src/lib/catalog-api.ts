@@ -1,14 +1,30 @@
 import "server-only";
 
 import * as api from "./api/catalog";
+import {
+  applyProductFilters,
+  countFacets,
+  hasActiveFilters,
+  listBrands,
+  paginateProducts,
+} from "./catalog-filters";
 import type { CatalogSource } from "./catalog-types";
 import { withLocalCategoryImage } from "./category-images";
 
 const RELATED_PRODUCTS_LIMIT = 4;
 
-/** Invalid page input (NaN, 0, negative, decimal) means page 1, as in the mock. */
 function normalizePage(page: number): number {
   return Number.isSafeInteger(page) && page > 0 ? page : 1;
+}
+
+async function getAllProducts() {
+  const firstPage = await api.getProductPage(1);
+  const remainingPages = await Promise.all(
+    Array.from({ length: firstPage.pagination.totalPages - 1 }, (_, index) =>
+      api.getProductPage(index + 2),
+    ),
+  );
+  return [firstPage, ...remainingPages].flatMap((page) => page.items);
 }
 
 /** Catalog served by the TUTA backend (default source). */
@@ -34,10 +50,6 @@ export const apiCatalog: CatalogSource = {
 
   getFeaturedProducts: api.getFeaturedProducts,
 
-  /**
-   * The category page lists every product without pagination, so all API
-   * pages (8 per page) are fetched: page 1 first, the rest concurrently.
-   */
   async getProductsByCategory(category) {
     const firstPage = await api.getCategoryPage(category.slug, 1);
     if (!firstPage) return [];
@@ -50,7 +62,15 @@ export const apiCatalog: CatalogSource = {
     return [firstPage, ...remainingPages].flatMap((page) => page?.items ?? []);
   },
 
-  async getProductPage(requestedPage) {
+  async getProductPage(requestedPage, filters) {
+    if (filters && hasActiveFilters(filters)) {
+      const products = await getAllProducts();
+      return paginateProducts(
+        applyProductFilters(products, filters),
+        normalizePage(requestedPage),
+      );
+    }
+
     const { items, pagination } = await api.getProductPage(
       normalizePage(requestedPage),
     );
@@ -58,7 +78,16 @@ export const apiCatalog: CatalogSource = {
       items,
       currentPage: pagination.page,
       totalPages: pagination.totalPages,
+      total: pagination.total,
     };
+  },
+
+  async getBrands() {
+    return listBrands(await getAllProducts());
+  },
+
+  async getProductFacets(filters) {
+    return countFacets(await getAllProducts(), filters);
   },
 
   async searchProducts(query, requestedPage) {

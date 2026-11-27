@@ -4,9 +4,14 @@ import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import type { Product } from "@/types/product";
 
-import type { CatalogSource, ProductPage } from "./catalog-types";
+import {
+  applyProductFilters,
+  countFacets,
+  listBrands,
+  paginateProducts,
+} from "./catalog-filters";
+import type { CatalogSource } from "./catalog-types";
 
-const PRODUCTS_PER_PAGE = 8;
 const RELATED_PRODUCTS_LIMIT = 4;
 
 const FEATURED_PRODUCT_SLUGS = [
@@ -26,22 +31,6 @@ const productsBySlug = new Map(
 const categoriesBySlug = new Map(
   categories.map((category) => [category.slug, category]),
 );
-
-/** Invalid pages fall back to 1; pages past the end clamp to the last page. */
-function paginateProducts(list: Product[], requestedPage: number): ProductPage {
-  const totalPages = Math.ceil(list.length / PRODUCTS_PER_PAGE);
-  const currentPage =
-    Number.isInteger(requestedPage) && requestedPage > 0
-      ? Math.min(requestedPage, Math.max(totalPages, 1))
-      : 1;
-  const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
-
-  return {
-    items: list.slice(startIndex, startIndex + PRODUCTS_PER_PAGE),
-    currentPage,
-    totalPages,
-  };
-}
 
 /** Same matching as the backend: lowercase, no Vietnamese accents. */
 function normalizeSearchText(value: string): string {
@@ -85,8 +74,19 @@ export const mockCatalog: CatalogSource = {
     );
   },
 
-  async getProductPage(requestedPage) {
-    return paginateProducts(productsNewestFirst, requestedPage);
+  async getProductPage(requestedPage, filters) {
+    const list = filters
+      ? applyProductFilters(productsNewestFirst, filters)
+      : productsNewestFirst;
+    return paginateProducts(list, requestedPage);
+  },
+
+  async getBrands() {
+    return listBrands(products);
+  },
+
+  async getProductFacets(filters) {
+    return countFacets(products, filters);
   },
 
   async searchProducts(query, requestedPage) {
@@ -96,10 +96,7 @@ export const mockCatalog: CatalogSource = {
         `${product.nameVi} ${product.nameJp ?? ""} ${product.brand}`,
       ).includes(needle),
     );
-    return {
-      ...paginateProducts(matches, requestedPage),
-      total: matches.length,
-    };
+    return paginateProducts(matches, requestedPage);
   },
 
   async getRelatedProducts(product, limit = RELATED_PRODUCTS_LIMIT) {
