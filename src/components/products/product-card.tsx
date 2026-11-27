@@ -31,7 +31,10 @@ export function ProductCard({
         href={ROUTES.productDetail(product.slug)}
         className="flex h-full flex-col rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tuta-green"
       >
-        <div className="relative aspect-4/5 overflow-hidden border border-transparent bg-surface transition-colors duration-200 group-hover:border-border group-focus-visible:border-tuta-green motion-reduce:transition-none">
+        <div
+          data-card-media
+          className="relative aspect-4/5 overflow-hidden border border-transparent bg-surface transition-colors duration-200 group-hover:border-border group-focus-visible:border-tuta-green motion-reduce:transition-none"
+        >
           <Image
             src={coverImage}
             alt={product.nameVi}
@@ -49,7 +52,7 @@ export function ProductCard({
           <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-tuta-green transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none" />
         </div>
 
-        <div className="flex flex-1 flex-col pt-4 sm:pt-5">
+        <div data-card-body className="flex flex-1 flex-col pt-4 sm:pt-5">
           <div className="flex min-h-4 items-center gap-2.5">
             <p className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.12em] text-tuta-green-dark">
               {product.brand}

@@ -9,6 +9,7 @@ import { HomeHero } from "@/components/home/home-hero";
 import { JsonLd } from "@/components/json-ld";
 import { LogoLoop, type LogoLoopItem } from "@/components/logo-loop";
 import { ProductGrid } from "@/components/products/product-grid";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { getFeaturedProducts } from "@/lib/catalog";
 import { siteStructuredData } from "@/lib/structured-data";
 
@@ -52,6 +53,7 @@ export default async function Home() {
       className="home-page w-full max-w-full overflow-x-hidden"
     >
       <JsonLd data={siteStructuredData()} />
+      <ScrollReveal />
       <HomeHero />
 
       <section
@@ -59,7 +61,10 @@ export default async function Home() {
         className="border-y border-border bg-surface px-5 py-24 md:px-8 md:py-32 lg:px-12"
       >
         <div className="mx-auto max-w-350">
-          <div className="flex flex-wrap items-end justify-between gap-6">
+          <div
+            data-reveal="rise"
+            className="flex flex-wrap items-end justify-between gap-6"
+          >
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-tuta-green">
                 Tuyển chọn gần đây
@@ -85,7 +90,7 @@ export default async function Home() {
             </Link>
           </div>
 
-          <div className="mt-12">
+          <div data-reveal="shelf" className="mt-12">
             <ProductGrid products={featuredProducts} headingLevel="h3" />
           </div>
         </div>
@@ -96,7 +101,7 @@ export default async function Home() {
         className="px-5 py-24 md:px-8 md:py-32 lg:px-12"
       >
         <div className="mx-auto grid max-w-350 gap-14 lg:grid-cols-12 lg:gap-20">
-          <div className="lg:col-span-5">
+          <div data-reveal="rise" className="lg:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-tuta-green">
               Cách TUTA chọn sản phẩm
             </p>
@@ -108,10 +113,14 @@ export default async function Home() {
             </h2>
           </div>
 
-          <dl className="border-t border-border lg:col-span-7">
-            {selectionPrinciples.map((principle) => (
+          <dl
+            data-reveal="rules"
+            className="border-t border-border lg:col-span-7"
+          >
+            {selectionPrinciples.map((principle, index) => (
               <div
                 key={principle.title}
+                style={{ "--i": index } as React.CSSProperties}
                 className="grid gap-3 border-b border-border py-7 md:grid-cols-[0.8fr_1.2fr] md:gap-10 md:py-9"
               >
                 <dt className="text-base font-semibold text-text-primary">
@@ -131,7 +140,10 @@ export default async function Home() {
         className="border-y border-border bg-tuta-green-light px-5 py-20 md:px-8 md:py-24 lg:px-12"
       >
         <div className="mx-auto max-w-350">
-          <div className="grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
+          <div
+            data-reveal="rise"
+            className="grid gap-5 md:grid-cols-[1fr_auto] md:items-end"
+          >
             <h2
               id="home-brands-title"
               className="text-2xl font-semibold tracking-[-0.03em] text-text-primary md:text-4xl capitalize"
@@ -154,7 +166,7 @@ export default async function Home() {
 
       <section className="bg-tuta-green-dark px-5 py-20 text-white md:px-8 md:py-28 lg:px-12">
         <div className="mx-auto grid max-w-350 gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
+          <div data-reveal="rise">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-tuta-green-light">
               Tiếp tục khám phá
             </p>
@@ -163,7 +175,11 @@ export default async function Home() {
             </h2>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div
+            data-reveal="rise"
+            style={{ "--reveal-delay": "150ms" } as React.CSSProperties}
+            className="flex flex-wrap gap-3"
+          >
             <Link
               href={ROUTES.products}
               className="group inline-flex min-h-12 items-center gap-3 bg-white px-5 text-sm font-semibold text-tuta-green-dark transition-colors duration-200 hover:bg-tuta-green-light focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none"

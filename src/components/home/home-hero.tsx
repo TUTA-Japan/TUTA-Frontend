@@ -1,7 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Fragment } from "react";
 
 import { ROUTES } from "@/constants/routes";
+
+const HEADLINE = "Đồ Nhật đáng dùng, được chọn cho bạn.";
 
 export function HomeHero() {
   return (
@@ -19,10 +22,20 @@ export function HomeHero() {
             id="home-hero-title"
             className="mt-6 max-w-4xl text-[clamp(2.25rem,5.5vw,5rem)] font-semibold leading-[1.02] tracking-[-0.055em] text-text-primary"
           >
-            Đồ Nhật đáng dùng, được chọn cho bạn.
+            {HEADLINE.split(" ").map((word, index) => (
+              <Fragment key={index}>
+                {index > 0 && " "}
+                <span
+                  className="inline-block animate-hero-word motion-reduce:animate-none"
+                  style={{ animationDelay: `${index * 60}ms` }}
+                >
+                  {word}
+                </span>
+              </Fragment>
+            ))}
           </h1>
 
-          <p className="mt-7 max-w-xl text-base leading-7 text-[#59635b] md:text-lg md:leading-8">
+          <p className="mt-7 max-w-xl animate-hero-word text-base leading-7 text-[#59635b] [animation-delay:450ms] motion-reduce:animate-none md:text-lg md:leading-8">
             TUTA giúp người Việt khám phá sản phẩm nội địa Nhật qua những lựa
             chọn có gu, thông tin rõ ràng và giá trị sử dụng thực tế.
           </p>
@@ -59,15 +72,16 @@ export function HomeHero() {
           className="bg-tuta-green-light px-5 py-10 md:px-8 md:py-14 lg:col-span-5 lg:px-10 lg:py-16"
         >
           <div className="relative flex min-h-115 h-full overflow-hidden border border-tuta-green/25 bg-background p-6 md:min-h-130 md:p-9 lg:min-h-0">
-            <div className="absolute top-[8%] right-[7%] size-[clamp(9rem,18vw,15rem)] rounded-full border border-tuta-orange/25 bg-tuta-orange-light" />
-            <div className="absolute top-0 bottom-0 left-[34%] w-px bg-tuta-green/15" />
-            <div className="absolute right-0 bottom-[20%] left-0 h-px bg-tuta-green/15" />
+            <div className="absolute top-[8%] right-[7%] size-[clamp(9rem,18vw,15rem)] animate-hero-sun rounded-full border border-tuta-orange/25 bg-tuta-orange-light [animation-delay:300ms] motion-reduce:animate-none" />
+            <div className="absolute top-0 bottom-0 left-[34%] w-px origin-top animate-hero-draw-y bg-tuta-green/15 motion-reduce:animate-none" />
+            <div className="absolute right-0 bottom-[20%] left-0 h-px origin-left animate-hero-draw-x bg-tuta-green/15 [animation-delay:150ms] motion-reduce:animate-none" />
 
             <div className="relative flex w-full flex-col justify-between">
-              <div className="flex items-center justify-between gap-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-tuta-green-dark">
+              <div className="flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-tuta-green-dark">
                 <span>Japan</span>
+                <span className="h-px flex-1 origin-left animate-hero-draw-x bg-tuta-green/30 [animation-delay:1000ms] [animation-duration:900ms] motion-reduce:animate-none" />
                 <span className="flex items-center gap-2">
-                  <span className="size-1.5 rounded-full bg-tuta-orange" />
+                  <span className="size-1.5 animate-hero-dot rounded-full bg-tuta-orange [animation-delay:1800ms] motion-reduce:animate-none" />
                   Vietnam
                 </span>
               </div>
@@ -77,7 +91,12 @@ export function HomeHero() {
                   lang="ja"
                   className="text-[clamp(4.75rem,13vw,8.5rem)] font-medium leading-none tracking-[-0.12em] text-tuta-green-dark"
                 >
-                  日本
+                  <span className="inline-block animate-hero-char [animation-delay:550ms] motion-reduce:animate-none">
+                    日
+                  </span>
+                  <span className="inline-block animate-hero-char [animation-delay:700ms] motion-reduce:animate-none">
+                    本
+                  </span>
                 </p>
 
                 <div className="border-l border-tuta-green/35 pl-5 md:pl-7">
