@@ -40,6 +40,12 @@ export function ProductCard({
             className="object-contain p-2 scale-[1.08] transition-transform duration-250 ease-out group-hover:scale-[1.11] group-focus-visible:scale-[1.11] motion-reduce:transform-none motion-reduce:transition-none sm:p-3"
           />
 
+          {product.availability === "in-stock" && (
+            <span className="absolute left-2 uppercase top-2 rounded-sm bg-tuta-green px-2 py-1 text-[11px] font-semibold leading-none text-white sm:left-3 sm:top-3">
+              Có sẵn
+            </span>
+          )}
+
           <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-tuta-green transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none" />
         </div>
 
@@ -65,7 +71,9 @@ export function ProductCard({
 
           <div className="mt-auto flex items-end justify-between gap-4 pt-4">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-              <p className="text-sm font-bold tabular-nums sm:text-[15px]">
+              <p
+                className={`text-sm font-bold tabular-nums sm:text-[15px] ${currentPrice && originalPrice ? "text-tuta-red" : ""}`}
+              >
                 {currentPrice ? (
                   <>
                     {currentPrice}

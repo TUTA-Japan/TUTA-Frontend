@@ -31,11 +31,12 @@ Canmake Marshmallow Finish Powder Abloom là phấn phủ nén 5 màu giúp hi�
   },
   {
     id: "2",
-    slug: "vien-uong-dhc-vitamin-c-20-ngay",
-    nameVi: "Viên uống DHC bổ sung Vitamin C 20 ngày",
+    slug: "vien-uong-dhc-vitamin-c-60-ngay",
+    nameVi: "Viên uống DHC bổ sung Vitamin C 60 ngày",
     brand: "DHC",
     category: "Thực phẩm chức năng",
-    referencePriceVnd: 140000,
+    availability: "in-stock",
+    referencePriceVnd: 170000,
     specification: "60 viên",
     images: [
       "https://images.tutatuta.vn/image/products/dhc1/1.png",
@@ -91,6 +92,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Viên uống bổ sung kẽm DHC Nhật Bản 60 ngày",
     brand: "DHC",
     category: "Thực phẩm chức năng",
+    availability: "in-stock",
     referencePriceVnd: 180000,
     originalPriceVnd: 68880,
     specification: "60 viên",
@@ -134,11 +136,12 @@ Trong mỗi 2 viên dùng hằng ngày:
   },
   {
     id: "4",
-    slug: "vien-uong-bo-sung-collagen-dhc",
-    nameVi: "Viên uống bổ sung Collagen DHC",
+    slug: "vien-uong-bo-sung-collagen-dhc-60-ngay",
+    nameVi: "Viên uống bổ sung Collagen DHC 60 ngày",
     brand: "DHC",
     category: "Thực phẩm chức năng",
-    originalPriceVnd: 280000,
+    availability: "in-stock",
+    originalPriceVnd: 485000,
     specification: "60 viên",
     images: [
       "https://images.tutatuta.vn/image/products/collagen-dhc/collagen-dhc.png",
@@ -185,6 +188,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Kem dưỡng trắng da AQUALABEL Xanh",
     brand: "Aqualabel",
     category: "Mỹ phẩm",
+    availability: "in-stock",
     referencePriceVnd: 345000,
     specification: "90g",
     images: [
@@ -249,6 +253,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Viên uống Nattokinase 2000FU Orihiro Nhật Bản",
     brand: "ORIHIRO",
     category: "Thực phẩm chức năng",
+    availability: "in-stock",
     referencePriceVnd: 420000,
     specification: "60 viên",
     images: [
@@ -487,6 +492,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Má hồng kem Canmake Cream Cheek Nhật Bản",
     brand: "Canmake",
     category: "Mỹ phẩm",
+    availability: "in-stock",
     referencePriceVnd: 185000,
     originalPriceVnd: 117600,
     images: [
@@ -534,6 +540,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Nước nhỏ mắt Lion Smile 40 EX Nhật Bản 15ml",
     brand: "Lion",
     category: "Thuốc",
+    availability: "in-stock",
     referencePriceVnd: 80000,
     specification: "Chai 15ml",
     images: [
@@ -574,6 +581,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Nước nhỏ mắt Sante Medical Guard EX 12ml",
     brand: "Sante",
     category: "Thuốc",
+    availability: "in-stock",
     referencePriceVnd: 240000,
     specification: "Chai 12ml",
     images: [
@@ -670,6 +678,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Mặt nạ bã rượu Sake Wafood Made PDC Nhật Bản 10 miếng",
     brand: "PDC",
     category: "Mỹ phẩm",
+    availability: "in-stock",
     referencePriceVnd: 210000,
     specification: "Gói 10 miếng",
     images: [
@@ -709,6 +718,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Mặt nạ ủ bã rượu Sake PDC Wafood Made dạng rửa 170g",
     brand: "PDC",
     category: "Mỹ phẩm",
+    availability: "in-stock",
     referencePriceVnd: 329000,
     specification: "Tuýp 170g",
     images: [
@@ -766,6 +776,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Sữa rửa mặt bã rượu Sake Wafood Made PDC Nhật Bản 100g",
     brand: "PDC",
     category: "Mỹ phẩm",
+    availability: "in-stock",
     referencePriceVnd: 300000,
     specification: "Tuýp 100g",
     images: [
@@ -824,6 +835,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Mặt nạ Quality 1st Derma Laser Super 100 Nhật Bản 7 miếng",
     brand: "Quality 1st",
     category: "Mỹ phẩm",
+    availability: "in-stock",
     referencePriceVnd: 229000,
     specification: "Gói 7 miếng",
     images: [
@@ -891,6 +903,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Nước nhỏ mắt Sante FX Neo Nhật Bản 12ml",
     brand: "Sante",
     category: "Thuốc",
+    availability: "in-stock",
     referencePriceVnd: 95000,
     specification: "Lọ 12ml",
     images: [
@@ -1138,6 +1151,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Kem chống nắng by365 Powdery UV Cream SPF50+ PA++++ Nhật Bản 60g",
     brand: "by365",
     category: "Mỹ phẩm",
+    availability: "in-stock",
     referencePriceVnd: 375000,
     specification: "Tuýp 60g",
     images: [
@@ -1206,6 +1220,7 @@ Trong mỗi 2 viên dùng hằng ngày:
     nameVi: "Phấn phủ dưỡng da Club Suppin Powder 26g Nhật Bản",
     brand: "Club Cosmetics",
     category: "Mỹ phẩm",
+    availability: "in-stock",
     referencePriceVnd: 390000,
     specification: "Hộp 26g kèm bông phấn",
     images: [
@@ -1624,6 +1639,7 @@ Trong mỗi 2 viên dùng hằng ngày:
       "Viên Uống Giảm Mụn, Nhiệt Miệng & Phục Hồi Da Eisai Chocola BB Plus Nhật Bản (60 viên)",
     brand: "Eisai",
     category: "Thuốc",
+    availability: "in-stock",
     referencePriceVnd: 390000,
     specification: "Lọ 60 viên",
     images: [
@@ -1797,6 +1813,7 @@ Dòng sản phẩm chăm sóc ban ngày cao cấp thuộc Shiseido Nhật Bản.
       "Kem Chấm Mụn Pair Acne Cream W Nhật Bản (24g) – Giảm Sưng Viêm, Kháng Khuẩn & Mờ Thâm",
     brand: "Lion",
     category: "Thuốc",
+    availability: "in-stock",
     referencePriceVnd: 249000,
     originalPriceVnd: 285600,
     specification: "Tuýp 24g",

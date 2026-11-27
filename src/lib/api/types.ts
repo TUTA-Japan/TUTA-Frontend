@@ -42,6 +42,8 @@ type ProductFieldsDto = {
   referencePriceVnd: number | null;
   originalPriceVnd: number | null;
   specification: string | null;
+  /** Not sent by the backend yet. */
+  availability?: string | null;
   shortDescription: string | null;
   description: string | null;
   status: ProductStatus;

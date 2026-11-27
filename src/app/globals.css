@@ -11,6 +11,8 @@
   --tuta-orange: #c75030;
   --tuta-orange-light: #f7e8e2;
 
+  --tuta-red: #e02424;
+
   --surface: #ffffff;
 
   --text-primary: #1f2a22;
@@ -29,6 +31,8 @@
 
   --color-tuta-orange: var(--tuta-orange);
   --color-tuta-orange-light: var(--tuta-orange-light);
+
+  --color-tuta-red: var(--tuta-red);
 
   --color-surface: var(--surface);
   --color-text-primary: var(--text-primary);

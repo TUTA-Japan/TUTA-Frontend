@@ -1,5 +1,5 @@
 import type { Category } from "@/types/category";
-import type { Product } from "@/types/product";
+import type { Product, ProductAvailability } from "@/types/product";
 
 import type {
   CategoryDto,
@@ -23,6 +23,12 @@ function imageUrl(image: string | ProductImageDto): string {
   return typeof image === "string" ? image : image.url;
 }
 
+function toAvailability(
+  value: string | null | undefined,
+): ProductAvailability | undefined {
+  return value === "in-stock" || value === "pre-order" ? value : undefined;
+}
+
 /** Backend product payload → UI `Product` (null → undefined, category → name). */
 export function toProduct(dto: PublicProductDto | RelatedProductDto): Product {
   return {
@@ -35,6 +41,7 @@ export function toProduct(dto: PublicProductDto | RelatedProductDto): Product {
     referencePriceVnd: optional(dto.referencePriceVnd),
     originalPriceVnd: optional(dto.originalPriceVnd),
     specification: optional(dto.specification),
+    availability: toAvailability(dto.availability),
     images: dto.images.map(imageUrl),
     shortDescription: optional(dto.shortDescription),
     description: optional(dto.description),
