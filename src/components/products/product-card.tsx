@@ -71,7 +71,9 @@ export function ProductCard({
 
           <div className="mt-auto flex items-end justify-between gap-4 pt-4">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-              <p className="text-sm font-bold tabular-nums sm:text-[15px]">
+              <p
+                className={`text-sm font-bold tabular-nums sm:text-[15px] ${currentPrice && originalPrice ? "text-tuta-red" : ""}`}
+              >
                 {currentPrice ? (
                   <>
                     {currentPrice}

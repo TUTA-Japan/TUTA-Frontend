@@ -89,7 +89,9 @@ export function ProductDetail({ product }: ProductDetailProps) {
           {price !== null && (
             <div className="mt-7">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
-                <p className="text-2xl font-semibold text-text-primary">
+                <p
+                  className={`text-2xl font-semibold ${discount ? "text-tuta-red" : "text-text-primary"}`}
+                >
                   {formatPrice(price)}
                 </p>
 
@@ -99,7 +101,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                       {formatPrice(discount.originalPrice)}
                     </p>
 
-                    <span className="text-xs font-medium text-tuta-orange">
+                    <span className="text-xs font-semibold text-tuta-red">
                       -{discount.percent}%
                     </span>
                   </>
